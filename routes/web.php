@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('companies');
 });
+
+
+
+Route::get('companies/{company}', function ($slug) {
+
+    $company = file_get_contents(__DIR__ . "/../resources/companies/{$slug}.html");
+    
+    return view('company', [
+        'details' => $company
+    ]);
+});
+

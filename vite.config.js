@@ -8,4 +8,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        proxy: {
+          '/app': 'http://127.0.0.1:8000',  // Pointing to Laravel's server
+        }
+      }
 });

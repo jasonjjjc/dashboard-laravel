@@ -20,8 +20,13 @@ Route::get('/', function () {
 
 
 Route::get('companies/{company}', function ($slug) {
+    $path = __DIR__ . "/../resources/companies/{$slug}.html";
 
-    $company = file_get_contents(__DIR__ . "/../resources/companies/{$slug}.html");
+    if (! file_exists($path)) {
+        return redirect('/');
+    }
+
+    $company = file_get_contents($path);
     
     return view('company', [
         'details' => $company

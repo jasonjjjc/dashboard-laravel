@@ -12,24 +12,28 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+// homepage displays all the companies in the resources/companies directory
 Route::get('/', function () {
     return view('companies');
 });
 
 
-
-Route::get('companies/{company}', function ($slug) {
-    $path = __DIR__ . "/../resources/companies/{$slug}.html";
-
-    if (! file_exists($path)) {
+// redirect all random non-existent paths to the homepage
+Route::get('/{path}', function ($random) {
+    if (! file_exists($random)) {
         return redirect('/');
     }
+});
 
+
+// display the company details page if the path is good
+Route::get('companies/{company}', function ($slug) {
+    $path = __DIR__ . "/../resources/companies/{$slug}.html";
     $company = file_get_contents($path);
     
     return view('company', [
         'details' => $company
     ]);
-});
+    
+})->where('company', '[A-z_\-]+');
 

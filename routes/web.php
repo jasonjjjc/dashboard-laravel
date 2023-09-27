@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Company;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 // homepage displays all the companies in the resources/companies directory
 Route::get('/', function () {
-    return view('companies');
+    return view('companies', [
+        'companies' => Company::all()
+    ]);
 });
 
 
 // redirect all random non-existent paths to the homepage
 Route::get('/{path}', function ($random) {
-    if (! file_exists($random)) {
+    if (!file_exists($random)) {
         return redirect('/');
     }
 });
@@ -28,12 +32,14 @@ Route::get('/{path}', function ($random) {
 
 // display the company details page if the path is good
 Route::get('companies/{company}', function ($slug) {
-    $path = __DIR__ . "/../resources/companies/{$slug}.html";
-    $company = file_get_contents($path);
-    
-    return view('company', [
-        'details' => $company
-    ]);
-    
-})->where('company', '[A-z_\-]+');
+    // Use the "find" function inside a class called "Company" 
+    // To find the company details
+    // Pass those details to the "content" property
+    // In the view called "company"
 
+    $companyDetails = Company::find($slug);
+
+    return view('company', [
+        'content' => $companyDetails
+    ]);
+})->where('company', '[A-z_\-]+');

@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
-
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,14 @@ use App\Models\Company;
 */
 // homepage displays all the companies in the resources/companies directory
 Route::get('/', function () {
+    // Use the "collect" function to collect all the files in the companies directory
+    $companies = Company::all();
+
+
+  
+    
     return view('companies', [
-        'companies' => Company::all()
+        'companies' => $companies
     ]);
 });
 

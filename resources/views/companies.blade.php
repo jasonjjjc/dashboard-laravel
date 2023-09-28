@@ -9,11 +9,16 @@
 </head>
 
 <body>
-    <div class="p-10 flex flex-col gap-6">
+    <div class="p-6 flex flex-col gap-6">
         <?php foreach ($companies as $company) : ?>
-            <?= $company ?>
+            <div class="flex flex-col border border-gray-100 rounded-sm">
+                <h1 class="py-3 px-6 bg-green-400 text-white rounded-tl-sm rounded-tr-sm">
+                    <a href="/companies/<?= $company->slug ?>"><?= $company->title ?></a>
+                </h1>
+                <p class="p-6"><?= $company->excerpt ?></p>
+            </div>
         <?php endforeach; ?>
-        
+
     </div>
 </body>
 

@@ -3,7 +3,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -15,17 +14,18 @@ class Company
 
     public $date;
 
-    public $body;
-
     public $slug;
 
-    public function __construct($title, $excerpt, $date, $body, $slug)
+    public $body;
+
+
+    public function __construct($title, $excerpt, $date, $slug, $body)
     {
         $this->title = $title;
         $this->excerpt = $excerpt;
         $this->date = $date;
-        $this->body = $body;
         $this->slug = $slug;
+        $this->body = $body;
     }
 
 
@@ -41,8 +41,8 @@ class Company
                     $document->title,
                     $document->excerpt,
                     $document->date,
+                    $document->slug,
                     $document->body(),
-                    $document->slug
                 ))
                 ->sortByDesc('date');
         });

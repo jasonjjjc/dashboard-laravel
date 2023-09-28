@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +39,6 @@ Route::get('companies/{company}', function ($slug) {
     $companyDetails = Company::find($slug);
 
     return view('company', [
-        'content' => $companyDetails
+        'company' => $companyDetails
     ]);
 })->where('company', '[A-z_\-]+');

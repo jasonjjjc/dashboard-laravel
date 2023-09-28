@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company</title>
-    @vite('resources/css/app.css')
-</head>
 
-<body>
-    <div class="flex flex-col p-6">
+@section('header')
+
+    @include('header')
+
+@endsection
+
+@section ('content')
+
+
+<div class="flex flex-col p-6">
         <article class="flex flex-col border border-gray-100 rounded-sm">
             <h1 class="py-3 px-6 bg-green-400 text-white rounded-tl-sm rounded-tr-sm">
                 {{ $company->title }}
@@ -18,6 +19,5 @@
         </article>
         <a href="/" class="mt-6 py-2 px-6 bg-green-500 text-white w-fit rounded-md">Back</a>
     </div>
-</body>
 
-</html>
+@endsection

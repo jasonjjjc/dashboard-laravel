@@ -10,7 +10,7 @@
 
 <body>
     <div class="flex flex-col p-6">
-        <article class="flex flex-col border border-gray-100">
+        <article class="flex flex-col border border-gray-100 rounded-sm">
             <h1 class="py-3 px-6 bg-green-400 text-white rounded-tl-sm rounded-tr-sm">
                 <?= $content->title ?>
             </h1>

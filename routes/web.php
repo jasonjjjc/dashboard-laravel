@@ -17,14 +17,8 @@ use Illuminate\Support\Facades\File;
 */
 // homepage displays all the companies in the resources/companies directory
 Route::get('/', function () {
-    // Use the "collect" function to collect all the files in the companies directory
-    $companies = Company::all();
-
-
-  
-    
     return view('companies', [
-        'companies' => $companies
+        'companies' => Company::all()
     ]);
 });
 

@@ -34,24 +34,32 @@ class Company
     // find all the details about all the companies in the resources/companies directory
     public static function all()
     {
-        return collect(File::files(resource_path("companies")))
-            ->map(fn ($file) => YamlFrontMatter::parseFile($file))
-            ->map(fn ($document) => new Company(
-                $document->title,
-                $document->excerpt,
-                $document->date,
-                $document->body(),
-                $document->slug
-            ));
+        return cache()->rememberForever('companies.all', function () {
+            return collect(File::files(resource_path("companies")))
+                ->map(fn ($file) => YamlFrontMatter::parseFile($file))
+                ->map(fn ($document) => new Company(
+                    $document->title,
+                    $document->excerpt,
+                    $document->date,
+                    $document->body(),
+                    $document->slug
+                ))
+                ->sortByDesc('date');
+        });
+        
     }
 
     // find one company's details in the resources/companies directory
     public static function find($slug)
     {
-        if (!file_exists($path = resource_path("companies/{$slug}.html"))) {
-            throw new ModelNotFoundException();
-        }
+        // find all the companies
+        $companies = static::all();
 
-        return cache()->remember("companies.{$slug}", 1, fn () => file_get_contents($path));
+        // return only the company that matches the slug
+        return $companies->firstWhere('slug', $slug);
+
+
+
+
     }
 }

@@ -12,7 +12,7 @@
     <header>
         @yield('header')
     </header>
-        @yield('content')
+        {{ $slot }}
 </body>
 
 </html>

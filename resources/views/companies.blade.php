@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="p-6 flex flex-col gap-6">
+    <div class="p-6 flex flex-1 flex-col gap-6">
 
         @foreach ($companies as $company)
         <div class="flex flex-col border border-gray-100 rounded-sm">

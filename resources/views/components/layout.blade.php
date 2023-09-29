@@ -11,7 +11,9 @@
 <body>
     <container class="flex flex-col min-h-screen">
         <x-header></x-header>
+        <x-spacer></x-spacer>
         {{ $slot}}
+        <x-spacer></x-spacer>
         <x-footer></x-footer>
     </container>
 </body>

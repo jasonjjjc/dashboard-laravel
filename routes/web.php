@@ -21,14 +21,6 @@ Route::get('/', function () {
 });
 
 
-// redirect all random non-existent paths to the homepage
-Route::get('/{path}', function ($random) {
-    if (!file_exists($random)) {
-        return redirect('/');
-    }
-});
-
-
 // display the company details page if the path is good
 Route::get('companies/{company}', function ($slug) {
     // Use the "find" function inside a class called "Company" 
@@ -42,3 +34,11 @@ Route::get('companies/{company}', function ($slug) {
         'company' => $companyDetails
     ]);
 })->where('company', '[A-z_\-]+');
+
+
+// handle all remaining url errors by redirecting to the homepage
+Route::get('/{path}', function ($random) {
+    if (!file_exists($random)) {
+        return redirect('/');
+    }
+});

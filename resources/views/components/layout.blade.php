@@ -9,9 +9,11 @@
 </head>
 
 <body>
-    <x-header></x-header>
-    {{ $slot}}
-    <x-footer></x-footer>
+    <container class="flex flex-col min-h-screen">
+        <x-header></x-header>
+        {{ $slot}}
+        <x-footer></x-footer>
+    </container>
 </body>
 
 </html>

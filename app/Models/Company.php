@@ -3,6 +3,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -49,16 +50,26 @@ class Company
         
     }
 
+
+
     // find one company's details in the resources/companies directory
     public static function find($slug)
     {
-        // find all the companies
-        $companies = static::all();
+        return static::all()->firstWhere('slug', $slug);
+    
+    }
+    
+    
+    // find or fail a company's details in the resources/companies directory
+    public static function findOrFail($slug)
+    {
+        $company = static::find($slug);
 
-        // return only the company that matches the slug
-        return $companies->firstWhere('slug', $slug);
+        if (!$company) {
+            throw new ModelNotFoundException();
+        }
 
-
+        return $company;
 
 
     }

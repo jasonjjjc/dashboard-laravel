@@ -28,17 +28,18 @@ Route::get('companies/{company}', function ($slug) {
     // Pass those details to the "content" property
     // In the view called "company"
 
-    $companyDetails = Company::find($slug);
+    $companyDetails = Company::findOrFail($slug);
+
 
     return view('company', [
         'company' => $companyDetails
     ]);
-})->where('company', '[A-z_\-]+');
+});
 
 
 // handle all remaining url errors by redirecting to the homepage
-Route::get('/{path}', function ($random) {
-    if (!file_exists($random)) {
-        return redirect('/');
-    }
-});
+// Route::get('/{path}', function ($random) {
+//     if (!file_exists($random)) {
+//         return redirect('/');
+//     }
+// });

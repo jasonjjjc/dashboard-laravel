@@ -4,8 +4,8 @@
         @foreach ($companies as $company)
         <div class="relative transform hover:-translate-y-1 hover:scale-105 hover:shadow-lg transition-transform duration-200 ease-in-out">
             <!-- Adding some exaggerated styles to the category tag to make it easier to click it on small screens -->
-            <a href="/categories/{{ $company->category->id }}" class="absolute -top-1 -right-2 p-4 group">
-                <p class="bg-gray-100 text-blue-500 text-sm py-1 px-2 rounded-md group-hover:underline group-hover:bg-blue-600 group-hover:text-white">{{ $company->category->name }}</p>
+            <a href="/categories/{{ $company->category->slug }}" class="absolute -top-1 -right-2 p-4 group">
+                <p class="bg-gray-100 text-blue-500 text-sm py-1 px-2 rounded-md group-hover:bg-blue-600 group-hover:text-white">{{ $company->category->name }}</p>
             </a>
             <a href="/companies/{{ $company->slug }}">
                 <div class="flex flex-col border border-gray-100 rounded-md h-72 shadow-md">

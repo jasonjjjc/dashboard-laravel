@@ -35,7 +35,7 @@ Route::get('companies/{company:slug}', function (Company $company) {
     ]);
 });
 
-Route::get('categories/{category}', function (Category $category) {
+Route::get('categories/{category:slug}', function (Category $category) {
     return view('companies', [
         'companies' => $category->companies
     ]);

@@ -7,8 +7,8 @@
                     <a href="/companies/{{ $company->id }}">{{ $company->name }}</a>
                 </h1>
                 <!-- Adding some exaggerated styles to the category tag to make it easier to click it on small screens -->
-                <a href="/categories/{{ $company->category->id }}" class="absolute -top-1 -right-2 p-4 group">
-                    <p class="bg-gray-100 text-blue-500 text-sm py-1 px-2 rounded-md group-hover:underline">{{ $company->category->name }}</p>
+                <a href="/categories/{{ $company->category->slug }}" class="absolute -top-1 -right-2 p-4 group">
+                    <p class="bg-gray-100 text-blue-500 text-sm py-1 px-2 rounded-md hover:bg-blue-600 hover:text-white">{{ $company->category->name }}</p>
                 </a>
                 <div class="px-3 flex flex-col gap-6">
                     <h2 class="font-bold">Email:</h2>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </article>
-        <a href="/" class="mt-6 py-2 px-6 bg-blue-500 text-white w-fit rounded-md">Home</a>
+        <a href="/" class="mt-6 py-2 px-6 bg-blue-500 text-white w-fit rounded-md hover:bg-blue-600">Home</a>
     </div>
 
 </x-layout>

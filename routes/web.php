@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,11 @@ Route::get('companies/{company:slug}', function (Company $company) {
     ]);
 });
 
+Route::get('categories/{category}', function (Category $category) {
+    return view('companies', [
+        'companies' => $category->companies
+    ]);
+});
 
 // handle all remaining url errors by redirecting to the homepage
 // Route::get('/{path}', function ($random) {

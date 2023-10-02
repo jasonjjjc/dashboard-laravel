@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('email');
@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('website');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('categories');
     }
 };

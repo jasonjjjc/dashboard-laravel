@@ -22,17 +22,15 @@ Route::get('/', function () {
 
 
 // display the company details page if the path is good
-Route::get('companies/{company}', function ($id) {
+Route::get('companies/{company:slug}', function (Company $company) {
     // Use the "find" function inside a class called "Company" 
     // To find the company details
     // Pass those details to the "content" property
     // In the view called "company"
 
-    $companyDetails = Company::findOrFail($id);
-
 
     return view('company', [
-        'company' => $companyDetails
+        'company' => $company
     ]);
 });
 

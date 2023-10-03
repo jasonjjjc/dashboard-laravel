@@ -16,6 +16,15 @@
                         <h2 class="font-bold">Website:</h2>
                         <p class="p-2 bg-black overflow-hidden">{{ $company->website }}</p>
                     </div>
+                    <div class="flex flex-col gap-2 group">
+                        <div class="flex justify-between">
+                            <h2 class="font-bold">Employees</h2>
+                            <p class="bg-black rounded-md py-1 px-2">Show All</p>
+                        </div>
+                        <p class="hidden bg-black overflow-hidden group-focus:flex">
+                            <a href="#" class="">Steve Jobs</a>
+                        </p>
+                    </div>
                     <div class="flex flex-col gap-2">
                         <h2 class="font-bold">Updated:</h2>
                         <p class="p-2 bg-black overflow-hidden">{{ $company->updated_at }}</p>
@@ -28,5 +37,4 @@
             </div>
         </article>
     </div>
-
 </x-layout>

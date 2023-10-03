@@ -1,9 +1,11 @@
 <header>
-    <div class="flex justify-between p-2 border-b-2 border-gray-200 bg-blue-500 text-white">
-        <h1 class="flex items-center"><a href="/" class="rounded-md py-2 px-4 hover:bg-blue-600 hover:text-white cursor-pointer">ComDash</a></h1>
-        <ul class="flex gap-4">
-            <li class="rounded-md py-2 px-4 hover:bg-blue-600 hover:text-white cursor-pointer">Help</li>
-            <li class="rounded-md py-2 px-4 hover:bg-blue-600 hover:text-white cursor-pointer">Logout</li>
+    <div class="flex justify-between items-center border-b border-gray-400 p-2">
+        <h1 class="flex ">
+            <a href="/" class="rounded-md py-1 px-3 cursor-pointer hover:text-red-400">LinkedUp</a>
+        </h1>
+        <ul class="flex flex-1 justify-end gap-3">
+            <li class="rounded-md py-1 px-3 cursor-pointer hover:text-red-400">Help</li>
+            <li class="rounded-md py-1 px-3 cursor-pointer hover:text-red-400">Logout</li>
         </ul>
     </div>
 </header>

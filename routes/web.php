@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
 use App\Models\Category;
@@ -16,8 +17,13 @@ use App\Models\Category;
 */
 // homepage displays all the companies in the resources/companies directory
 Route::get('/', function () {
+
+    // \Illuminate\Support\Facades\DB::listen(function ($query) {
+    //     logger($query->sql, $query->bindings);
+    // });
+
     return view('companies', [
-        'companies' => Company::all()
+        'companies' => Company::with('category')->get() 
     ]);
 });
 

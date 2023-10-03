@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <container class="flex flex-col min-h-screen">
+    <container class="flex flex-col min-h-screen bg-black text-white">
         <x-header></x-header>
         <x-spacer></x-spacer>
         {{ $slot}}

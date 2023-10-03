@@ -21,8 +21,8 @@
                             <h2 class="font-bold">Employees</h2>
                             <p class="bg-black rounded-md py-1 px-2">Show All</p>
                         </div>
-                        <p class="hidden bg-black overflow-hidden group-focus:flex">
-                            <a href="#" class="">Steve Jobs</a>
+                        <p class="bg-black overflow-hidden">
+                            <a href="#" class="">{{ $company->user->name }}</a>
                         </p>
                     </div>
                     <div class="flex flex-col gap-2">

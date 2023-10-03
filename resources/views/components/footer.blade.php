@@ -1,5 +1,5 @@
 <footer>
-    <div class="flex justify-between items-center border-t border-gray-400 p-2">
+    <div class="flex justify-between items-center border-t border-red-400 p-2">
         <h1 class="flex ">
             <a href="<?php echo $_SERVER['REQUEST_URI'] != '/' ? '/' : 'javascript:void(0)'; ?>" class="rounded-md py-1 px-3 cursor-pointer hover:text-red-400">&copy;&nbsp;LinkedUp</a>
         </h1>

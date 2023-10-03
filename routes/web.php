@@ -47,9 +47,8 @@ Route::get('categories/{category:slug}', function (Category $category) {
     ]);
 });
 
-// handle all remaining url errors by redirecting to the homepage
-// Route::get('/{path}', function ($random) {
-//     if (!file_exists($random)) {
-//         return redirect('/');
-//     }
-// });
+Route::get('users/{user:name}', function (App\Models\User $user) {
+    return view('companies', [
+        'companies' => $user->companies
+    ]);
+});

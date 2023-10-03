@@ -20,7 +20,10 @@ class DatabaseSeeder extends Seeder
         Category::truncate();
         Company::truncate();
 
-        $user = User::factory()->create();
+        $user = User::factory()->create([
+            'name' => 'Admin',
+            'password' => 'admin'
+        ]);
 
 
         // Categories
@@ -63,7 +66,7 @@ class DatabaseSeeder extends Seeder
         // Companies
 
         Company::create([
-            "user_id" => 1,
+            "user_id" => $user->id,
             "category_id" => $technology->id,
             "slug" => "apple",
             "name" => "Apple",
@@ -76,7 +79,7 @@ class DatabaseSeeder extends Seeder
 
         Company::create([
 
-            "user_id" => 2,
+            "user_id" => $user->id,
             "category_id" => $clothes->id,
             "slug" => "burberry",
             "name" => "Burberry",
@@ -89,7 +92,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Company::create([
-            "user_id" => 3,
+            "user_id" => $user->id,
             "category_id" => $food->id,
             "slug" => "waitrose",
             "name" => "Waitrose",
@@ -101,7 +104,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Company::create([
-            "user_id" => 4,
+            "user_id" => $user->id,
             "category_id" => $home->id,
             "slug" => "john-lewis",
             "name" => "John Lewis",
@@ -113,7 +116,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Company::create([
-            "user_id" => 5,
+            "user_id" => $user->id,
             "category_id" => $home->id,
             "slug" => "screwfix",
             "name" => "Screwfix",

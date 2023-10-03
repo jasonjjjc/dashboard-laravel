@@ -2,18 +2,18 @@
     <x-header></x-header>
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
-        <x-featured-company-card></x-featured-company-card>
+        <x-company-featured-card :company="$companies[0]"/>
 
-        <div class="lg:grid lg:grid-cols-2">
-            <x-company-card></x-company-card>
-            <x-company-card></x-company-card>
+        {{--<div class="lg:grid lg:grid-cols-2">
+            <x-company-card/>
+            <x-company-card/>
         </div>
 
         <div class="lg:grid lg:grid-cols-3">
-            <x-company-card></x-company-card>
-            <x-company-card></x-company-card>
-            <x-company-card></x-company-card>
-        </div>
+            <x-company-card/>
+            <x-company-card/>
+            <x-company-card/>
+        </div>--}}
     </main>
     {{--<div class="px-6 flex flex-1 flex-col gap-6">
         @foreach ($companies as $company)

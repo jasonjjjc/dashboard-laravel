@@ -23,7 +23,7 @@ Route::get('/', function () {
     // });
 
     return view('companies', [
-        'companies' => Company::with('category')->get() 
+        'companies' => Company::latest()->get() 
     ]);
 });
 

@@ -11,6 +11,8 @@ class Company extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $fillable = ['name', 'user_id', 'slug', 'category_id', 'email', 'logo', 'website'];
 
+    protected $with = ['category', 'user'];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

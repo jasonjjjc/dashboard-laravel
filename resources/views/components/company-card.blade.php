@@ -11,27 +11,34 @@
                     <a href="/categories/{{ $company->category->slug }}"
                         class="px-3 py-1 border border-blue-300 rounded-full text-blue-300 text-xs uppercase font-semibold"
                         style="font-size: 10px">{{ $company->category->name }}</a>
-                    <a href="{{ $company->website }}"
-                        class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                        style="font-size: 10px">website</a>
                 </div>
 
                 <div class="mt-4">
-                    <h1 class="text-3xl cursor-pointer">
-                        {{ $company->name }}
-                    </h1>
+                    <div class="flex gap-4">
+                        <h1 class="text-3xl cursor-pointer">
+                            {{ $company->name }}
+                        </h1>
+                        <p class="flex items-center gap-4">
+                            <a href="{{ $company->website }}"
+                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
+                                style="font-size: 10px">website</a>
+                            <a href="{{ $company->email }}"
+                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
+                                style="font-size: 10px">email</a>
+                        </p>
+                    </div>
 
                     <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>{{ $company->created_at->diffForHumans() }}</time>
                     </span>
+
                 </div>
             </header>
 
             <div class="text-sm mt-4">
                 <p>
-                    <a href="mailto:{{ $company->email }}">
-                        {{ $company->email }}
-                    </a>
+                    {{-- This is blank for now --}}
+                    {{ $company->description }}
                 </p>
             </div>
 

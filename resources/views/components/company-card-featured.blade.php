@@ -16,11 +16,19 @@
                 </div>
 
                 <div class="mt-4">
-                    <h1 class="text-3xl">
-                        <a href="/companies/{{ $company->slug }}">
+                    <div class="flex gap-4">
+                        <h1 class="text-3xl cursor-pointer">
                             {{ $company->name }}
-                        </a>
-                    </h1>
+                        </h1>
+                        <p class="flex items-center gap-4">
+                            <a href="{{ $company->website }}"
+                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
+                                style="font-size: 10px">website</a>
+                            <a href="{{ $company->email }}"
+                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
+                                style="font-size: 10px">email</a>
+                        </p>
+                    </div>
                     <span class="mt-2 block text-gray-400 text-xs">
                         Published <time>{{ $company->created_at->diffForHumans() }}</time>
                     </span>
@@ -29,11 +37,8 @@
 
             <div class="text-sm mt-2">
                 <p>
-                    {{ $company->email }}
-                </p>
-
-                <p class="mt-4">
-                    {{ $company->website }}
+                    {{-- This is blank for now --}}
+                    {{ $company->description }} 
                 </p>
             </div>
 

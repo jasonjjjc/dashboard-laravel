@@ -17,7 +17,12 @@ use App\Http\Controllers\CompanyController;
 |
 */
 // homepage displays all the companies in the resources/companies directory
-Route::get('/', [CompanyController::class, 'index']);
+Route::get('/', function () {
+    return view('employees', [
+        'employees' => Employee::all(),
+        'companies' => Company::all()
+    ]);
+});
 
 
 
@@ -36,12 +41,14 @@ Route::get('employees/{employee:slug}', function (Employee $employee) {
 
 Route::get('companies/{company:slug}', function (Company $company) {
     return view('employees', [
-        'employees' => $company->employees
+        'employees' => $company->employees,
+        'companies' => Company::all()
     ]);
 });
 
 Route::get('users/{user:name}', function (App\Models\User $user) {
     return view('employees', [
-        'employees' => $user->employees
+        'employees' => $user->employees,
+        'companies' => Company::all()
     ]);
 });

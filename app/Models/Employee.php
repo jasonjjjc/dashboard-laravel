@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model
 {
     use HasFactory;
-    protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $fillable = ['name', 'user_id', 'slug', 'category_id', 'email', 'logo', 'website', 'summary', 'description'];
+    protected $guarded = ['id'];
+    protected $fillable = ['user_id', 'company_id', 'slug', 'name', 'email', 'job_title', 'phone', 'address', 'summary', 'description'];
 
     protected $with = ['company', 'user'];
 
@@ -21,7 +21,7 @@ class Employee extends Model
 
     public function user () 
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }

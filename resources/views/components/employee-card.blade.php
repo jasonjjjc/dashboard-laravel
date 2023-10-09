@@ -19,17 +19,14 @@
                             {{ $employee->name }}
                         </h1>
                         <p class="flex items-center gap-4">
-                            <a href="{{ $employee->website }}"
-                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                                style="font-size: 10px">website</a>
-                            <a href="{{ $employee->email }}"
+                            <a href="mailto:{{ $employee->email }}"
                                 class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
                                 style="font-size: 10px">email</a>
                         </p>
                     </div>
 
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Published <time>{{ $employee->created_at->diffForHumans() }}</time>
+                        Added <time>{{ $employee->created_at->diffForHumans() }}</time>
                     </span>
 
                 </div>

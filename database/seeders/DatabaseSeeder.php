@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         User::truncate();
         Company::truncate();
-        Company::truncate();
+        Employee::truncate();
 
         $user = User::factory()->create([
             'name' => 'Admin',
@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
             "slug" => "tim-cook",
             "name" => "Tim Cook",
             "email" => "tim.cook@apple.com",
-            "job_title" => "CEO",
+            "job_title" => "Chief Executive Officer",
             "phone" => "01234567890",
             "address" => "1 Infinite Loop, Cupertino, CA 95014, United States",
             "summary" => "Timothy Donald Cook is an American business executive, philanthropist and industrial engineer. Cook is the chief executive officer of Apple Inc., and previously served as the company's chief operating officer under its cofounder Steve Jobs.",
@@ -127,7 +127,6 @@ class DatabaseSeeder extends Seeder
             "address" => "Horseferry House, Horseferry Rd, Westminster, London SW1P 2AW",
             "summary" => "Riccardo Tisci is an Italian fashion designer. He was creative director for Givenchy from 2005 to 2017. In 2018, he was hired as the chief creative officer of British luxury brand Burberry.",
             "description" => "Riccardo Tisci is an Italian fashion designer. He was creative director for Givenchy from 2005 to 2017. In 2018, he was hired as the chief creative officer of British luxury brand Burberry. He added a new and youthful vibe to the brand's lineup and repositioned Burberry at the forefront of luxury designer brands among younger customers. In his spare time he liked to party with all the models at Burberry. Originally from Italy, he moved to London in 2018 to take up the role at Burberry. He is known for making bold fashion statements and is often seen wearing a kilt. He famously designed the wedding dress for Meghan Markle when she married Prince Harry.",
-
         ]);
 
         Employee::create([
@@ -141,7 +140,6 @@ class DatabaseSeeder extends Seeder
             "address" => "Doncastle Road, Bracknell, Berkshire, RG12 8YA",
             "summary" => "James Bailey is an English businessman, and the executive director of Waitrose & Partners, a division of the John Lewis Partnership.",
             "description" => "James Bailey is an English businessman, and the executive director of Waitrose & Partners, a division of the John Lewis Partnership. He is known for his love of Waitrose's Duchy range of products and is often seen eating them in the office. Prior to working at Waitrose, James worked at Tesco and Sainsbury's. He is known for piloting Waitrose's online delivery service and is often seen driving the delivery vans himself. His favourite saying is \"Never knowingly undersold\" and he is often seen wearing a suit and tie. Originally, he is from London, but now lives in Berkshire with his wife and two children.",
-           
         ]);
 
         Employee::create([

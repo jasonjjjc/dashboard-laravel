@@ -1,7 +1,8 @@
 @props(['employees', 'companies', 'company'])
 
 <x-layout>
-    <x-header :companies="$companies" :company="$company"></x-header>
+    <x-header :companies="$companies" :company="isset($company) ? $company : null"></x-header>
+
 
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">

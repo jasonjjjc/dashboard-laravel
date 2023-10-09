@@ -1,7 +1,7 @@
-@props(['employees', 'companies'])
+@props(['employees', 'companies', 'company'])
 
 <x-layout>
-    <x-header :companies="$companies"></x-header>
+    <x-header :companies="$companies" :company="$company"></x-header>
 
 
     <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">

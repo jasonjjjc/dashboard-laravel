@@ -42,6 +42,7 @@ Route::get('employees/{employee:slug}', function (Employee $employee) {
 Route::get('companies/{company:slug}', function (Company $company) {
     return view('employees', [
         'employees' => $company->employees,
+        'company' => $company,
         'companies' => Company::all()
     ]);
 });

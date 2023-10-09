@@ -14,7 +14,7 @@
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
 
             <div x-data="{ show: false }" @click.away="show = false" class="w-full flex lg:w-48 items-center">
-                <button @click="show = ! show" class="w-full py-2 pl-3 pr-9 text-start text-sm font-semibold">Companies</button>
+                <button @click="show = ! show" class="w-full py-2 pl-3 pr-9 text-start text-sm font-semibold">{{ isset($company) ? $company->name : 'All Companies' }}</button>
 
                 <div x-show="show" class="w-full bg-gray-100 p-2 absolute top-10 z-10 rounded-xl" style="display: none">
                     @foreach ($companies as $company)

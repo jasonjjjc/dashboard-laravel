@@ -9,7 +9,7 @@ class Company extends Model
 {
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $fillable = ['name', 'user_id', 'slug', 'category_id', 'email', 'logo', 'website'];
+    protected $fillable = ['name', 'user_id', 'slug', 'category_id', 'email', 'logo', 'website', 'summary', 'description'];
 
     protected $with = ['category', 'user'];
 

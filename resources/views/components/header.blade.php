@@ -3,7 +3,7 @@
         All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
     </h1>
 
-    <h2 class="inline-flex mt-2">By {{ $user->name }} <img src="/images/lary-head.svg" alt="Head of Lary the mascot"></h2>
+    <h2 class="inline-flex mt-2">By {{ $user->name }}</h2>
 
     <div class="text-sm mt-14">
         @if ($currentCompany)

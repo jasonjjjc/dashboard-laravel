@@ -5,13 +5,13 @@
                 <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Published <time>{{ $company->created_at->diffForHumans() }}</time>
+                    Published <time>{{ $employee->created_at->diffForHumans() }}</time>
                 </p>
 
                 <div class="flex items-center lg:justify-center text-sm mt-4">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="flex gap-6 ml-3 text-left">
-                        <h5 class="font-bold">{{ $company->user->name }}</h5>
+                        <h5 class="font-bold">{{ $employee->user->name }}</h5>
                         <a href="mailto:{{ $company->user->email }}"
                             class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
                             style="font-size: 10px">Email</a>
@@ -33,23 +33,23 @@
                             </g>
                         </svg>
 
-                        Back to Companies
+                        Back to Employees
                     </a>
 
                     <div class="space-x-2">
-                        <x-category-button :category="$company->category" />
+                        <x-company-button :company="$employee->company" />
                     </div>
                 </div>
 
                 <h1 class="font-bold text-3xl lg:text-4xl mb-10">
-                    {{ $company->name }}
+                    {{ $employee->name }}
                 </h1>
 
                 <div class="space-y-4 lg:text-lg leading-loose">
                     <p>
-                        {{-- Convert the company description to an array of sentences --}}
+                        {{-- Convert the employee description to an array of sentences --}}
                         @php
-                            $sentences = explode('. ', $company->description);
+                            $sentences = explode('. ', $employee->description);
                             // Remove the last item, remove the period, and add it back
                             $lastSentence = array_pop($sentences);
                             $lastSentence = rtrim($lastSentence, '.');

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
-use App\Models\Category;
+use App\Models\Employee;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,33 +22,33 @@ Route::get('/', function () {
     //     logger($query->sql, $query->bindings);
     // });
 
-    return view('companies', [
-        'companies' => Company::latest()->get() 
+    return view('employees', [
+        'employees' => Employee::latest()->get() 
     ]);
 });
 
 
 // display the company details page if the path is good
-Route::get('companies/{company:slug}', function (Company $company) {
+Route::get('employees/{employee:slug}', function (Employee $employee) {
     // Use the "find" function inside a class called "Company" 
     // To find the company details
     // Pass those details to the "content" property
     // In the view called "company"
 
 
-    return view('company', [
-        'company' => $company
+    return view('employee', [
+        'employee' => $employee
     ]);
 });
 
-Route::get('categories/{category:slug}', function (Category $category) {
-    return view('companies', [
-        'companies' => $category->companies
+Route::get('companies/{company:slug}', function (Company $company) {
+    return view('employees', [
+        'employees' => $company->employees
     ]);
 });
 
 Route::get('users/{user:name}', function (App\Models\User $user) {
-    return view('companies', [
-        'companies' => $user->companies
+    return view('employees', [
+        'employees' => $user->employees
     ]);
 });

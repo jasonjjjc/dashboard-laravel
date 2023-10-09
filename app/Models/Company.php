@@ -8,20 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     use HasFactory;
-    protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $fillable = ['name', 'user_id', 'slug', 'category_id', 'email', 'logo', 'website', 'summary', 'description'];
 
-    protected $with = ['category', 'user'];
-
-    public function category()
+    public function employees()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Employee::class);
     }
-
-
-    public function user () 
-    {
-        return $this->belongsTo(User::class);
-    }
-
 }

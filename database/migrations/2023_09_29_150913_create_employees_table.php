@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('category_id');
+            $table->foreignId('company_id');
             $table->string('slug')->unique();
             $table->string('name');
             $table->string('email');
-            $table->string('logo');
-            $table->string('website');
-            $table->text('summary');
-            $table->text('description');
+            $table->string('job_title');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('summary')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('employees');
     }
 };

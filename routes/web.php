@@ -23,7 +23,8 @@ Route::get('/', function () {
     // });
 
     return view('employees', [
-        'employees' => Employee::latest()->get() 
+        'employees' => Employee::latest()->get(),
+        
     ]);
 });
 

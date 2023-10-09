@@ -17,8 +17,9 @@
                 <button @click="show = ! show" class="w-full py-2 pl-3 pr-9 text-start text-sm font-semibold">Companies</button>
 
                 <div x-show="show" class="w-full bg-gray-100 p-2 absolute top-10 z-10 rounded-xl" style="display: none">
-
-                    <a href="#" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white rounded-sm">One</a>
+                    @foreach ($companies as $company)
+                    <a href="/companies/{{ $company->slug }}" class="block text-left px-3 text-sm leading-6 hover:bg-blue-500 hover:text-white focus:bg-blue-500 focus:text-white rounded-sm">{{ $company->name }}</a>
+                    @endforeach
 
                 </div>
 

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
 use App\Models\Employee;
+use App\Http\Controllers\CompanyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +17,8 @@ use App\Models\Employee;
 |
 */
 // homepage displays all the companies in the resources/companies directory
-Route::get('/', function () {
+Route::get('/', [CompanyController::class, 'index']);
 
-    // \Illuminate\Support\Facades\DB::listen(function ($query) {
-    //     logger($query->sql, $query->bindings);
-    // });
-
-    return view('employees', [
-        'employees' => Employee::latest()->get(),
-        
-    ]);
-});
 
 
 // display the company details page if the path is good

@@ -1,7 +1,7 @@
-@props(['employees', 'companies', 'company'])
+@props(['employees', 'companies', 'currentCompany'])
 
 <x-layout>
-    <x-header :companies="$companies" :company="isset($company) ? $company : null"></x-header>
+    <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null"></x-header>
 
 
 

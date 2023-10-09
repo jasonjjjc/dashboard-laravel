@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use App\Models\Company;
 use App\Models\Employee;
-use App\Http\Controllers\CompanyController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,13 +42,15 @@ Route::get('companies/{company:slug}', function (Company $company) {
     return view('employees', [
         'employees' => $company->employees,
         'currentCompany' => $company,
-        'companies' => Company::all()
+        'companies' => Company::all(),
+        'user' => User::first()
     ]);
 });
 
 Route::get('users/{user:name}', function (App\Models\User $user) {
     return view('employees', [
         'employees' => $user->employees,
+        'user' => $user,
         'companies' => Company::all()
     ]);
 });

@@ -9,7 +9,7 @@
 
     {{-- Links --}}
 
-    <div x-show="show" class="w-full bg-gray-100 p-2 absolute top-10 z-10 rounded-xl"
+    <div x-show="show" class="w-full bg-gray-100 p-2 absolute top-10 z-10 rounded-xl overflow-auto max-h-48"
         style="display: none">
         
         {{ $slot }}

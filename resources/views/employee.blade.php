@@ -11,8 +11,8 @@
                 <div class="flex items-center lg:justify-center text-sm mt-4">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="flex gap-6 ml-3 text-left">
-                        <h5 class="font-bold">{{ $employee->user->name }}</h5>
-                        <a href="mailto:{{ $company->user->email }}"
+                        <h5 class="font-bold">{{ $employee->name }}</h5>
+                        <a href="mailto:{{ $employee->email }}"
                             class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
                             style="font-size: 10px">Email</a>
                     </div>

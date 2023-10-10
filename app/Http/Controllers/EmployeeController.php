@@ -41,4 +41,10 @@ class EmployeeController extends Controller
         ]);
 
     }
+
+
+    public function getPosts ()
+    {
+        return Employee::latest()->filter()->get();
+    }
 }

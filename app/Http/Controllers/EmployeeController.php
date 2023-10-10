@@ -33,4 +33,12 @@ class EmployeeController extends Controller
             'user' => User::first()
         ]);
     }
+
+    public function show (Employee $employee) 
+    {
+        return view('employee', [
+            'employee' => $employee
+        ]);
+
+    }
 }

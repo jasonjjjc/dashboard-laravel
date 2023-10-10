@@ -5,7 +5,7 @@
 
     <h2 class="inline-flex mt-2">By {{ $user->name }}</h2>
 
-    <div class="text-sm mt-14">
+    <div class="text-sm mt-8">
         @if ($currentCompany)
             {{ $currentCompany->summary }}
         @else
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Other Filters -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
+        {{-- <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-3 text-sm font-semibold">
                 <option value="category" disabled selected>Other Filters
                 </option>
@@ -54,13 +54,13 @@
             </select>
 
             <x-icon name="down-arrow" class="mr-3"></x-icon>
-        </div>
+        </div> --}}
 
         <!-- Search -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl px-3 py-2">
-            <form method="GET" action="#">
+        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl p-2">
+            <form method="GET" action="#" class="w-full text-start">
                 <input type="text" name="search" placeholder="Find something"
-                    class="bg-transparent placeholder-black font-semibold text-sm">
+                    class="bg-transparent placeholder-black font-semibold text-sm w-full p-1">
             </form>
         </div>
     </div>

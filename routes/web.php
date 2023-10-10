@@ -19,7 +19,8 @@ use App\Models\User;
 Route::get('/', function () {
     return view('employees', [
         'employees' => Employee::all(),
-        'companies' => Company::all()
+        'companies' => Company::all(),
+        'user' => User::first()
     ]);
 });
 

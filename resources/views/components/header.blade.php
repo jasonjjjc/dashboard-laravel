@@ -60,7 +60,8 @@
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl p-2">
             <form method="GET" action="#" class="w-full text-start">
                 <input type="text" name="search" placeholder="Find something"
-                    class="bg-transparent placeholder-black font-semibold text-sm w-full p-1">
+                    class="bg-transparent placeholder-black font-semibold text-sm w-full p-1 focus:outline-blue-500"
+                    value="{{ request('search') }}">    
             </form>
         </div>
     </div>

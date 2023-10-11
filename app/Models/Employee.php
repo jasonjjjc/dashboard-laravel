@@ -14,10 +14,10 @@ class Employee extends Model
     protected $with = ['company', 'user'];
 
 
-    public function scopeFilter ($query) 
+    public function scopeFilter ($query, array $filters) 
     {
 
-        if (request('search')) {
+        if ($filters['search'] ?? false) {
             $query
                 ->where('name', 'like', '%' . request('search') . '%')
                 ->orWhere('email', 'like', '%' . request('search') . '%')

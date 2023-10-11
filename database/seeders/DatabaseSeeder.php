@@ -98,6 +98,17 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
+        $carechange = Company::create([
+            "id" => 7,
+            "slug" => "carechange",
+            "name" => "Carechange",
+            "email" => "info@carechange.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch-logo.svg",
+            "website" => "https://www.carechange.com/",
+            "summary" => "Carechange is a British healthcare software company headquartered in Norwich, UK.",
+            "description" => "Carechange is a British healthcare software company headquartered in Norwich, UK. Its main product offering is a suite of tools for automating healthcare administration and management. They employ over 400 people worldwide and are the largest supplier of healthcare software in the world. The company was founded by Jason Chalangary in Norwich in 2021. Carechange is 100% owned by Jason Chalangary. Salaries at Carechange range from £30,000 to £100,000 a year. Software Engineering Managers make an average annual salary of £80,000, while employees with the title Sales Associate make an average annual salary of £30,000. Employees typically stay at Carechange for around 6 years and employee satisfaction typically ranges from 90-100%.",
+        ]);
+
 
 
         // Employees
@@ -182,6 +193,18 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        Employee::create([
+            "user_id" => $user->id,
+            "company_id" => $carechange->id,
+            "slug" => "jason-chalangary",
+            "name" => "Jason Chalangary",
+            "email" => "jason@chalangary.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567890",
+            "address" => "Jason House, Jason Road, Jason, Jasonshire, J4 5ON",
+            "summary" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company.",
+            "description" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company. He is known for his love of Company's range of tools and is often seen using them in the office. Prior to working at Company, Jason worked in the Nation Health Service and Queen Mary University of London. Originally from Essex, he now lives in Norwich with his partner.",
+        ]);
 
 
     }

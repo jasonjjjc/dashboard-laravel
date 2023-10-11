@@ -17,7 +17,7 @@ class Employee extends Model
     public function scopeFilter ($query, array $filters) 
     {
 
-        $query->when($filters['search'] ?? false, function ($query, $search) {
+        $query->when($filters['search'] ?? false, fn ($query, $search) => 
             $query
                 ->where('name', 'like', '%' . $search . '%')
                 ->orWhere('email', 'like', '%' . $search . '%')
@@ -27,10 +27,12 @@ class Employee extends Model
                 // or where the company_id of the employee matches the id of a company in the companies table where the name is like the search term
                 ->orWhereHas('company', function ($query) use ($search) {
                     $query->where('name', 'like', '%' . $search . '%');
-                });
+                })
+        );
 
-
-        });
+        $query->when($filters['company'] ?? false, fn ($query, $company) => 
+            $query->whereHas('company', fn ($query) => 
+                $query->where('slug', $company)));
 
     }
 

@@ -10,14 +10,14 @@ use App\Models\User;
 Route::get('/', [EmployeeController::class, 'index']);
 Route::get('employees/{employee:slug}', [EmployeeController::class, 'show']);
 
-Route::get('companies/{company:slug}', function (Company $company) {
-    return view('employees', [
-        'employees' => $company->employees,
-        'currentCompany' => $company,
-        'companies' => Company::all(),
-        'user' => User::first()
-    ]);
-});
+// Route::get('companies/{company:slug}', function (Company $company) {
+//     return view('employees', [
+//         'employees' => $company->employees,
+//         'currentCompany' => $company,
+//         'companies' => Company::all(),
+//         'user' => User::first()
+//     ]);
+// });
 
 Route::get('users/{user:name}', function (App\Models\User $user) {
     return view('employees', [

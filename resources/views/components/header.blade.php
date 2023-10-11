@@ -34,7 +34,7 @@
                     Companies</x-dropdown-item>
 
                 @foreach ($companies as $company)
-                    <x-dropdown-item href="/companies/{{ $company->slug }}"
+                    <x-dropdown-item href="?company={{ $company->slug }}"
                         :active="isset($currentCompany) && $currentCompany->is($company)"
                     >{{ ucwords($company->name) }}
                 </x-dropdown-item>

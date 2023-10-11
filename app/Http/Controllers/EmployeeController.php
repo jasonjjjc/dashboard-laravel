@@ -13,8 +13,9 @@ class EmployeeController extends Controller
     public function index () 
     {
         return view('employees', [
-            'employees' => Employee::latest()->filter(request(['search']))->get(),
+            'employees' => Employee::latest()->filter(request(['search', 'company']))->get(),
             'companies' => Company::all(),
+            'currentCompany' => Company::firstWhere('slug', request('company')),
             'user' => User::first()
         ]);
     }

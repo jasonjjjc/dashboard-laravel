@@ -17,29 +17,7 @@
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-8">
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
-
-            <x-dropdown :companies="$companies" :currentCompany="$currentCompany">
-
-                <x-slot name="trigger">
-                    <button
-                        class="w-full flex justify-between text-start">{{ isset($currentCompany) ? $currentCompany->name : 'All Companies' }}
-
-                        <x-down-arrow class="absolute pointer-events-none"></x-down-arrow>
-
-                    </button>
-                </x-slot>
-
-
-                <x-dropdown-item href="/" class="{{ $currentCompany ? '' : 'bg-blue-500 text-white' }}">All
-                    Companies</x-dropdown-item>
-
-                @foreach ($companies as $company)
-                    <x-dropdown-item href="?company={{ $company->slug }}"
-                        :active="isset($currentCompany) && $currentCompany->is($company)"
-                    >{{ ucwords($company->name) }}
-                </x-dropdown-item>
-                        @endforeach
-            </x-dropdown>
+           <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" />
         </div>
 
         <!-- Other Filters -->

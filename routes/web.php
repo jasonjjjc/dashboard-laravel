@@ -23,6 +23,5 @@ Route::get('users/{user:name}', function (App\Models\User $user) {
     return view('employees', [
         'employees' => $user->employees,
         'user' => $user,
-        'companies' => Company::all()
     ]);
 });

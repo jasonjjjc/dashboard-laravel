@@ -20,10 +20,25 @@ class DatabaseSeeder extends Seeder
         Company::truncate();
         Employee::truncate();
 
-        $user = User::factory()->create([
-            'name' => 'Admin',
+        $admin = User::factory()->create([
+            'name' => 'admin',
             'password' => 'admin'
         ]);
+
+        $userOne = User::factory()->create([
+            'name' => 'User One',
+            'password' => 'one'
+        ]);
+        $userTwo = User::factory()->create([
+            'name' => 'User Two',
+            'password' => 'two'
+        ]);
+        $userThree = User::factory()->create([
+            'name' => 'User Three',
+            'password' => 'three'
+        ]);
+
+
 
 
         // Companies
@@ -114,7 +129,20 @@ class DatabaseSeeder extends Seeder
         // Employees
 
         Employee::create([
-            "user_id" => $user->id,
+            "user_id" => $admin->id,
+            "company_id" => $carechange->id,
+            "slug" => "jason-chalangary",
+            "name" => "Jason Chalangary",
+            "email" => "jason@chalangary.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567890",
+            "address" => "Jason House, Jason Road, Jason, Jasonshire, J4 5ON",
+            "summary" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company.",
+            "description" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company. He is known for his love of Company's range of tools and is often seen using them in the office. Prior to working at Company, Jason worked in the Nation Health Service and Queen Mary University of London. Originally from Essex, he now lives in Norwich with his partner.",
+        ]);        
+
+        Employee::create([
+            "user_id" => $admin->id,
             "company_id" => $apple->id,
             "slug" => "tim-cook",
             "name" => "Tim Cook",
@@ -128,7 +156,7 @@ class DatabaseSeeder extends Seeder
 
         Employee::create([
 
-            "user_id" => $user->id,
+            "user_id" => $userOne->id,
             "company_id" => $burberry->id,
             "slug" => "ricardo-tisci",
             "name" => "Ricardo Tisci",
@@ -141,7 +169,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Employee::create([
-            "user_id" => $user->id,
+            "user_id" => $userOne->id,
             "company_id" => $waitrose->id,
             "slug" => "james-bailey",
             "name" => "James Bailey",
@@ -154,20 +182,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Employee::create([
-            "user_id" => $user->id,
-            "company_id" => $johnLewis->id,
-            "slug" => "sharon-white",
-            "name" => "Sharon White",
-            "email" => "sharon.white@johnlewis.com",
-            "job_title" => "Chairman",
-            "phone" => "01234567890",
-            "address" => "171 Victoria St, Westminster, London SW1E 5NN",
-            "summary" => "Sharon White is a British businesswoman who is the chairman of the John Lewis Partnership. She was previously the chief executive of Ofcom.",
-            "description" => "Sharon White is a British businesswoman who is the chairman of the John Lewis Partnership. She was previously the chief executive of Ofcom. She is known for her love of John Lewis's home furnishings and is often seen redecorating the office. Prior to working at John Lewis, Sharon worked at the Treasury and the World Bank. She is known for her love of the John Lewis Christmas advert and is often seen singing along to it. Educated at Cambridge University, she is known for her love of the arts and is often seen at the theatre.",
-        ]);
-
-        Employee::create([
-            "user_id" => $user->id,
+            "user_id" => $userTwo->id,
             "company_id" => $screwfix->id,
             "slug" => "john-mewett",
             "name" => "John Mewett",
@@ -180,7 +195,20 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Employee::create([
-            "user_id" => $user->id,
+            "user_id" => $userTwo->id,
+            "company_id" => $johnLewis->id,
+            "slug" => "sharon-white",
+            "name" => "Sharon White",
+            "email" => "sharon.white@johnlewis.com",
+            "job_title" => "Chairman",
+            "phone" => "01234567890",
+            "address" => "171 Victoria St, Westminster, London SW1E 5NN",
+            "summary" => "Sharon White is a British businesswoman who is the chairman of the John Lewis Partnership. She was previously the chief executive of Ofcom.",
+            "description" => "Sharon White is a British businesswoman who is the chairman of the John Lewis Partnership. She was previously the chief executive of Ofcom. She is known for her love of John Lewis's home furnishings and is often seen redecorating the office. Prior to working at John Lewis, Sharon worked at the Treasury and the World Bank. She is known for her love of the John Lewis Christmas advert and is often seen singing along to it. Educated at Cambridge University, she is known for her love of the arts and is often seen at the theatre.",
+        ]);
+
+        Employee::create([
+            "user_id" => $userThree->id,
             "company_id" => $bosch->id,
             "slug" => "stefan-hartung",
             "name" => "Stefan Hartung",
@@ -190,22 +218,20 @@ class DatabaseSeeder extends Seeder
             "address" => "Robert Bosch GmbH, Postfach 10 60 50, 70049 Stuttgart, Germany",
             "summary" => "Stefan Hartung is a German businessman, and the chief executive officer of Bosch, a multinational engineering and technology company.",
             "description" => "Stefan Hartung is a German businessman, and the chief executive officer of Bosch, a multinational engineering and technology company. He is known for his love of Bosch's range of power tools and is often seen using them in the office. Prior to working at Bosch, Stefan worked at Siemens and BMW. Originally from Stuttgart, he now lives in Berlin with his wife and two children.",
-        ]);
-
+        ]);        
 
         Employee::create([
-            "user_id" => $user->id,
-            "company_id" => $carechange->id,
-            "slug" => "jason-chalangary",
-            "name" => "Jason Chalangary",
-            "email" => "jason@chalangary.com",
-            "job_title" => "Chief Executive Officer",
-            "phone" => "01234567890",
-            "address" => "Jason House, Jason Road, Jason, Jasonshire, J4 5ON",
-            "summary" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company.",
-            "description" => "Jason Chalangary is a British businessman, and the chief executive officer of Company, a multinational healthcare technology company. He is known for his love of Company's range of tools and is often seen using them in the office. Prior to working at Company, Jason worked in the Nation Health Service and Queen Mary University of London. Originally from Essex, he now lives in Norwich with his partner.",
+            "user_id" => $userThree->id, 
+            "company_id" => $apple->id, 
+            "slug" => "steve-wozniak",
+            "name" => "Steve Wozniak",
+            "email" => "woz@apple.com",
+            "job_title" => "Co-founder and Engineer",
+            "phone" => "01234567890", 
+            "address" => "Cupertino, CA",
+            "summary" => "Co-founder of Apple Inc. and primary developer of the Apple I and Apple II personal computers.",
+            "description" => "Steve Wozniak, affectionately known as 'Woz', is an American electronics engineer, computer programmer, and technology entrepreneur. He co-founded Apple Inc. with Steve Jobs and Ronald Wayne. Wozniak single-handedly invented the Apple I computer and also had a major role in the development of the Apple II computer. Both of these inventions are integral parts of the personal computer revolution. Known for his passion for engineering and his down-to-earth personality, Wozniak has been a key figure in the tech industry, advocating for hands-on learning and creativity. Although he left Apple's day-to-day operations in 1985, Wozniak remains an employee and represents the company at various events and public occasions."
         ]);
-
 
     }
 }

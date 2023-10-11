@@ -20,8 +20,8 @@ class Employee extends Model
         $query->when(
             $filters['search'] ?? false,
             fn ($query, $search) =>
-            $query
-                ->where('name', 'like', '%' . $search . '%')
+            $query->where(fn ($query) =>
+                $query->where('name', 'like', '%' . $search . '%')
                 ->orWhere('email', 'like', '%' . $search . '%')
                 ->orWhere('job_title', 'like', '%' . $search . '%')
                 ->orWhere('summary', 'like', '%' . $search . '%')
@@ -30,6 +30,7 @@ class Employee extends Model
                 ->orWhereHas('company', function ($query) use ($search) {
                     $query->where('name', 'like', '%' . $search . '%');
                 })
+            )
         );
 
         $query->when($filters['company'] ?? false, fn ($query, $company) =>

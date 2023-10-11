@@ -14,10 +14,12 @@ class Employee extends Model
     protected $with = ['company', 'user'];
 
 
-    public function scopeFilter ($query, array $filters) 
+    public function scopeFilter($query, array $filters)
     {
 
-        $query->when($filters['search'] ?? false, fn ($query, $search) => 
+        $query->when(
+            $filters['search'] ?? false,
+            fn ($query, $search) =>
             $query
                 ->where('name', 'like', '%' . $search . '%')
                 ->orWhere('email', 'like', '%' . $search . '%')
@@ -30,10 +32,14 @@ class Employee extends Model
                 })
         );
 
-        $query->when($filters['company'] ?? false, fn ($query, $company) => 
-            $query->whereHas('company', fn ($query) => 
-                $query->where('slug', $company)));
+        $query->when($filters['company'] ?? false, fn ($query, $company) =>
+        $query->whereHas('company', fn ($query) =>
+        $query->where('slug', $company)));
 
+
+        $query->when($filters['user'] ?? false, fn ($query, $user) =>
+        $query->whereHas('user', fn ($query) =>
+        $query->where('name', $user)));
     }
 
 
@@ -43,9 +49,8 @@ class Employee extends Model
     }
 
 
-    public function user () 
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-
 }

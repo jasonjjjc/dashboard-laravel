@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     public function index () 
     {
         return view('employees.index', [
-            'employees' => Employee::latest()->filter(request(['search', 'company']))->get(),
+            'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->get(),
             'companies' => Company::all(),
             'currentCompany' => Company::firstWhere('slug', request('company')),
             'user' => User::first()
@@ -22,7 +22,7 @@ class EmployeeController extends Controller
 
     public function show (Employee $employee) 
     {
-        return view('employee.show', [
+        return view('employees.show', [
             'employee' => $employee
         ]);
 

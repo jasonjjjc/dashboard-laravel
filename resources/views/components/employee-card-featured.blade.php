@@ -15,8 +15,8 @@
 
                 <div class="mt-12">
                     <div class="flex items-center gap-12">
-                        <h1 class="text-5xl cursor-pointer">
-                            {{ $employee->name }}
+                        <h1 class="text-5xl">
+                            <a href="/employees/{{ $employee->slug }}">{{ $employee->name }}</a>
                         </h1>
                         <p>
                             <a href="mailto:{{ $employee->email }}"
@@ -45,7 +45,7 @@
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
                     <div class="ml-3">
                         <h5 class="font-bold">
-                            <a href="/users/{{ $employee->user->name }}">{{ $employee->user->name }}</a> 
+                            <a href="/?user={{ $employee->user->name }}">{{ $employee->user->name }}</a> 
                         </h5>
                         <h6>Mascot at Laracasts</h6>
                     </div>

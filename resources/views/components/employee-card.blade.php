@@ -7,11 +7,10 @@
             <img src="/images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
         </div>
 
-        <div class="flex flex-col py-4">
+        <div class="flex flex-col py-4 gap-4">
             <header>
-
-                <div class="flex flex-col gap-4">
-                    <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-2">
                         <h1 class="text-3xl cursor-pointer">
                             {{ $employee->name }}
                         </h1>
@@ -27,7 +26,7 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4">
+            <div class="text-sm">
                 <p>
                     {{--  If the current page url looks like /companies/*** then display the company description, else display the company summary  --}}
                     @if (request()->is('employees/*'))
@@ -38,7 +37,7 @@
                 </p>
             </div>
 
-            <footer class="flex justify-between items-center mt-8">
+            <footer class="self-center flex justify-between items-center mt-4">
                 <div>
                     <a href="/employees/{{ $employee->slug }}">
                         <div

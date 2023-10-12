@@ -12,12 +12,15 @@ class EmployeeController extends Controller
 {
     public function index () 
     {
-        return view('employees.index', [
-            'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->get(),
-            'companies' => Company::all(),
-            'currentCompany' => Company::firstWhere('slug', request('company')),
-            'user' => User::first()
-        ]);
+
+        return Employee::latest()->filter(request(['search', 'company', 'user']))->paginate(5);
+
+        // return view('employees.index', [
+        //     'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->get(),
+        //     'companies' => Company::all(),
+        //     'currentCompany' => Company::firstWhere('slug', request('company')),
+        //     'user' => User::first()
+        // ]);
     }
 
     public function show (Employee $employee) 

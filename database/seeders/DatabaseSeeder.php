@@ -29,13 +29,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'User One',
             'password' => 'one'
         ]);
+        
         $userTwo = User::factory()->create([
             'name' => 'User Two',
             'password' => 'two'
         ]);
+        
         $userThree = User::factory()->create([
             'name' => 'User Three',
             'password' => 'three'
+        ]);
+
+        $userFour = User::factory()->create([
+            'name' => 'User Four',
+            'password' => 'four'
         ]);
 
 
@@ -125,7 +132,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $google = Company::create([
-            "id" => 2,
+            "id" => 8,
             "slug" => "google",
             "name" => "Google",
             "email" => "info@google.com",
@@ -136,7 +143,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $amazon = Company::create([
-            "id" => 3,
+            "id" => 9,
             "slug" => "amazon",
             "name" => "Amazon",
             "email" => "info@amazon.com",
@@ -147,7 +154,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $microsoft = Company::create([
-            "id" => 4,
+            "id" => 10,
             "slug" => "microsoft",
             "name" => "Microsoft",
             "email" => "info@microsoft.com",
@@ -158,7 +165,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $facebook = Company::create([
-            "id" => 5,
+            "id" => 11,
             "slug" => "facebook",
             "name" => "Facebook",
             "email" => "info@facebook.com",
@@ -169,7 +176,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $netflix = Company::create([
-            "id" => 6,
+            "id" => 12,
             "slug" => "netflix",
             "name" => "Netflix",
             "email" => "info@netflix.com",
@@ -180,7 +187,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $tesla = Company::create([
-            "id" => 7,
+            "id" => 13,
             "slug" => "tesla",
             "name" => "Tesla",
             "email" => "info@tesla.com",
@@ -191,7 +198,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $adobe = Company::create([
-            "id" => 8,
+            "id" => 14,
             "slug" => "adobe",
             "name" => "Adobe",
             "email" => "info@adobe.com",
@@ -202,7 +209,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         $spotify = Company::create([
-            "id" => 9,
+            "id" => 15,
             "slug" => "spotify",
             "name" => "Spotify",
             "email" => "info@spotify.com",
@@ -387,6 +394,46 @@ class DatabaseSeeder extends Seeder
             "description" => "Hastings co-founded Netflix in 1997. He's been instrumental in transforming the DVD rental service into a global streaming powerhouse. He's known for promoting a unique corporate culture and has been a proponent of
             education reform.",
         ]);
+
+        $elonMusk = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $tesla->id,
+            "slug" => "elon-musk",
+            "name" => "Elon Musk",
+            "email" => "elon.musk@tesla.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567896",
+            "address" => "3500 Deer Creek Road, Palo Alto, CA 94304, United States",
+            "summary" => "Elon Musk is an entrepreneur known for founding, co-founding, and leading multiple high-tech companies.",
+            "description" => "Elon Musk is the CEO and lead designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI. Known for his ambitious vision for the future, Musk's ventures include everything from electric vehicles to neurotechnology, and he's a leading figure in the push for sustainable energy.",
+        ]);
+        
+        $shantanuNarayen = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $adobe->id,
+            "slug" => "shantanu-narayen",
+            "name" => "Shantanu Narayen",
+            "email" => "shantanu.narayen@adobe.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567897",
+            "address" => "345 Park Avenue, San Jose, CA 95110-2704, United States",
+            "summary" => "Shantanu Narayen is an Indian-American business executive, and the chairman and CEO of Adobe Inc.",
+            "description" => "Narayen joined Adobe in 1998, becoming the CEO in 2007. Under his leadership, Adobe shifted its focus from boxed software to a subscription cloud-based model. He has been recognized as one of the world's best CEOs and has been praised for his leadership style.",
+        ]);
+        
+        $danielEk = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $spotify->id,
+            "slug" => "daniel-ek",
+            "name" => "Daniel Ek",
+            "email" => "daniel.ek@spotify.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567898",
+            "address" => "Regeringsgatan 19, SE-111 53 Stockholm, Sweden",
+            "summary" => "Daniel Ek is a Swedish billionaire entrepreneur and technologist. He's the co-founder and CEO of Spotify.",
+            "description" => "Ek co-founded Spotify in 2006. The platform has revolutionized the music industry by offering on-demand streaming of a vast music library. Ek's vision for Spotify was to combat music piracy while providing a platform for artists to earn a livelihood.",
+        ]);
+        
 
     }
 }

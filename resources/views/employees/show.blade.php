@@ -48,21 +48,22 @@
                 </h1>
 
                 <div class="space-y-4 lg:text-lg leading-loose">
-                    <p>
+                    <div>
                         {{-- Convert the employee description to an array of sentences --}}
                         @php
-                            $sentences = explode('. ', $employee->description);
+                            $sentences = preg_split('/\. (?=[A-Z])/', $employee->description);
                             // Remove the last item, remove the period, and add it back
                             $lastSentence = array_pop($sentences);
                             $lastSentence = rtrim($lastSentence, '.');
                             $sentences[] = $lastSentence;
                         @endphp
-
+                    
                         {{-- Iterate through each pair of sentences to create paragraphs --}}
                         @foreach (array_chunk($sentences, 2) as $description)
-                            <p>{{ implode('. ', $description) }}.</p>
+                            <p class="mb-4">{{ implode('. ', $description) }}.</p>
                         @endforeach
-                    </p>
+                    </div>
+                    
                 </div>
             </div>
         </article>

@@ -10,25 +10,20 @@ use App\Models\User;
 
 class EmployeeController extends Controller
 {
-    public function index () 
+    public function index()
     {
-
-        return Employee::latest()->filter(request(['search', 'company', 'user']))->paginate(5);
-
-        // return view('employees.index', [
-        //     'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->get(),
-        //     'companies' => Company::all(),
-        //     'currentCompany' => Company::firstWhere('slug', request('company')),
-        //     'user' => User::first()
-        // ]);
+        return view('employees.index', [
+            'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->paginate(1)->withQueryString(),
+            'companies' => Company::all(),
+            'currentCompany' => Company::firstWhere('slug', request('company')),
+            'user' => User::first()
+        ]);
     }
 
-    public function show (Employee $employee) 
+    public function show(Employee $employee)
     {
         return view('employees.show', [
             'employee' => $employee
         ]);
-
     }
-
 }

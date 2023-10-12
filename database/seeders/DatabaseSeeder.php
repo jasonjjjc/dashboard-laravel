@@ -124,6 +124,95 @@ class DatabaseSeeder extends Seeder
             "description" => "Carechange is a British healthcare software company headquartered in Norwich, UK. Its main product offering is a suite of tools for automating healthcare administration and management. They employ over 400 people worldwide and are the largest supplier of healthcare software in the world. The company was founded by Jason Chalangary in Norwich in 2021. Carechange is 100% owned by Jason Chalangary. Salaries at Carechange range from £30,000 to £100,000 a year. Software Engineering Managers make an average annual salary of £80,000, while employees with the title Sales Associate make an average annual salary of £30,000. Employees typically stay at Carechange for around 6 years and employee satisfaction typically ranges from 90-100%.",
         ]);
 
+        $google = Company::create([
+            "id" => 2,
+            "slug" => "google",
+            "name" => "Google",
+            "email" => "info@google.com",
+            "logo" => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+            "website" => "https://www.google.com/",
+            "summary" => "Google LLC is an American multinational technology company that specializes in Internet-related services and products.",
+            "description" => "Google is known for its search engine but also offers a variety of other products and services like YouTube, Android, Google Cloud, Google Maps, Google Docs, and Google Chrome. Founded in 1998 by Larry Page and Sergey Brin while they were Ph.D. students at Stanford University, California, it's now considered one of the Big Five technology companies alongside Apple, Amazon, Microsoft, and Facebook.",
+        ]);
+        
+        $amazon = Company::create([
+            "id" => 3,
+            "slug" => "amazon",
+            "name" => "Amazon",
+            "email" => "info@amazon.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+            "website" => "https://www.amazon.com/",
+            "summary" => "Amazon.com, Inc. is an American multinational technology company which focuses on e-commerce, cloud computing, and artificial intelligence.",
+            "description" => "Founded by Jeff Bezos in July 1994, Amazon started as an online bookstore and has expanded its business to include other products like electronics, apparel, furniture, food, and toys. Amazon Web Services (AWS) is its highly profitable cloud service segment. It's considered one of the Big Five tech companies.",
+        ]);
+        
+        $microsoft = Company::create([
+            "id" => 4,
+            "slug" => "microsoft",
+            "name" => "Microsoft",
+            "email" => "info@microsoft.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            "website" => "https://www.microsoft.com/",
+            "summary" => "Microsoft Corporation is an American multinational technology company that develops, licenses, and supports a wide range of software products, computing devices, and services.",
+            "description" => "Founded by Bill Gates and Paul Allen in 1975, Microsoft's flagship product is the Windows operating system. Other well-known products include the Office suite, Surface, and Xbox. Azure is their cloud computing service. They're considered one of the Big Five tech companies.",
+        ]);
+        
+        $facebook = Company::create([
+            "id" => 5,
+            "slug" => "facebook",
+            "name" => "Facebook",
+            "email" => "info@facebook.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg",
+            "website" => "https://www.facebook.com/",
+            "summary" => "Facebook, Inc. is an American social media conglomerate.",
+            "description" => "Founded by Mark Zuckerberg in 2004, Facebook's core is its namesake social networking platform. The company also owns Instagram, WhatsApp, and Oculus VR. Facebook has faced various controversies, especially in areas of privacy and political manipulation.",
+        ]);
+        
+        $netflix = Company::create([
+            "id" => 6,
+            "slug" => "netflix",
+            "name" => "Netflix",
+            "email" => "info@netflix.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+            "website" => "https://www.netflix.com/",
+            "summary" => "Netflix, Inc. is an American subscription streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more.",
+            "description" => "Founded in 1997 by Reed Hastings and Marc Randolph, Netflix began as a DVD rental-by-mail service. Today, with its streaming platform, it has a massive global presence and produces content in various languages, making it a significant player in the entertainment industry.",
+        ]);
+        
+        $tesla = Company::create([
+            "id" => 7,
+            "slug" => "tesla",
+            "name" => "Tesla",
+            "email" => "info@tesla.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
+            "website" => "https://www.tesla.com/",
+            "summary" => "Tesla, Inc. is an American electric vehicle and clean energy company.",
+            "description" => "Founded by Elon Musk and several co-founders in 2003, Tesla is known for its electric cars, battery energy storage systems, and renewable energy products. With the mission to accelerate the world's transition to sustainable energy, Tesla is a key player in the automotive and energy sectors.",
+        ]);
+        
+        $adobe = Company::create([
+            "id" => 8,
+            "slug" => "adobe",
+            "name" => "Adobe",
+            "email" => "info@adobe.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg",
+            "website" => "https://www.adobe.com/",
+            "summary" => "Adobe Inc. is an American multinational computer software company.",
+            "description" => "Founded in December 1982 by John Warnock and Charles Geschke, Adobe is known for various software including Photoshop, Acrobat Reader, and Adobe Creative Cloud. It has historically focused upon the creation of multimedia and creativity software products.",
+        ]);
+        
+        $spotify = Company::create([
+            "id" => 9,
+            "slug" => "spotify",
+            "name" => "Spotify",
+            "email" => "info@spotify.com",
+            "logo" => "https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg",
+            "website" => "https://www.spotify.com/",
+            "summary" => "Spotify Technology S.A. is a Swedish audio streaming and media services provider.",
+            "description" => "Founded in 2006 by Daniel Ek and Martin Lorentzon, Spotify allows users to listen to music and podcasts for free with advertisements or with a paid subscription. It's one of the world's largest music streaming service providers.",
+        ]);
+              
+
 
 
         // Employees
@@ -231,6 +320,72 @@ class DatabaseSeeder extends Seeder
             "address" => "Cupertino, CA",
             "summary" => "Co-founder of Apple Inc. and primary developer of the Apple I and Apple II personal computers.",
             "description" => "Steve Wozniak, affectionately known as 'Woz', is an American electronics engineer, computer programmer, and technology entrepreneur. He co-founded Apple Inc. with Steve Jobs and Ronald Wayne. Wozniak single-handedly invented the Apple I computer and also had a major role in the development of the Apple II computer. Both of these inventions are integral parts of the personal computer revolution. Known for his passion for engineering and his down-to-earth personality, Wozniak has been a key figure in the tech industry, advocating for hands-on learning and creativity. Although he left Apple's day-to-day operations in 1985, Wozniak remains an employee and represents the company at various events and public occasions."
+        ]);
+
+        $sundarPichai = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $google->id,
+            "slug" => "sundar-pichai",
+            "name" => "Sundar Pichai",
+            "email" => "sundar.pichai@google.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567891",
+            "address" => "1600 Amphitheatre Parkway, Mountain View, CA 94043, United States",
+            "summary" => "Sundar Pichai is an Indian-American business executive. He is the chief executive officer (CEO) of Google's parent company, Alphabet Inc.",
+            "description" => "Born in India, Sundar Pichai joined Google in 2004 and became CEO in 2015. He's known for his work on Google Chrome and Chrome OS. He has also been involved in the development of Google Drive, Gmail, and Google Maps. Pichai is known for his calm demeanor and has a reputation for building partnerships.",
+        ]);
+        
+        $jeffBezos = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $amazon->id,
+            "slug" => "jeff-bezos",
+            "name" => "Jeff Bezos",
+            "email" => "jeff.bezos@amazon.com",
+            "job_title" => "Founder",
+            "phone" => "01234567892",
+            "address" => "410 Terry Ave. North, Seattle, WA 98109, United States",
+            "summary" => "Jeff Bezos is the founder of Amazon, the world's largest online retailer.",
+            "description" => "Bezos founded Amazon in 1994. Under his leadership, Amazon expanded into a variety of other sectors, such as cloud computing with AWS and space travel with Blue Origin. He's one of the world's wealthiest individuals and is known for his emphasis on customer service.",
+        ]);
+        
+        $satyaNadella = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $microsoft->id,
+            "slug" => "satya-nadella",
+            "name" => "Satya Nadella",
+            "email" => "satya.nadella@microsoft.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567893",
+            "address" => "One Microsoft Way, Redmond, WA 98052, United States",
+            "summary" => "Satya Narayana Nadella is an Indian-American business executive. He is the chief executive officer (CEO) of Microsoft.",
+            "description" => "Since becoming CEO in 2014, Nadella has transformed Microsoft by emphasizing cloud computing and diversifying into other areas. Prior to becoming CEO, he was Executive Vice President of Microsoft's cloud and enterprise group.",
+        ]);
+        
+        $markZuckerberg = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $facebook->id,
+            "slug" => "mark-zuckerberg",
+            "name" => "Mark Zuckerberg",
+            "email" => "mark.zuckerberg@facebook.com",
+            "job_title" => "Chief Executive Officer",
+            "phone" => "01234567894",
+            "address" => "1601 Willow Road, Menlo Park, CA 94025, United States",
+            "summary" => "Mark Zuckerberg is co-founder and CEO of Facebook, the world's largest social networking site.",
+            "description" => "Zuckerberg co-founded Facebook in 2004 while at Harvard. Under his leadership, Facebook acquired Instagram and WhatsApp. He's known for his vision of connecting the world and has faced numerous challenges related to privacy and misinformation on the platform.",
+        ]);
+        
+        $reedHastings = Employee::create([
+            "user_id" => $admin->id,
+            "company_id" => $netflix->id,
+            "slug" => "reed-hastings",
+            "name" => "Reed Hastings",
+            "email" => "reed.hastings@netflix.com",
+            "job_title" => "Co-founder and Co-CEO",
+            "phone" => "01234567895",
+            "address" => "100 Winchester Circle, Los Gatos, CA 95032, United States",
+            "summary" => "Wilmot Reed Hastings Jr. is an American businessman. He is the co-founder and co-CEO of Netflix.",
+            "description" => "Hastings co-founded Netflix in 1997. He's been instrumental in transforming the DVD rental service into a global streaming powerhouse. He's known for promoting a unique corporate culture and has been a proponent of
+            education reform.",
         ]);
 
     }

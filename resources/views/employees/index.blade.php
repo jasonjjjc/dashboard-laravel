@@ -5,7 +5,7 @@
 
 
 
-    <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+    <main class="flex flex-col items-center max-w-6xl mt-6 lg:mt-20">
         @if (isset($employees) ? $employees->count() : null)
             <x-employees-grid :employees="$employees"></x-employees-grid>
 

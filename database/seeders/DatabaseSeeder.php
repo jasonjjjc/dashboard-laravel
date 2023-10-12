@@ -22,27 +22,38 @@ class DatabaseSeeder extends Seeder
 
         $admin = User::factory()->create([
             'name' => 'admin',
-            'password' => 'admin'
+            'username' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => 'password',
+            'is_admin' => true,
         ]);
 
         $userOne = User::factory()->create([
             'name' => 'User One',
-            'password' => 'one'
+            'username' => 'one',
+            'email' => 'one@one.com',
+            'password' => 'asdasdasd'
         ]);
         
         $userTwo = User::factory()->create([
             'name' => 'User Two',
-            'password' => 'two'
+            'username' => 'two',
+            'email' => 'two@two.com',
+            'password' => 'asdasdasd'
         ]);
         
         $userThree = User::factory()->create([
             'name' => 'User Three',
-            'password' => 'three'
+            'username' => 'three',
+            'email' => 'three@three.com',
+            'password' => 'asdasdad'
         ]);
 
         $userFour = User::factory()->create([
             'name' => 'User Four',
-            'password' => 'four'
+            'username' => 'four',
+            'email' => 'four@four.com',
+            'password' => 'asdasdasd'
         ]);
 
 

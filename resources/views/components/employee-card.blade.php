@@ -7,22 +7,17 @@
             <img src="/images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
         </div>
 
-        <div class="mt-8 flex flex-col justify-between">
+        <div class="flex flex-col py-4">
             <header>
-                <div class="space-x-2">
-                    <x-company-button :company="$employee->company" />
-                </div>
 
-                <div class="mt-4">
-                    <div class="flex gap-4">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-4">
                         <h1 class="text-3xl cursor-pointer">
                             {{ $employee->name }}
                         </h1>
-                        <p class="flex items-center gap-4">
-                            <a href="mailto:{{ $employee->email }}"
-                                class="w-fit px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                                style="font-size: 10px">email</a>
-                        </p>
+                        <div>
+                            <x-company-button :company="$employee->company" />
+                        </div>
                     </div>
 
                     <span class="mt-2 block text-gray-400 text-xs">
@@ -44,16 +39,6 @@
             </div>
 
             <footer class="flex justify-between items-center mt-8">
-                <div class="flex items-center text-sm">
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
-                    <div class="ml-3">
-                        <h5 class="font-bold">
-                            <a href="/users/{{ $employee->user->name }}">{{ $employee->user->name }}</a>
-                        </h5>
-                        <h6>Mascot at Laracasts</h6>
-                    </div>
-                </div>
-
                 <div>
                     <a href="/employees/{{ $employee->slug }}">
                         <div

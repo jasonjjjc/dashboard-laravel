@@ -7,7 +7,8 @@ module.exports = {
     "./resources/**/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
 }

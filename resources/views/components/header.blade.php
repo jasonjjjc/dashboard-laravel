@@ -3,8 +3,6 @@
         All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
     </h1>
 
-    <h2 class="inline-flex mt-2">by {{ $user->name }}</h2>
-
     <div class="text-sm mt-8">
         @if ($currentCompany)
             {{ $currentCompany->summary }}
@@ -45,7 +43,7 @@
                 @endif
 
                 <input type="text" name="search" placeholder="Find something"
-                    class="bg-transparent placeholder-blue-500 font-semibold text-sm w-full rounded-xl py-2 px-3 border border-blue-500 focus:outline-blue-500"
+                    class="bg-transparent placeholder-blue-500 font-semibold text-sm w-full rounded-xl p-3 border border-blue-500 focus:outline-blue-500"
                     value="{{ request('search') }}">    
             </form>
         </div>

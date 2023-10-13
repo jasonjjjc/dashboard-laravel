@@ -8,7 +8,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    
+
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
@@ -19,19 +19,28 @@
                     <img src="/Favicon.ico" alt="Laracasts Logo" width="80" height="160">
                 </a>
             </div>
-            <div> 
-                <a href="/register" class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Register</a>
+            <div>
+
+                @auth
+
+                    <form method="POST" action="/logout" class="text-xs font-bold uppercase py-2 px-6">
+                        @csrf
+                        <button type="submit">Log Out</button>
+                    </form>
+                @else
+                    <a href="/register"
+                        class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Register</a>
+
+                @endauth
             </div>
         </nav>
 
         {{ $slot }}
 
-        <x-footer/>
+        <x-footer />
     </section>
 
-    @if ( session()->has('success') )
-        
-        <x-flash-message :message="session('success')"/>
-        
+    @if (session()->has('success'))
+        <x-flash-message :message="session('success')" />
     @endif
 </body>

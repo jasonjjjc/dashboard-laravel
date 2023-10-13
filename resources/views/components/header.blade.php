@@ -35,7 +35,7 @@
         </div> --}}
 
         <!-- Search -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl p-2">
+        <div class="relative flex lg:inline-flex items-center">
             <form method="GET" action="/" class="w-full text-start">
 
                 @if (request('company')) 
@@ -45,7 +45,7 @@
                 @endif
 
                 <input type="text" name="search" placeholder="Find something"
-                    class="bg-transparent placeholder-blue-500 font-semibold text-sm w-full p-1 focus:outline-blue-500"
+                    class="bg-transparent placeholder-blue-500 font-semibold text-sm w-full rounded-xl py-2 px-3 border border-blue-500 focus:outline-blue-500"
                     value="{{ request('search') }}">    
             </form>
         </div>

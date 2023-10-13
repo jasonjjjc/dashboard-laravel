@@ -41,7 +41,7 @@
                 <div>
                     <a href="/employees/{{ $employee->slug }}">
                         <div
-                            class="flex gap-1 transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">
+                            class="flex gap-1 text-xs font-semibold border border-blue-500 text-blue-500 rounded-full py-2 px-8">
                             <p>Read</p>
                             <p>More</p>
                         </div>

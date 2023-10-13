@@ -1,9 +1,9 @@
-<header class="max-w-xl mx-auto mt-20 text-center">
+<header class="max-w-xl mx-auto mt-10 text-center">
     <h1 class="text-4xl">
         All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
     </h1>
 
-    <h2 class="inline-flex mt-2">By {{ $user->name }}</h2>
+    <h2 class="inline-flex mt-2">by {{ $user->name }}</h2>
 
     <div class="text-sm mt-8">
         @if ($currentCompany)
@@ -45,7 +45,7 @@
                 @endif
 
                 <input type="text" name="search" placeholder="Find something"
-                    class="bg-transparent placeholder-black font-semibold text-sm w-full p-1 focus:outline-blue-500"
+                    class="bg-transparent placeholder-blue-500 font-semibold text-sm w-full p-1 focus:outline-blue-500"
                     value="{{ request('search') }}">    
             </form>
         </div>

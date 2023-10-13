@@ -12,12 +12,15 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-6 py-8 min-h-screen flex flex-col justify-between items-center">
-        <nav class="flex flex-col md:justify-between md:items-center">
+    <section class="px-6 py-4 min-h-screen flex flex-col justify-between items-center">
+        <nav class="flex w-full items-center justify-between">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/Favicon.ico" alt="Laracasts Logo" width="80" height="160">
                 </a>
+            </div>
+            <div> 
+                <a href="/register" class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Register</a>
             </div>
         </nav>
 

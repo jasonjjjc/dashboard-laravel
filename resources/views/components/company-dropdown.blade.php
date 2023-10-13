@@ -2,7 +2,7 @@
 
     <x-slot name="trigger">
         <button
-            class="p-3 w-full flex justify-between text-start">{{ isset($currentCompany) ? $currentCompany->name : 'All Companies' }}
+            class="p-3 w-full flex justify-between text-start text-blue-500">{{ isset($currentCompany) ? $currentCompany->name : 'All Companies' }}
 
             <x-down-arrow class="absolute pointer-events-none"></x-down-arrow>
 

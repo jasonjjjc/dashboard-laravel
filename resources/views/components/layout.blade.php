@@ -25,4 +25,10 @@
 
         <x-footer/>
     </section>
+
+    @if ( session()->has('success') )
+        
+        <x-flash-message :message="session('success')"/>
+        
+    @endif
 </body>

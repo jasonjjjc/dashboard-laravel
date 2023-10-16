@@ -7,7 +7,7 @@
                 <p class="mt-4 block text-gray-400 text-xs">
                     Added <time>{{ $employee->created_at->diffForHumans() }}</time>
                 </p>
-                
+
             </div>
 
             <div class="col-span-8">
@@ -75,7 +75,12 @@
                                         <label for="body" class="sr-only">Enter Your Testimonial Here</label>
                                         <textarea id="body" name="body" rows="4"
                                             class="w-full h-full border border-gray-200 rounded-xl placeholder-gray-900 px-4 py-2"
-                                            placeholder="Add a testimonial about {{ $employee->name }}..."></textarea>
+                                            placeholder="Add a testimonial about {{ $employee->name }}..." required></textarea>
+
+                                            @error('body')
+                                                <span class="text-red-500 text-xs">{{ $message }}</span>
+                                            @enderror
+
                                     </div>
 
                                     <button type="submit"

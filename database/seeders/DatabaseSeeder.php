@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Company;
 use App\Models\Employee;
+use App\Models\Testimonial;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,9 +17,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        User::truncate();
         Company::truncate();
-        Employee::truncate();
+        Testimonial::truncate();
 
         $admin = User::factory()->create([
             'name' => 'admin',
@@ -445,6 +445,11 @@ class DatabaseSeeder extends Seeder
             "description" => "Ek co-founded Spotify in 2006. The platform has revolutionized the music industry by offering on-demand streaming of a vast music library. Ek's vision for Spotify was to combat music piracy while providing a platform for artists to earn a livelihood.",
         ]);
         
+        $oneTest = Testimonial::create([
+            "user_id" => $admin->id,
+            "employee_id" => $danielEk->id,
+            'body' => 'Admin likes Daniel Ek.',
+        ]);
 
     }
 }

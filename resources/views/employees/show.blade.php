@@ -57,14 +57,26 @@
                             $lastSentence = rtrim($lastSentence, '.');
                             $sentences[] = $lastSentence;
                         @endphp
-                    
+
                         {{-- Iterate through each pair of sentences to create paragraphs --}}
                         @foreach (array_chunk($sentences, 2) as $description)
                             <p class="mb-4">{{ implode('. ', $description) }}.</p>
                         @endforeach
                     </div>
-                    
                 </div>
+
+
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                    <header>
+                        <h3 class="font-bold text-xl">Comments</h3>
+                    </header>
+                    <main class="space-y-4">
+                        <x-testimonial/>
+
+                    </main>
+                </section>
+
             </div>
         </article>
     </main>

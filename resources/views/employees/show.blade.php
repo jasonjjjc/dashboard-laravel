@@ -5,20 +5,9 @@
                 <img src="/images/illustration-1.png" alt="" class="rounded-xl">
 
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Published <time>{{ $employee->created_at->diffForHumans() }}</time>
+                    Added <time>{{ $employee->created_at->diffForHumans() }}</time>
                 </p>
-
-                <div class="flex items-center lg:justify-center text-sm mt-4">
-                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
-                    <div class="flex gap-6 ml-3 text-left">
-                        <h5 class="font-bold">
-                            <a href="/?user={{ $employee->user->name }}">{{ $employee->user->name }}</a>
-                        </h5>
-                        <a href="mailto:{{ $employee->email }}"
-                            class="px-3 py-1 border border-red-300 rounded-full text-red-300 text-xs uppercase font-semibold"
-                            style="font-size: 10px">Email</a>
-                    </div>
-                </div>
+                
             </div>
 
             <div class="col-span-8">
@@ -69,30 +58,38 @@
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
                     <header>
-                        <h3 class="font-bold text-xl">Comments</h3>
+                        <h3 class="font-bold text-xl">Testimonials</h3>
                     </header>
 
                     <main class="space-y-4">
                         @auth
-                        <form method="POST" action="/employees/{{ $employee->slug }}/testimonials" class="border border-gray-200 rounded-xl flex flex-col p-6 gap-4">
-                            @csrf
+                            <form method="POST" action="/employees/{{ $employee->slug }}/testimonials"
+                                class="border border-gray-200 rounded-xl flex flex-col p-6 gap-4">
+                                @csrf
 
-                            <img src="https://i.pravatar.cc/200?id={{ auth()->user()->id }}" alt="avatar"
-                                class="h-12 w-12 rounded-xl">
+                                <img src="https://i.pravatar.cc/200?id={{ auth()->user()->id }}" alt="avatar"
+                                    class="h-12 w-12 rounded-xl">
 
-                            <div class="w-full flex flex-col gap-4 md:space-x-3">
-                                <div class="flex-grow">
-                                    <label for="body" class="sr-only">Enter Your Testimonial Here</label>
-                                    <textarea id="body" name="body" rows="4"
-                                        class="w-full h-full border border-gray-200 rounded-xl placeholder-gray-900 px-4 py-2"
-                                        placeholder="Add a testimonial about {{ $employee->name }}..."></textarea>
+                                <div class="w-full flex flex-col gap-4 md:space-x-3">
+                                    <div class="flex-grow">
+                                        <label for="body" class="sr-only">Enter Your Testimonial Here</label>
+                                        <textarea id="body" name="body" rows="4"
+                                            class="w-full h-full border border-gray-200 rounded-xl placeholder-gray-900 px-4 py-2"
+                                            placeholder="Add a testimonial about {{ $employee->name }}..."></textarea>
+                                    </div>
+
+                                    <button type="submit"
+                                        class="h-8 bg-blue-500 hover:bg-blue-600 rounded-xl shadow-md text-white px-10 md:w-fit md:self-end">Post</button>
                                 </div>
+                            </form>
+                        @else
 
-                                <button type="submit"
-                                    class="h-8 bg-blue-500 hover:bg-blue-600 rounded-xl shadow-md text-white px-10 md:w-fit md:self-end">Post</button>
-                            </div>
-                        </form>
-                        @endauth    
+                            <p class="font-semibold">
+                                <a href="/register" class="hover:underline text-blue-500 font-bold">Register</a> or
+                                <a href="/login" class="hover:underline text-blue-500 font-bold">Log in</a> to leave a testimonial.
+                            </p>
+
+                        @endauth
 
                         @foreach ($employee->testimonials as $testimonial)
                             <x-testimonial :testimonial="$testimonial" />

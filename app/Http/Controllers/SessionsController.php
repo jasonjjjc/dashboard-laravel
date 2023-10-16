@@ -19,14 +19,17 @@ class SessionsController extends Controller
             'password' => 'required'
         ]);
 
-        if (auth()->attempt($attributes)) {
-            session()->regenerate();
+        if (!auth()->attempt($attributes)) {
 
-            return redirect('/')->with('success', 'Welcome Back!');
-        } else {
             return back()
             ->withInput()
             ->withErrors(['email' => 'Your provided credentials could not be verified.', 'password' => 'Your provided credentials could not be verified.']);
+
+        } else {
+    
+            session()->regenerate();
+            return redirect('/')->with('success', 'Welcome Back!');
+            
         }
     }
 

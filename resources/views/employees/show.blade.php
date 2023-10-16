@@ -72,8 +72,9 @@
                         <h3 class="font-bold text-xl">Comments</h3>
                     </header>
                     <main class="space-y-4">
-                        <x-testimonial/>
-
+                        @foreach ($employee->testimonials as $testimonial)
+                            <x-testimonial :testimonial="$testimonial" />
+                        @endforeach
                     </main>
                 </section>
 

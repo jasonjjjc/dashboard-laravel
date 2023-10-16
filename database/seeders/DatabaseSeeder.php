@@ -448,7 +448,25 @@ class DatabaseSeeder extends Seeder
         $oneTest = Testimonial::create([
             "user_id" => $admin->id,
             "employee_id" => $danielEk->id,
-            'body' => 'Admin likes Daniel Ek.',
+            'body' => "Having had the privilege to work closely with Daniel Ek over the past few years, I've been consistently impressed by his visionary approach and commitment to innovation. Daniel has a unique ability to bridge the gap between technical intricacies and user experiences, ensuring that Spotify remains at the forefront of the music streaming industry. His leadership has inspired me, and I've grown tremendously both professionally and personally under his guidance.",
+        ]);
+
+        $twoTest = Testimonial::create([
+            "user_id" => $admin->id,
+            "employee_id" => $shantanuNarayen->id,
+            'body' => "Working with Shantanu Narayen has been an extraordinary journey of growth and inspiration. His remarkable blend of technological foresight and business acumen has consistently driven Adobe to new heights. What truly stands out, however, is his unwavering commitment to fostering a culture of innovation and inclusivity. Under Shantanu's leadership, I've not only witnessed the evolution of groundbreaking products but have also experienced a workspace where every voice is valued, and every idea has the potential to shape the future. His leadership style is a testament to the fact that genuine empathy and strategic vision can coexist, propelling a company to global leadership.",
+        ]);
+
+        $threeTest = Testimonial::create([
+            "user_id" => $userOne->id,
+            "employee_id" => $danielEk->id,
+            'body' => "As an intern at Spotify, I was initially intimidated by the thought of working at such a renowned company. However, Daniel Ek made the environment welcoming and nurturing. Despite his position, he took the time to mentor and interact with interns, emphasizing the value of fresh perspectives and continual learning. It's rare to find leaders like Daniel who truly believe in nurturing the next generation, and I'm grateful for the invaluable lessons I've learned from him.",
+        ]);
+
+        $fourTest = Testimonial::create([
+            "user_id" => $userOne->id,
+            "employee_id" => $danielEk->id,
+            'body' => "Daniel Ek's passion for music and technology is palpable every time he speaks. Working alongside him at Spotify has been an enlightening experience. He's not just a leader; he's a visionary who understands the importance of fostering a culture of creativity and collaboration. Under his leadership, I've seen ideas transform into impactful campaigns that resonate deeply with our user base.",
         ]);
 
     }

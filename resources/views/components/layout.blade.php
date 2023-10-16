@@ -37,7 +37,7 @@
                     @endauth
                 </div>
             </nav>
-            <div class="h-full flex flex-col justify-center pb-16">
+            <div class="h-full flex flex-col justify-center items-center pb-16">
                 {{ $slot }}
             </div>
         </div>

@@ -5,7 +5,7 @@
             <h1 class="self-center font-bold text-xl pt-6 pb-4">Login</h1>
         </main>
 
-        <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full">
+        <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full ">
             @csrf
             <div id="register-form-inputs" class="relative flex flex-col gap-10 w-full max-w-md">
                 <div class="relative">

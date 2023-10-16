@@ -13,32 +13,38 @@
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-4 min-h-screen flex flex-col justify-between items-center">
-        <nav class="flex w-full items-center justify-between">
-            <div>
-                <a href="/">
-                    <img src="/Favicon.ico" alt="Laracasts Logo" width="80" height="160">
-                </a>
-            </div>
-            <div class="flex gap-4">
+        <div class="h-screen w-full">
+            <nav class="flex items-center justify-between">
+                <div>
+                    <a href="/">
+                        <img src="/Favicon.ico" alt="Laracasts Logo" width="40" height="80">
+                    </a>
+                </div>
+                <div class="flex gap-4">
 
-                @auth
-                    <form method="POST" action="/logout">
-                        @csrf
-                        <button type="submit" class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Log Out <span class="hidden lowercase text-gray-700 lg:block">{{ auth()->user()->username }}</span></button>
-                    </form>
-                @else
-                    <a href="/register"
-                        class="text-xs text-center font-bold uppercase p-2 text-blue-500">Register</a>
-                    <a href="/login"
-                        class="text-xs text-center font-bold uppercase p-2 text-blue-500">Log
-                        In</a>
-                @endauth
+                    @auth
+                        <form method="POST" action="/logout">
+                            @csrf
+                            <button type="submit"
+                                class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Log
+                                Out <span
+                                    class="hidden lowercase text-gray-700 lg:block">{{ auth()->user()->username }}</span></button>
+                        </form>
+                    @else
+                        <a href="/register" class="text-xs text-center font-bold uppercase p-2 text-blue-500">Register</a>
+                        <a href="/login" class="text-xs text-center font-bold uppercase p-2 text-blue-500">Log
+                            In</a>
+                    @endauth
+                </div>
+            </nav>
+            <div class="h-full flex flex-col justify-center pb-16">
+                {{ $slot }}
             </div>
-        </nav>
-
-        {{ $slot }}
+        </div>
 
         <x-footer />
+
+
     </section>
 
     @if (session()->has('success'))

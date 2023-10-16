@@ -73,7 +73,7 @@
                     </header>
 
                     <main class="space-y-4">
-
+                        @auth
                         <form method="POST" action="/employees/{{ $employee->slug }}/testimonials" class="border border-gray-200 rounded-xl flex flex-col p-6 gap-4">
                             @csrf
 
@@ -92,7 +92,7 @@
                                     class="h-8 bg-blue-500 hover:bg-blue-600 rounded-xl shadow-md text-white px-10 md:w-fit md:self-end">Post</button>
                             </div>
                         </form>
-
+                        @endauth    
 
                         @foreach ($employee->testimonials as $testimonial)
                             <x-testimonial :testimonial="$testimonial" />

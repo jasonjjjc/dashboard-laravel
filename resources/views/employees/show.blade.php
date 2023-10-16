@@ -74,7 +74,7 @@
 
                     <main class="space-y-4">
 
-                        <form method="POST" action="#" class="border border-gray-200 rounded-xl flex flex-col p-6 gap-4">
+                        <form method="POST" action="/employees/{{ $employee->slug }}/testimonials" class="border border-gray-200 rounded-xl flex flex-col p-6 gap-4">
                             @csrf
 
                             <img src="https://i.pravatar.cc/200?id={{ auth()->user()->id }}" alt="avatar"

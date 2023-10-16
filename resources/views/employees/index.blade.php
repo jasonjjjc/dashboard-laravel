@@ -18,7 +18,7 @@
             @endif
         </main>
     @else
-        <main class="h-full flex flex-col items-center justify-center max-w-6xl">
+        <main class="flex flex-col items-center justify-center max-w-6xl">
             <div class="transform -translate-y-1/2 space-y-16">
                 <div class="flex flex-col gap-2 items-center">
                     <p class="font-bold text-4xl">Welcome to</p>
@@ -26,7 +26,7 @@
                 </div>
 
                 <div>
-                    <p>Please <a href="/register" class="font-bold text-blue-500">register</a> or <a href="/login" class="font-bold text-blue-500">login</a> to continue.</p>
+                    <p>Please <a href="/register" class="font-bold text-blue-500">register</a> or <a href="/login" class="font-bold text-blue-500">login</a> to view our huge collection of companies and their employees.</p>
                 </div>
             </div>
         </main>

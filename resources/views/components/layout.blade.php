@@ -12,8 +12,8 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-6 py-4 min-h-screen flex flex-col justify-between items-center">
-        <div class="h-screen w-full">
+    <section class="px-6 py-4 min-h-screen flex flex-col items-center">
+        <div class="flex flex-col min-h-screen w-full">
             <nav class="flex items-center justify-between">
                 <div>
                     <a href="/">
@@ -37,7 +37,7 @@
                     @endauth
                 </div>
             </nav>
-            <div class="h-full flex flex-col justify-center items-center pb-16">
+            <div class="flex-1 flex flex-col justify-center items-center pb-16">
                 {{ $slot }}
             </div>
         </div>

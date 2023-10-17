@@ -17,6 +17,7 @@ Route::post('newsletter', function () {
         'server' => 'us21'
     ]);
     try {
+        // 0571c59f3b is the ID on the Mailchimp API for the newsletter list
     $response = $mailchimp->lists->addListMember('0571c59f3b', [
         'email_address' => request('email'),
         'status' => 'subscribed',

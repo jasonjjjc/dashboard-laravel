@@ -1,8 +1,8 @@
 <x-layout>
 
-    <section class="w-full flex">
+    <section class="flex flex-grow w-full">
 
-        <main class="flex flex-col items-center flex-1">
+        <main class="flex flex-col justify-center w-full">
             <h1 class="self-center font-bold text-xl pt-6 pb-4">Register!</h1>
             <form id="register-form" method="POST" action="/register" class="flex flex-col items-center gap-16 w-full">
                 @csrf

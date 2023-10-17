@@ -1,6 +1,6 @@
 <article class="flex gap-4 border border-gray-200 bg-gray-100 rounded-xl p-6">
                             
-    <img src="https://i.pravatar.cc/200?id={{ $testimonial->user->id }}" alt="avatar" class="h-8 rounded-xl">
+    <img src="https://i.pravatar.cc/100?id={{ $testimonial->user->id }}" alt="avatar" class="h-8 rounded-xl">
     
     <main class="flex flex-col">
         

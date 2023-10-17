@@ -136,7 +136,7 @@ class DatabaseSeeder extends Seeder
             "slug" => "carechange",
             "name" => "Carechange",
             "email" => "info@carechange.com",
-            "logo" => "https://upload.wikimedia.org/wikipedia/commons/1/16/Bosch-logo.svg",
+            "logo" => "/images/carechange.png",
             "website" => "https://www.carechange.com/",
             "summary" => "Carechange is a British healthcare software company headquartered in Norwich, UK.",
             "description" => "Carechange is a British healthcare software company headquartered in Norwich, UK. Its main product offering is a suite of tools for automating healthcare administration and management. They employ over 400 people worldwide and are the largest supplier of healthcare software in the world. The company was founded by Jason Chalangary in Norwich in 2021. Carechange is 100% owned by Jason Chalangary. Salaries at Carechange range from £30,000 to £100,000 a year. Software Engineering Managers make an average annual salary of £80,000, while employees with the title Sales Associate make an average annual salary of £30,000. Employees typically stay at Carechange for around 6 years and employee satisfaction typically ranges from 90-100%.",

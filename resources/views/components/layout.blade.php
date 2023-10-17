@@ -14,7 +14,7 @@
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-4 min-h-screen flex flex-col items-center">
         <div class="flex flex-col min-h-screen w-full">
-            <nav class="flex items-center justify-between">
+            <nav class="flex items-center justify-between border-b border-gray-100 pb-4">
                 <div>
                     <a href="/">
                         <img src="/Favicon.ico" alt="Laracasts Logo" width="40" height="80">
@@ -28,7 +28,8 @@
                             <button type="submit"
                                 class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Log
                                 Out <span
-                                    class="hidden lowercase text-gray-700 lg:block">{{ auth()->user()->username }}</span></button>
+                                    class="hidden lowercase pt-2 text-gray-700 lg:block">{{ auth()->user()->username }}</span>
+                            </button>
                         </form>
                     @else
                         <a href="/register" class="text-xs text-center font-bold uppercase p-2 text-blue-500">Register</a>
@@ -37,7 +38,7 @@
                     @endauth
                 </div>
             </nav>
-            <div class="flex-1 flex flex-col justify-center items-center pb-16">
+            <div class="flex-1 flex flex-col items-center pb-16">
                 {{ $slot }}
             </div>
         </div>

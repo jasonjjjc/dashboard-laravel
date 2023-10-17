@@ -1,7 +1,7 @@
 <x-layout>
-    <section class="w-full flex flex-col">
+    <section class="flex flex-col w-full flex-grow justify-center">
 
-        <main class="flex flex-col items-center flex-1">
+        <main class="flex flex-col justify-center items-center">
             <h1 class="self-center font-bold text-xl pt-6 pb-4">Login</h1>
         </main>
 

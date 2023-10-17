@@ -1,4 +1,4 @@
-<header class="w-full mt-4 text-center lg:w-fit lg:flex lg:flex-col lg:w-96">
+<header class="w-full mt-4 text-center lg:w-fit lg:flex lg:flex-col lg:gap-8 lg:w-96">
 
     <div class="flex flex-col gap-4 pb-8 border-b border-gray-100">
 

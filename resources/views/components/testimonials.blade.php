@@ -1,6 +1,6 @@
-<section class="w-full ">
+<section class="w-full pt-8">
     <header>
-        <h3 class="font-bold text-xl">Testimonials</h3>
+        <h3 class="font-bold text-xl pb-4">Testimonials</h3>
     </header>
 
     <main class="space-y-4">

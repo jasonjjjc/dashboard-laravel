@@ -9,7 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    protected $fillable = ['user_id', 'company_id', 'slug', 'name', 'email', 'job_title', 'phone', 'address', 'summary', 'description'];
+    protected $fillable = ['user_id', 'company_id', 'slug', 'name', 'email', 'image', 'job_title', 'phone', 'address', 'summary', 'description'];
 
     protected $with = ['company', 'user'];
 

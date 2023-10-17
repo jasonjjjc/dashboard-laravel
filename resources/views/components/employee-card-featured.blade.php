@@ -1,12 +1,12 @@
 @props(['employee'])
 
 
-<article class="py-4 w-full">
+<article class="w-full flex justify-center">
     <div
-        class="relative flex transition-colors duration-300 border border-gray-100 hover:bg-gray-100 rounded-xl">
-        <a href="/employees/{{ $employee->slug }}" class="flex-1 p-4">
+        class="relative w-full max-w-2xl">
+        <a href="/employees/{{ $employee->slug }}">
 
-            <h1 class="text-md font-semibold">
+            <h1 class="text-md font-semibold transition-colors duration-300 border border-gray-100 hover:bg-gray-100 rounded-xl p-3">
                 {{ $employee->name }}
             </h1>
 

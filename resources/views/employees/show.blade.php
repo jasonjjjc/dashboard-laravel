@@ -1,20 +1,20 @@
 <x-layout>
     <main class="max-w-xl mt-6">
-        <article class="flex flex-col items-center gap-4">
-            <img src="/images/illustration-1.png" alt="" class="rounded-xl">
+        <article class="flex flex-col items-center gap-6">
+            <img src="{{ $employee->image }}" alt="" class="rounded-xl">
 
             <p class="text-gray-400 text-xs">
                 Added <time>{{ $employee->created_at->diffForHumans() }}</time>
             </p>
 
-            <h1 class="font-bold text-3xl lg:text-4xl">
+            <h1 class="font-bold text-2xl lg:text-4xl">
                 {{ $employee->name }}
             </h1>
 
             <x-company-button :company="$employee->company" />
 
 
-            <div class="lg:text-lg leading-loose">
+            <div class="text-sm lg:text-md leading-loose border-b border-gray-100 pb-8">
                 <div>
                     {{-- Convert the employee description to an array of sentences --}}
                     @php

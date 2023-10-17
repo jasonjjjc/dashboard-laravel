@@ -46,9 +46,9 @@
         </div>
     @endif
 
-    <div class="flex justify-center text-xs leading-relaxed mt-4 border-b border-gray-100 pb-8">
+    <div class="flex justify-center text-xs leading-relaxed mt-4 pb-8">
         @if ($currentCompany)
-            <p class="max-w-md">
+            <p class="max-w-md pb-8 border-b border-gray-100">
                 {{ $currentCompany->summary }}
             </p>
         @endif

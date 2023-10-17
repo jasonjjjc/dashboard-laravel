@@ -17,7 +17,7 @@
             <nav class="flex items-center justify-between border-b border-gray-100 pb-4">
                 <div>
                     <a href="/">
-                        <img src="/Favicon.ico" alt="Laracasts Logo" width="40" height="80">
+                        <img src="/Favicon.ico" alt="JobStack Logo" width="40" height="80">
                     </a>
                 </div>
                 <div class="flex gap-4">

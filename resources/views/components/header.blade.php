@@ -1,11 +1,11 @@
 <header class="w-full mt-4 text-center lg:w-fit lg:flex lg:flex-col lg:gap-8 lg:w-96">
 
-    <div class="flex flex-col gap-4 pb-8 border-b border-gray-100">
+    <div class="flex flex-col items-center gap-4 pb-8 border-b border-gray-100 w-full">
 
         <!-- Search -->
         <p class="text-lg">Search</p>
 
-        <div class="flex flex-col gap-4 border-b border-gray-100">
+        <div class="flex flex-col gap-4 border-b border-gray-100 max-w-lg w-full">
             <form method="GET" action="/" class="flex flex-1 rounded-md">
 
                 @if (request('company'))

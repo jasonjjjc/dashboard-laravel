@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     public function index()
     {
         return view('employees.index', [
-            'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->paginate(6)->withQueryString(),
+            'employees' => Employee::latest()->filter(request(['search', 'company', 'user']))->paginate(10)->withQueryString(),
             'companies' => Company::all(),
             'currentCompany' => Company::firstWhere('slug', request('company')),
             'user' => User::first()

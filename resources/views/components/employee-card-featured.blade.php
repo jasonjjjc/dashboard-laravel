@@ -6,7 +6,7 @@
         class="relative w-full max-w-2xl">
         <a href="/employees/{{ $employee->slug }}">
 
-            <h1 class="text-md font-semibold transition-colors duration-300 border border-gray-100 hover:bg-gray-100 rounded-xl p-3">
+            <h1 class="text-md font-semibold transition-colors duration-300 border border-gray-100 hover:bg-gray-100 rounded-md p-3">
                 {{ $employee->name }}
             </h1>
 

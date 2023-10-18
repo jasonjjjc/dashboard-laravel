@@ -6,111 +6,130 @@
             @csrf
 
             <div class="flex flex-col gap-6">
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
-                    Name
-                </label>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
+                        Name
+                    </label>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}" required>
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}" required>
 
-                @error('name')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    @error('name')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="email">
-                    Email
-                </label>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="email">
+                        Email
+                    </label>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="email" id="email" placeholder="Enter your email" value="{{ old('email') }}" required>
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="email" id="email" placeholder="Enter your email" value="{{ old('email') }}"
+                        required>
 
-                @error('email')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    @error('email')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="phone">
-                    Phone
-                </label>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="phone">
+                        Phone
+                    </label>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="phone" id="phone" placeholder="Enter your phone" value="{{ old('phone') }}" required>
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="phone" id="phone" placeholder="Enter your phone" value="{{ old('phone') }}"
+                        required>
 
-                @error('phone')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    @error('phone')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="image">
-                    Image
-                </label>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="image" id="image" placeholder="Enter your image URL" value="{{ old('image') }}"
-                    required>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="image">
+                        Image
+                    </label>
 
-                @error('image')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="image" id="image" placeholder="Enter your image URL" value="{{ old('image') }}"
+                        required>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="job_title">
-                    Job Title
-                </label>
+                    @error('image')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="job_title">
+                        Job Title
+                    </label>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="job_title" id="job_title" placeholder="Enter your job title" value="{{ old('job_title') }}"
-                    required>
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="job_title" id="job_title" placeholder="Enter your job title"
+                        value="{{ old('job_title') }}" required>
 
-                @error('job_title')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    @error('job_title')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="address">
+                        Address
+                    </label>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="address">
-                    Address
-                </label>
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
+                        name="address" id="address" placeholder="Enter your address" value="{{ old('address') }}"
+                        required>
 
-                <input class="relative border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                    name="address" id="address" placeholder="Enter your address" value="{{ old('address') }}"
-                    required>
+                    @error('address')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="summary">
+                        Summary
+                    </label>
 
-                @error('address')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="summary"
+                        id="summary" placeholder="Enter your summary text" required>{{ old('summary') }}</textarea>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="summary">
-                    Summary
-                </label>
+                    @error('summary')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="summary"
-                    id="summary" placeholder="Enter your summary text" required>{{ old('summary') }}</textarea>
+                <div class="relative">
+                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="description">
+                        Description
+                    </label>
 
-                @error('summary')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="description"
+                        id="description" placeholder="Enter your description text" value="{{ old('description') }}" required>{{ old('description') }}</textarea>
 
-                <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="description">
-                    Description
-                </label>
+                    @error('description')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
-                <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="description"
-                    id="description" placeholder="Enter your description text" value="{{ old('description') }}" required>{{ old('description') }}</textarea>
+                <div class="relative">
+                    <label class="-mb-5 uppercase font-bold text-xs text-gray-700" for="company_id">Company</label>
 
-                @error('description')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    <select name="company_id" id="company_id"
+                        class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" required>
+                        <option value="">Select Company</option>
+                        @foreach ($companies as $company)
+                            <option value="{{ $company->id }}"
+                                {{ old('company_id') == $company->id ? 'selected' : '' }}>
+                                {{ ucwords($company->name) }}</option>
+                        @endforeach
+                    </select>
 
-                <label class="-mb-5 uppercase font-bold text-xs text-gray-700" for="company_id">Company</label>
-
-                <select name="company_id" id="company_id"
-                    class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" required>
-                    <option value="">Select Company</option>
-                    @foreach ($companies as $company)
-                        <option value="{{ $company->id }}" {{ old('company_id') == $company->id ? 'selected' : '' }}>
-                            {{ ucwords($company->name) }}</option>
-                    @endforeach
-                </select>
-
-                @error('company')
-                    <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                @enderror
+                    @error('company')
+                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
+                    @enderror
+                </div>
 
                 @if (session('error'))
                     <x-flash-message success="error" message="{{ session('error') }}" />

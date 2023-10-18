@@ -19,8 +19,9 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-6 py-4 min-h-screen flex flex-col items-center">
-        <div class="flex flex-col min-h-screen w-full">
+    <section class="px-6 py-4">
+        <div class="flex flex-col w-full min-h-screen mb-16">
+            
             <nav class="flex items-center justify-between border-b border-gray-100 pb-4">
                 <div>
                     <a href="/">
@@ -30,7 +31,7 @@
                 <div class="flex gap-4">
 
                     <a href="#newsletter"
-                        class="bg-blue-500 rounded-md text-xs font-semibold text-white uppercase py-2 px-4 flex justify-center items-center">
+                        class="hidden md:flex justify-center items-center bg-blue-500 rounded-md text-xs font-semibold text-white uppercase py-2 px-4">
                         Newsletter <span class="hidden md:inline-block ml-1">Sign Up</span>
                     </a>
 
@@ -52,9 +53,11 @@
                     @endauth
                 </div>
             </nav>
-            <div class=" pb-16">
+
+            <div class="flex flex-col flex-1">
                 {{ $slot }}
             </div>
+            
         </div>
 
         <x-footer />

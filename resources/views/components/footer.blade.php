@@ -1,6 +1,6 @@
 <footer class="w-full bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10">
     <img src="/images/lary-newsletter-icon.svg" alt="" class="mx-auto -mb-6" style="width: 145px;">
-    <h5 class="text-3xl">Sign up to get new features</h5>
+    <h5 class="text-3xl">Subscribe to get newsletter updates</h5>
     <p class="text-sm mt-4">We promise to keep the inbox clean. No bugs.</p>
 
     <div class="mt-4">
@@ -13,7 +13,7 @@
 
                 <div class=" flex items-center">
                     <label for="email" class="hidden lg:inline-block mr-4">
-                        <img src="./images/mailbox-icon.svg" alt="mailbox letter">
+                        <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                     </label>
 
                     <input id="email" name="email" type="text" placeholder="Your email address"

@@ -30,7 +30,7 @@
 
             </form>
             <!-- Company Dropdown -->
-            <div class="relative bg-gray-100 rounded-md">
+            <div class="relative bg-gray-100 border border-gray-200 rounded-md">
                 <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" />
             </div>
 

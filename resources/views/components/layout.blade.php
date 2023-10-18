@@ -32,7 +32,7 @@
                 <div class="flex gap-4">
 
                     <a href="#newsletter"
-                        class="bg-blue-500 rounded-md text-xs font-semibold text-white uppercase py-2 px-5 flex justify-center items-center">
+                        class="bg-blue-500 rounded-md text-xs font-semibold text-white uppercase py-2 px-4 flex justify-center items-center">
                         Newsletter <span class="hidden md:inline-block ml-1">Sign Up</span>
                     </a>
 
@@ -41,7 +41,7 @@
                             @csrf
 
                             <button type="submit"
-                                class="text-xs font-bold uppercase py-2 px-6 border border-blue-500 text-blue-500 rounded-md">Log
+                                class="text-xs font-bold uppercase py-2 px-4 border border-blue-500 text-blue-500 rounded-md">Log
                                 Out <span
                                     class="hidden lowercase pl-1 text-gray-700 lg:inline-block">{{ auth()->user()->username }}</span>
                             </button>

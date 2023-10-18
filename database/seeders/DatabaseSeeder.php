@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
         $carechange = Company::create([
             "id" => 7,
             "slug" => "carechange",
-            "name" => "Carechange",
+            "name" => "CareChange",
             "email" => "info@carechange.com",
             "logo" => "/images/carechange.png",
             "website" => "https://www.carechange.com/",

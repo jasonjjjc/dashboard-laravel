@@ -26,4 +26,11 @@ class EmployeeController extends Controller
             'employee' => $employee
         ]);
     }
+
+    public function create()
+    {
+        return view('employees.create', [
+            'companies' => Company::all()
+        ]);
+    }
 }

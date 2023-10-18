@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Company;
 use App\Models\Employee;
 use App\Models\User;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 
 class EmployeeController extends Controller
@@ -32,5 +34,37 @@ class EmployeeController extends Controller
         return view('employees.create', [
             'companies' => Company::all()
         ]);
+    }
+
+    public function store()
+    {
+        $attributes = request()->validate([
+            'name' => 'required',
+            'email' => ['required', Rule::unique('employees', 'email')],
+            'phone' => 'required',
+            'image' => 'required',
+            'job_title' => 'required',
+            'address' => 'required',
+            'summary' => 'required',
+            'description' => 'required',
+            'company_id' => ['required', Rule::exists('companies', 'id')]
+        ]);
+
+        $slug = Str::slug(request('name'));
+        $slugExists = Employee::where('slug', $slug)->exists();
+
+        if ($slugExists) {
+            return redirect('/admin/employees/create')->with('error', 'Employee with similar name already exists. Please choose a different name.')->withInput();
+        }
+
+        $attributes['slug'] = $slug;
+        $attributes['user_id'] = auth()->id();
+
+        try {
+            Employee::create($attributes);
+            return redirect('/')->with('success', 'Employee created successfully!');
+        } catch (\Exception $e) {
+            return redirect('/admin/employees/create')->with('error', 'Employee not created!');
+        }
     }
 }

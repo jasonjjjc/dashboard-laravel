@@ -12,8 +12,6 @@
         }
     </style>
 
-
-
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
@@ -65,6 +63,6 @@
     </section>
 
     @if (session()->has('success'))
-        <x-flash-message :message="session('success')" />
+        <x-flash-message success="success" :message="session('success')" />
     @endif
 </body>

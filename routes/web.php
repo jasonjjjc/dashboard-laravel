@@ -27,3 +27,4 @@ Route::post('sessions', [SessionsController::class, 'store'])->middleware('guest
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('admin/employees/create', [EmployeeController::class, 'create'])->middleware('admin');
+Route::post('admin/employees', [EmployeeController::class, 'store'])->middleware('admin');

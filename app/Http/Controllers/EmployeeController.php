@@ -40,12 +40,13 @@ class EmployeeController extends Controller
     {
         $attributes = request()->validate([
             'name' => 'required',
-            'email' => ['required', Rule::unique('employees', 'email')],
-            'phone' => 'required',
+            'email' => ['required', Rule::unique('employees', 'email'), 'email'],
+            'phone' => ['required', 'numeric', 'digits:11', Rule::unique('employees', 'phone')],
             'image' => 'required',
-            'job_title' => 'required',
-            'address' => 'required',
-            'summary' => 'required',
+            // must be more than 3 characters
+            'job_title' => ['required', 'min:3'],
+            'address' => ['required', 'min:8'],
+            'summary' => ['required', 'min:10', 'max:255'],
             'description' => 'required',
             'company_id' => ['required', Rule::exists('companies', 'id')]
         ]);

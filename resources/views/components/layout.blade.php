@@ -20,7 +20,7 @@
 
 <body style="font-family: Open Sans, sans-serif">
     <section class="px-6 py-4">
-        <div class="flex flex-col w-full min-h-screen mb-16">
+        <div class="flex flex-col w-full min-h-screen">
             
             <nav class="flex items-center justify-between border-b border-gray-100 pb-4">
                 <div>
@@ -60,7 +60,6 @@
             
         </div>
 
-        <x-footer />
 
 
     </section>

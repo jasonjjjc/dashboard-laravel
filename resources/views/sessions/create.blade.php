@@ -1,8 +1,9 @@
 <x-layout>
-    <section class="flex-1 flex flex-col justify-center">
-            <main class="flex flex-col justify-center items-center">
+    <section class="flex-1 flex flex-col justify-center min-h-screen">
+        <div class="transform -translate-y-20">
+            <header class="flex flex-col justify-center items-center">
                 <h1 class="self-center font-bold text-xl py-4">Login</h1>
-            </main>
+            </header>
 
             <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full ">
                 @csrf
@@ -25,5 +26,8 @@
                 <button id="register-form-submit" type="submit"
                     class="w-full max-w-md bg-blue-500 text-white py-2 px-4 rounded-md">Login</button>
             </form>
+        </div>
     </section>
+
+    <x-footer />
 </x-layout>

@@ -1,5 +1,5 @@
 <x-layout>
-    <main class="max-w-xl mt-6">
+    <main class="max-w-xl mt-6 mx-auto">
         <article class="flex flex-col items-center gap-6">
             <img src="{{ $employee->image }}" alt="" class="rounded-xl">
 
@@ -8,8 +8,12 @@
             </p>
 
             <h1 class="font-bold text-2xl lg:text-4xl">
-                {{ $employee->name }}
+                @php
+                    $nameParts = explode(' ', $employee->name);
+                    echo count($nameParts) > 1 ? ucwords($employee->name) : strtoupper($employee->name);
+                @endphp
             </h1>
+            
 
             <x-company-button :company="$employee->company" />
 

@@ -52,7 +52,7 @@
                     @endauth
                 </div>
             </nav>
-            <div class="flex-1 flex flex-col items-center pb-16">
+            <div class=" pb-16">
                 {{ $slot }}
             </div>
         </div>

@@ -7,9 +7,12 @@
             <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" :user="$user"></x-header>
 
             <main class="flex flex-col w-full lg:items-center  border-b border-gray-100 pb-8">
-                <h1 class="text-2xl py-8">
-                    All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
-                </h1>
+                <div class="flex items-center justify-between w-full max-w-2xl">
+                    <h1 class="text-2xl py-8">
+                        All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
+                    </h1>
+                    <a href="admin/employees/create" class="py-2 px-4 bg-blue-500 h-fit w-fit rounded-md text-white">Add</a>
+                </div>
                 @if (isset($employees) ? $employees->count() : null)
                     <x-employees-grid :employees="$employees"></x-employees-grid>
 

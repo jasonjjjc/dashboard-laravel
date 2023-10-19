@@ -19,25 +19,30 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="flex flex-col px-4 py-4 min-h-screen">
+    <div class="px-4">
+        <section class="flex flex-col min-h-screen">
 
             <nav
-                class="flex items-center justify-between border-b border-gray-100 pb-4 text-sm font-semibold text-blue-500">
+                class="flex items-center justify-between border-b border-gray-100 py-4 text-sm font-semibold text-blue-500">
                 <div>
                     <a href="/">
                         <img src="/Favicon.ico" alt="JobStack Logo" width="40" height="80">
                     </a>
                 </div>
                 <div class="flex items-center gap-4">
-                    @auth
-                        @if (auth()->user()->is_admin)
-                            <div class="py-2 px-4">
+                    <div class="py-2 px-4">
 
-                                <x-dropdown>
-                                    <x-slot name="trigger">
-                                        <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
-                                    </x-slot>
+                        <x-dropdown>
+                            <x-slot name="trigger">
+                                <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
+                            </x-slot>
 
+                            <x-dropdown-item href="/employees" :active="request()->is('employees')">All Employees</x-dropdown-item>
+
+                            <x-dropdown-item href="/companies" :active="request()->is('companies')">All Companies</x-dropdown-item>
+
+                            @auth
+                                @if (auth()->user()->is_admin)
                                     <x-dropdown-item href="/admin/employees/create" :active="request()->is('admin/employees/create')">
                                         Add Employee
                                     </x-dropdown-item>
@@ -45,12 +50,12 @@
                                     <x-dropdown-item href="/admin/companies/create" :active="request()->is('admin/companies/create')">
                                         Add Company
                                     </x-dropdown-item>
+                                @endif
+                            @endauth
 
-                                </x-dropdown>
+                        </x-dropdown>
 
-                            </div>
-                        @endif
-                    @endauth
+                    </div>
 
                     <a href="#newsletter" class="hidden md:block whitespace-nowrap py-2 px-4 hover:text-blue-600">
                         Newsletter <span class="hidden md:inline-block">Sign Up</span>
@@ -71,9 +76,11 @@
                 </div>
             </nav>
 
-                {{ $slot }}
+            {{ $slot }}
+        </section>
 
-    </section>
+        <x-footer />
+    </div>
 
     @if (session()->has('success'))
         <x-flash-message success="success" :message="session('success')" />

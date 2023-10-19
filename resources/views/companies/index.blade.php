@@ -4,14 +4,14 @@
 
     @auth
         <div class="w-full flex flex-col items-center lg:flex-row lg:items-start lg:gap-8">
-
-            <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" :user="$user"></x-header>
+            
+            <x-header :companies="$companies"></x-header>
 
             <main class="flex flex-col w-full items-center pb-8">
-
+                
                 <div class="flex items-center justify-between w-full max-w-2xl">
                     <h1 class="text-2xl py-8">
-                        All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
+                        All Companies
                     </h1>
                     @auth
                         @if (auth()->user()->is_admin == 1)
@@ -22,13 +22,14 @@
 
                 </div>
 
-                @if (isset($employees) ? $employees->count() : null)
-                    <x-index-grid :employees="$employees"></x-employees-grid>
+                @if (isset($companies) ? $companies->count() : null)
+                    <x-index-grid :companies="$companies"></x-index-grid>
 
-                        {{ $employees->links() }}
-                        <div class="h-12 w-full"></div> {{-- Spacer --}}
+                    {{ $companies->links() }}
+                    <div class="h-12 w-full"></div> {{-- Spacer --}}
+                
                     @else
-                        <p class="text-center">No employees yet. Please check back later.</p>
+                    <p class="text-center">No companies yet. Please check back later.</p>
                 @endif
 
                 <x-footer />
@@ -37,7 +38,7 @@
 
 
         </div>
-
+    
     @endauth
 
 

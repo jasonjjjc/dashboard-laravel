@@ -1,6 +1,7 @@
 <x-layout>
+
     <section class="flex-1 flex flex-col justify-center">
-        <div class="">
+
             <header class="flex flex-col justify-center items-center">
                 <h1 class="self-center font-bold text-xl py-4">Login</h1>
             </header>
@@ -26,8 +27,7 @@
                 <button id="register-form-submit" type="submit"
                     class="w-full max-w-md bg-blue-500 text-white py-2 px-4 rounded-md">Login</button>
             </form>
-        </div>
+
     </section>
 
-    <x-footer />
 </x-layout>

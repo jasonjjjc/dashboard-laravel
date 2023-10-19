@@ -1,8 +1,7 @@
 <x-layout>
 
-
-    <main class="flex-1 flex flex-col justify-between">
-        <div class="flex-1 flex flex-col justify-center">
+    <main class="flex-1 flex flex-col justify-center">
+        <div class="flex flex-col justify-center">
             <h1 class="text-center font-bold text-xl py-4">Register</h1>
 
             <form id="register-form" method="POST" action="/register" class="flex flex-col items-center gap-16 w-full">
@@ -43,12 +42,6 @@
             </form>
         </div>
 
-        <x-footer />
     </main>
-
-
-
-
-
 
 </x-layout>

@@ -39,14 +39,14 @@
     </div>
 
 
-    @if ($currentCompany)
+    @if (isset($currentCompany))
         <div class="flex justify-center">
             <img src="{{ $currentCompany ? $currentCompany->logo : '' }}" alt="Company Logo"
                 class="max-h-16 mt-8 object-contain">
         </div>
     @endif
 
-    @if ($currentCompany)
+    @if (isset($currentCompany))
         <div class="flex justify-center text-xs leading-relaxed mt-4 pb-8">
             <p class="max-w-md pb-8 border-b border-gray-100">
                 {{ $currentCompany->summary }}

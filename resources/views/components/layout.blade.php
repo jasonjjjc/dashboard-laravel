@@ -32,16 +32,17 @@
                 <div class="flex items-center gap-4">
                     <div class="py-2 px-4">
 
-                        <x-dropdown>
-                            <x-slot name="trigger">
-                                <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
-                            </x-slot>
+                        @auth
 
-                            <x-dropdown-item href="/employees" :active="request()->is('employees')">All Employees</x-dropdown-item>
+                            <x-dropdown>
+                                <x-slot name="trigger">
+                                    <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
+                                </x-slot>
 
-                            <x-dropdown-item href="/companies" :active="request()->is('companies')">All Companies</x-dropdown-item>
+                                <x-dropdown-item href="/employees" :active="request()->is('employees')">All Employees</x-dropdown-item>
 
-                            @auth
+                                <x-dropdown-item href="/companies" :active="request()->is('companies')">All Companies</x-dropdown-item>
+
                                 @if (auth()->user()->is_admin)
                                     <x-dropdown-item href="/admin/employees/create" :active="request()->is('admin/employees/create')">
                                         Add Employee
@@ -51,10 +52,11 @@
                                         Add Company
                                     </x-dropdown-item>
                                 @endif
-                            @endauth
 
-                        </x-dropdown>
+                            </x-dropdown>
 
+                        @endauth
+                        
                     </div>
 
                     <a href="#newsletter" class="hidden md:block whitespace-nowrap py-2 px-4 hover:text-blue-600">

@@ -13,7 +13,7 @@
                 @endif
 
                 <input type="text" name="search" placeholder="Find someone"
-                    class="flex-1 rounded-tl-md rounded-bl-md border border-blue-500 bg-transparent placeholder-blue-500 font-semibold text-sm px-3 py-2 focus:outline-none"
+                    class="flex-1 rounded-tl-md rounded-bl-md border border-blue-500 bg-transparent placeholder-blue-500 font-semibold text-sm px-3 py-2 focus:outline-blue-500"
                     value="{{ request('search') }}" />
 
 
@@ -31,7 +31,7 @@
             </form>
             <!-- Company Dropdown -->
             <div class="relative bg-gray-100 border border-gray-200 rounded-md">
-                <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" />
+                <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" width="w-full" />
             </div>
 
         </div>

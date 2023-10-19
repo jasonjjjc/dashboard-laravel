@@ -25,7 +25,7 @@
                 @enderror
 
                 <button type="submit"
-                    class="w-full bg-blue-500 py-3 rounded-md text-white hover:text-blue-300 font-bold">
+                    class="w-full bg-blue-500 py-3 rounded-md text-white hover:text-blue-300 hover:bg-blue-600 font-bold">
                     Sign Up
                 </button>
             </form>

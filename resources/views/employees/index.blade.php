@@ -16,7 +16,7 @@
                     @auth
                         @if (auth()->user()->is_admin == 1)
                             <a href="admin/employees/create"
-                                class="py-1 px-3 bg-blue-500 h-fit w-fit rounded-md text-sm text-white">Add</a>
+                                class="py-1 px-3 bg-blue-500 h-fit w-fit rounded-md text-sm text-white hover:bg-blue-600 hover:text-blue-300">Add</a>
                         @endif
                     @endauth
 
@@ -47,8 +47,8 @@
                 </div>
 
                 <div>
-                    <p class="text-center ">Please <a href="/register" class="font-bold text-blue-500">register</a> or <a
-                            href="/login" class="font-bold text-blue-500">login</a> to start collecting JobStacks!</p>
+                    <p class="text-center ">Please <a href="/register" class="font-bold text-blue-500 hover:text-blue-600">register</a> or <a
+                            href="/login" class="font-bold text-blue-500 hover:text-blue-600">login</a> to start collecting JobStacks!</p>
                 </div>
             </div>
         </main>

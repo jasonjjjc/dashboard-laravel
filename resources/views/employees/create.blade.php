@@ -1,7 +1,7 @@
 <x-layout>
     <section class="px-6 py-8 w-full">
-
         <form method="POST" action="/admin/employees" class="max-w-lg w-full mx-auto">
+            <h1 class="pb-8 font-bold text-xl">Add an employee</h1>
 
             @csrf
 
@@ -12,7 +12,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="name" id="name" placeholder="Enter your name" value="{{ old('name') }}" required>
+                        name="name" id="name" placeholder="Enter name" value="{{ old('name') }}" required>
 
                     @error('name')
                         <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -25,7 +25,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="email" id="email" placeholder="Enter your email" value="{{ old('email') }}"
+                        name="email" id="email" placeholder="Enter email" value="{{ old('email') }}"
                         required>
 
                     @error('email')
@@ -39,7 +39,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="phone" id="phone" placeholder="Enter your phone" value="{{ old('phone') }}"
+                        name="phone" id="phone" placeholder="Enter phone" value="{{ old('phone') }}"
                         required>
 
                     @error('phone')
@@ -54,7 +54,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="image" id="image" placeholder="Enter your image URL" value="{{ old('image') }}"
+                        name="image" id="image" placeholder="Enter image URL" value="{{ old('image') }}"
                         required>
 
                     @error('image')
@@ -67,7 +67,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="job_title" id="job_title" placeholder="Enter your job title"
+                        name="job_title" id="job_title" placeholder="Enter job title"
                         value="{{ old('job_title') }}" required>
 
                     @error('job_title')
@@ -80,7 +80,7 @@
                     </label>
 
                     <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="address" id="address" placeholder="Enter your address" value="{{ old('address') }}"
+                        name="address" id="address" placeholder="Enter address" value="{{ old('address') }}"
                         required>
 
                     @error('address')
@@ -93,7 +93,7 @@
                     </label>
 
                     <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="summary"
-                        id="summary" placeholder="Enter your summary text" required>{{ old('summary') }}</textarea>
+                        id="summary" placeholder="Enter summary text" required>{{ old('summary') }}</textarea>
 
                     @error('summary')
                         <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -106,7 +106,7 @@
                     </label>
 
                     <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="description"
-                        id="description" placeholder="Enter your description text" value="{{ old('description') }}" required>{{ old('description') }}</textarea>
+                        id="description" placeholder="Enter description text" value="{{ old('description') }}" required>{{ old('description') }}</textarea>
 
                     @error('description')
                         <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>

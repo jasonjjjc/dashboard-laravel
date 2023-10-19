@@ -1,6 +1,6 @@
 <x-layout>
-    <section class="flex-1 flex flex-col justify-center min-h-screen">
-        <div class="transform -translate-y-20">
+    <section class="flex-1 flex flex-col justify-center">
+        <div class="">
             <header class="flex flex-col justify-center items-center">
                 <h1 class="self-center font-bold text-xl py-4">Login</h1>
             </header>

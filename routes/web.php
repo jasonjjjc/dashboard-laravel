@@ -10,8 +10,10 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\CompanyController;
 
 
-
-Route::get('/', [EmployeeController::class, 'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/employees', [EmployeeController::class, 'index']);
 
 Route::get('employees/{employee:slug}', [EmployeeController::class, 'show']);
 Route::post('employees/{employee:slug}/testimonials', [EmployeeTestimonialsController::class, 'store']);
@@ -20,7 +22,6 @@ Route::post('newsletter', NewsletterController::class);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
-
 
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('sessions', [SessionsController::class, 'store'])->middleware('guest');

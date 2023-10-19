@@ -19,8 +19,7 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
-    <section class="px-2 py-4">
-        <div class="flex flex-col w-full min-h-screen">
+    <section class="flex flex-col px-4 py-4 min-h-screen">
 
             <nav
                 class="flex items-center justify-between border-b border-gray-100 pb-4 text-sm font-semibold text-blue-500">
@@ -72,13 +71,7 @@
                 </div>
             </nav>
 
-            <div class="flex flex-col flex-1 px-2">
                 {{ $slot }}
-            </div>
-
-        </div>
-
-
 
     </section>
 

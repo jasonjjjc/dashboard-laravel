@@ -7,7 +7,7 @@
             
             <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" :user="$user"></x-header>
 
-            <main class="flex flex-col w-full md:items-center pb-8">
+            <main class="flex flex-col w-full items-center pb-8">
                 
                 <div class="flex items-center justify-between w-full max-w-2xl">
                     <h1 class="text-2xl py-8">

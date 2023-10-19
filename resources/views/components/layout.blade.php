@@ -43,6 +43,10 @@
                                         Add Employee
                                     </x-dropdown-item>
 
+                                    <x-dropdown-item href="/admin/companies/create" :active="request()->is('admin/companies/create')">
+                                        Add Company
+                                    </x-dropdown-item>
+
                                 </x-dropdown>
 
                             </div>

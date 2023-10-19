@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\EmployeeTestimonialsController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\CompanyController;
 
 
 
@@ -28,3 +29,6 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 
 Route::get('admin/employees/create', [EmployeeController::class, 'create'])->middleware('admin');
 Route::post('admin/employees', [EmployeeController::class, 'store'])->middleware('admin');
+
+Route::get('admin/companies/create', [CompanyController::class, 'create'])->middleware('admin');
+Route::post('admin/companies', [CompanyController::class, 'store'])->middleware('admin');

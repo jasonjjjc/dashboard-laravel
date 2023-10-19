@@ -66,7 +66,7 @@ class EmployeeController extends Controller
             Employee::create($attributes);
             return redirect('/')->with('success', 'Employee created successfully!');
         } catch (\Exception $e) {
-            return redirect('/admin/employees/create')->with('error', 'Employee not created!');
+            return redirect('/admin/employees/create')->with('error', 'Employee not created!')->withInput();
         }
     }
 }

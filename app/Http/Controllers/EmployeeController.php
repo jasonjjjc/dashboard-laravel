@@ -38,11 +38,12 @@ class EmployeeController extends Controller
 
     public function store()
     {
+
         $attributes = request()->validate([
             'name' => 'required',
             'email' => ['required', Rule::unique('employees', 'email'), 'email'],
             'phone' => ['required', 'numeric', 'digits:11', Rule::unique('employees', 'phone')],
-            'image' => 'required',
+            'image' => 'required|image',
             'job_title' => ['required', 'min:3'],
             'address' => ['required', 'min:8'],
             'summary' => ['required', 'min:10', 'max:255'],
@@ -59,6 +60,7 @@ class EmployeeController extends Controller
 
         $attributes['slug'] = $slug;
         $attributes['user_id'] = auth()->id();
+        $attributes['image'] = request()->file('image')->store('images', 'public');
 
         try {
             Employee::create($attributes);

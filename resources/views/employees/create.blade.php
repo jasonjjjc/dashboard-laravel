@@ -1,7 +1,7 @@
 <x-layout>
     <section class="px-6 py-8 w-full max-w-lg mx-auto">
         <h1 class="pb-8 font-bold text-xl">Add an employee</h1>
-        <form method="POST" action="/admin/employees" class="max-w-lg w-full mx-auto">
+        <form method="POST" action="/admin/employees" class="max-w-lg w-full mx-auto" enctype="multipart/form-data">
 
             @csrf
 
@@ -53,8 +53,8 @@
                         Image
                     </label>
 
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="image" id="image" placeholder="Enter image URL" value="{{ old('image') }}"
+                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="file"
+                        name="image" id="image" placeholder="Add an image" value="{{ old('image') }}"
                         required>
 
                     @error('image')

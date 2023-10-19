@@ -1,8 +1,8 @@
 <x-layout>
 
     <section class="flex-1 flex flex-col min-h-screen">
-        <main class="flex-1 flex flex-col justify-center">
-            <div class="transform -translate-y-20">
+        <main class="flex-1 flex flex-col xl:justify-center">
+            <div class="xl:transform xl:-translate-y-20">
                 <h1 class="text-center font-bold text-xl py-4">Register</h1>
 
                 <form id="register-form" method="POST" action="/register" class="flex flex-col items-center gap-16 w-full">

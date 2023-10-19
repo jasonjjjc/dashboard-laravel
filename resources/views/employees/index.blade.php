@@ -24,14 +24,11 @@
                 @else
                     <p class="text-center">No employees yet. Please check back later.</p>
                 @endif
-
-                <x-footer />
-
             </main>
         </div>
     @else
-        <main class="flex flex-1 flex-col items-center justify-center max-w-6xl">
-            <div class="space-y-6">
+        <main class="min-h-screen flex flex-1 flex-col items-center justify-center max-w-6xl">
+            <div class="space-y-6 transform -translate-y-20">
                 <div class="flex flex-col gap-2 items-center">
                     <p class="font-bold text-4xl">Welcome to</p>
                     <p class="font-bold text-6xl">JobStack</p>
@@ -47,5 +44,8 @@
 
 
     @endauth
+
+    <x-footer />
+
 
 </x-layout>

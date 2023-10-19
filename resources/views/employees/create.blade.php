@@ -1,7 +1,7 @@
 <x-layout>
-    <section class="px-6 py-8 w-full">
+    <section class="px-6 py-8 w-full max-w-lg mx-auto">
+        <h1 class="pb-8 font-bold text-xl">Add an employee</h1>
         <form method="POST" action="/admin/employees" class="max-w-lg w-full mx-auto">
-            <h1 class="pb-8 font-bold text-xl">Add an employee</h1>
 
             @csrf
 

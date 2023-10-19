@@ -46,12 +46,12 @@
         </div>
     @endif
 
-    <div class="flex justify-center text-xs leading-relaxed mt-4 pb-8">
-        @if ($currentCompany)
+    @if ($currentCompany)
+        <div class="flex justify-center text-xs leading-relaxed mt-4 pb-8">
             <p class="max-w-md pb-8 border-b border-gray-100">
                 {{ $currentCompany->summary }}
             </p>
-        @endif
-    </div>
+        </div>
+    @endif
 
 </header>

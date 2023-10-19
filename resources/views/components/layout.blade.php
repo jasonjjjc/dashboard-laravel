@@ -39,9 +39,10 @@
                                         <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
                                     </x-slot>
 
-                                    <x-dropdown-item href="/admin/employees/create" :active="request()->is('/admin/employees/create')">
+                                    <x-dropdown-item href="/admin/employees/create" :active="request()->is('admin/employees/create')">
                                         Add Employee
                                     </x-dropdown-item>
+
                                 </x-dropdown>
 
                             </div>

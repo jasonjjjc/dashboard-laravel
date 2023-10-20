@@ -10,11 +10,16 @@
             <main class="flex flex-col w-full items-center pb-8">
 
                 <div class="flex items-center justify-between w-full max-w-2xl">
-                    <h1 class="text-2xl py-8">
-                        All <span class="text-blue-500">{{ $currentCompany ? ucwords($currentCompany->name) : '' }}</span> Employees
-                    </h1>
+                    <div class="flex flex-col py-6">
+                        <h1 class="text-2xl px-4">
+                            All <span
+                                class="text-blue-500">{{ $currentCompany ? ucwords($currentCompany->name) : '' }}</span>
+                            Employees
+                        </h1>
 
-                    <p class="hidden md:block text-xs">Select an employee to {{ request()->is('admin/employees') ? 'edit' : 'view' }} their profile.</p>
+                        <p class="pt-2 px-4 text-xs">Select an employee to
+                            {{ request()->is('admin/employees') ? 'edit' : 'view' }} their profile.</p>
+                    </div>
                     @auth
                         @if (auth()->user()->is_admin == 1)
                             <a href="admin/employees/create"
@@ -30,7 +35,7 @@
                         {{ $employees->links() }}
                         <div class="h-12 w-full"></div> {{-- Spacer --}}
                     @else
-                        <p class="text-center">No employees yet. Please check back later.</p>
+                        <p class="text-center mt-24">No employees yet. Please check back later.</p>
                 @endif
 
             </main>

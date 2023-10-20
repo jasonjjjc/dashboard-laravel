@@ -2,8 +2,7 @@
 
     @auth
 
-
-        <main class="min-h-screen flex flex-1 flex-col items-center justify-center max-w-6xl">
+        <main class="flex flex-1 flex-col items-center justify-center w-full">
             <div class="space-y-6 transform -translate-y-20">
                 <div class="flex flex-col gap-2 items-center">
                     <p class="font-bold text-4xl">Start your</p>
@@ -17,6 +16,7 @@
                 </div>
             </div>
         </main>
+
     @else
 
             <main class="flex flex-1 flex-col items-center justify-center w-full">

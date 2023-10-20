@@ -12,7 +12,7 @@
                     <input type="hidden" name="company" value="{{ request('company') }}">
                 @endif
 
-                <input type="text" name="search" placeholder="Find someone"
+                <input type="text" name="search" placeholder="Find {{ request()->is('companies') ? 'a company' : 'an employee' }}"
                     class="flex-1 rounded-tl-md rounded-bl-md border border-blue-500 bg-transparent placeholder-blue-500 font-semibold text-sm px-3 py-2 focus:outline-blue-500"
                     value="{{ request('search') }}" />
 

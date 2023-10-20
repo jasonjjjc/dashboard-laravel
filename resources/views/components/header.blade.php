@@ -45,7 +45,7 @@
     @if (isset($currentCompany))
         <div class="flex justify-center">
             <img src="/storage/{{ $currentCompany ? $currentCompany->logo : '' }}" alt="Company Logo"
-                class="max-h-16 mt-8 object-contain">
+                class="max-h-24 mt-8">
         </div>
     @endif
 

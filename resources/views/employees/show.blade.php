@@ -15,7 +15,7 @@
             </h1>
             
 
-            <x-link-button :company="$employee->company" />
+            <x-link-button :employeeCompany="$employee->company"/>
 
 
             <div class="text-sm lg:text-md leading-loose border-b border-gray-100 pb-8">

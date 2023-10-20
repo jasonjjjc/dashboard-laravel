@@ -34,6 +34,10 @@ Route::get('employees', [EmployeeController::class, 'index']);
 Route::get('admin/employees', [EmployeeController::class, 'index'])->middleware('admin');
 Route::get('admin/employees/create', [EmployeeController::class, 'create'])->middleware('admin');
 Route::post('admin/employees', [EmployeeController::class, 'store'])->middleware('admin');
+Route::get('admin/employees/{employee:slug}/edit', [EmployeeController::class, 'edit'])->middleware('admin');
+Route::put('admin/employees/{employee:slug}', [EmployeeController::class, 'update'])->middleware('admin');
+Route::patch('admin/employees/{employee:slug}/image', [EmployeeController::class, 'updateImage'])->middleware('admin');
+
 
 
 Route::get('companies', [CompanyController::class, 'index']);

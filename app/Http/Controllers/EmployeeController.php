@@ -8,7 +8,7 @@ use App\Models\Employee;
 use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
@@ -67,6 +67,62 @@ class EmployeeController extends Controller
             return redirect('/employees')->with('success', 'Employee created successfully!');
         } catch (\Exception $e) {
             return redirect('/admin/employees/create')->with('error', 'Employee not created!')->withInput();
+        }
+    }
+
+    public function edit(Employee $employee)
+    {
+        return view('employees.edit', [
+            'employee' => $employee,
+            'companies' => Company::all()
+        ]);
+    }
+
+    public function update(Request $request, Employee $employee)
+    {
+        // Validate incoming data
+        $validatedData = $request->validate([
+            'image' => 'sometimes|required|string',
+            'name' => 'required|string|max:255',
+            'company' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        // Update the employee's data
+        $employee->update([
+            'image' => $validatedData['image'],
+            'name' => $validatedData['name'],
+            'company' => $validatedData['company'],
+            'description' => $validatedData['description'],
+        ]);
+
+        // Redirect with a success message
+        return redirect()->route('admin.employees', $employee)->with('success', 'Employee details updated successfully!');
+    }
+
+    public function updateImage(Request $request, Employee $employee)
+    {
+        $request->validate(['image' => 'required|image']);
+
+        // Get the old image path before updating
+        $oldImagePath = $employee->image;
+
+        // Store the new image
+        $path = $request->file('image')->store('images/employees', 'public');
+
+        // Delete the old image from storage if it exists and is not the new image
+        if ($oldImagePath && $oldImagePath !== $path) {
+            Storage::disk('public')->delete($oldImagePath);
+        }
+
+        // Update the employee record with the new image path
+        $employee->update(['image' => $path]);
+
+        // Check if the image was updated and return appropriate response
+        if ($employee->wasChanged('image')) {
+            return redirect()->back()->with('success', 'Employee image updated successfully!');
+        } else {
+            return redirect()->back()->with('error', 'Employee image not updated!');
         }
     }
 }

@@ -15,9 +15,10 @@ class CompanyController extends Controller
 
     public function index()
     {
-        $companies = Company::latest()->paginate(10);
 
-        return view('companies.index', compact('companies'));
+        return view('companies.index', [
+            'companies' => Company::latest()->filter(request(['search']))->paginate(10)->withQueryString(),
+        ]);
     }
 
 
@@ -49,7 +50,7 @@ class CompanyController extends Controller
 
         try {
             Company::create($attributes);
-            return redirect('/')->with('success', 'Company created successfully!');
+            return redirect('/companies')->with('success', 'Company created successfully!');
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
 

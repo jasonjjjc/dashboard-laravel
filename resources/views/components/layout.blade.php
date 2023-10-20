@@ -19,22 +19,27 @@
 </head>
 
 <body style="font-family: Open Sans, sans-serif">
+
     <div class="px-4">
+        
         <section class="flex flex-col min-h-screen">
 
             <nav
                 class="flex items-center justify-between border-b border-gray-100 py-4 text-sm font-semibold text-blue-500">
+
                 <div>
                     <a href="/">
                         <img src="/Favicon.ico" alt="JobStack Logo" width="40" height="80">
                     </a>
                 </div>
+
                 <div class="flex items-center gap-4">
                     <div class="py-2 px-4">
 
                         @auth
 
                             <x-dropdown>
+
                                 <x-slot name="trigger">
                                     <button class="hover:text-blue-600 focus:text-blue-600">Menu</button>
                                 </x-slot>
@@ -56,7 +61,7 @@
                             </x-dropdown>
 
                         @endauth
-                        
+
                     </div>
 
                     <a href="#newsletter" class="hidden md:block whitespace-nowrap py-2 px-4 hover:text-blue-600">
@@ -75,7 +80,9 @@
                         <a href="/register" class=" text-center p-2 hover:text-blue-600 ">Register</a>
                         <a href="/login" class=" text-center p-2 hover:text-blue-600 ">Login</a>
                     @endauth
+
                 </div>
+
             </nav>
 
             {{ $slot }}
@@ -87,4 +94,5 @@
     @if (session()->has('success'))
         <x-flash-message success="success" :message="session('success')" />
     @endif
+
 </body>

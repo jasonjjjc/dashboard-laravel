@@ -1,4 +1,4 @@
-@if (isset($employees))
+@if ($for == 'employees')
 
     @if ($employees->count() > 0)
         <div class="flex flex-col gap-4 w-full">
@@ -8,7 +8,7 @@
         </div>
     @endif
 @else
-    @if (isset($companies))
+    @if ($for == 'companies')
 
         @if ($companies->count() > 0)
             <div class="flex flex-col gap-4 w-full">

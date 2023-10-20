@@ -6,7 +6,7 @@
         <p class="text-lg">Search</p>
 
         <div class="flex flex-col gap-4 border-b border-gray-100 max-w-lg w-full">
-            <form method="GET" action="/" class="flex flex-1 rounded-md">
+            <form method="GET" action="/{{ $for }}" class="flex flex-1 rounded-md">
 
                 @if (request('company'))
                     <input type="hidden" name="company" value="{{ request('company') }}">
@@ -29,10 +29,13 @@
                 </button>
 
             </form>
+
             <!-- Company Dropdown -->
-            <div class="relative bg-gray-100 border border-gray-200 rounded-md">
-                <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" width="w-full" />
-            </div>
+            @if ($for == 'employees')
+                <div class="relative bg-gray-100 border border-gray-200 rounded-md">
+                    <x-company-dropdown :currentCompany="isset($currentCompany) ? $currentCompany : null" width="w-full" />
+                </div>
+            @endif
 
         </div>
 
@@ -41,7 +44,7 @@
 
     @if (isset($currentCompany))
         <div class="flex justify-center">
-            <img src="{{ $currentCompany ? $currentCompany->logo : '' }}" alt="Company Logo"
+            <img src="/storage/{{ $currentCompany ? $currentCompany->logo : '' }}" alt="Company Logo"
                 class="max-h-16 mt-8 object-contain">
         </div>
     @endif

@@ -5,7 +5,7 @@
     @auth
         <div class="w-full flex flex-col items-center lg:flex-row lg:items-start lg:gap-8">
 
-            <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" :user="$user"></x-header>
+            <x-header :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" for="employees"></x-header>
 
             <main class="flex flex-col w-full items-center pb-8">
 
@@ -23,15 +23,13 @@
                 </div>
 
                 @if (isset($employees) ? $employees->count() : null)
-                    <x-index-grid :employees="$employees"></x-employees-grid>
+                    <x-index-grid :employees="$employees" for="employees"></x-employees-grid>
 
                         {{ $employees->links() }}
                         <div class="h-12 w-full"></div> {{-- Spacer --}}
                     @else
                         <p class="text-center">No employees yet. Please check back later.</p>
                 @endif
-
-                <x-footer />
 
             </main>
 

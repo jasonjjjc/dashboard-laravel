@@ -1,3 +1,5 @@
+
+
 <x-dropdown :companies="$companies" :currentCompany="isset($currentCompany) ? $currentCompany : null" menuWidth="100%">
 
     <x-slot name="trigger">
@@ -10,11 +12,11 @@
     </x-slot>
 
 
-    <x-dropdown-item href="/?{{ http_build_query(request()->except('company', 'page')) }}" class="{{ isset($currentCompany) ? '' : 'bg-blue-500 text-white' }}">All
+    <x-dropdown-item href="/employees{{ http_build_query(request()->except('company', 'page')) }}" class="{{ isset($currentCompany) ? '' : 'bg-blue-500 text-white' }}">All
         Companies</x-dropdown-item>
 
     @foreach ($companies as $company)
-        <x-dropdown-item href="/?company={{ $company->slug }}&{{ http_build_query(request()->except('company', 'page')) }}" :active="isset($currentCompany) && $currentCompany->is($company)">{{ ucwords($company->name) }}
+        <x-dropdown-item href="/employees?company={{ $company->slug }}&{{ http_build_query(request()->except('company', 'page')) }}" :active="isset($currentCompany) && $currentCompany->is($company)">{{ ucwords($company->name) }}
         </x-dropdown-item>
     @endforeach
 </x-dropdown>

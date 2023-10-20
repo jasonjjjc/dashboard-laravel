@@ -13,6 +13,8 @@
                     <h1 class="text-2xl py-8">
                         All <span class="text-blue-500">{{ $currentCompany ? ucwords($currentCompany->name) : '' }}</span> Employees
                     </h1>
+
+                    <p class="hidden md:block text-xs">Select an employee to {{ request()->is('admin/employees') ? 'edit' : 'view' }} their profile.</p>
                     @auth
                         @if (auth()->user()->is_admin == 1)
                             <a href="admin/employees/create"

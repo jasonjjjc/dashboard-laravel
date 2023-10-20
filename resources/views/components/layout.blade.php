@@ -49,6 +49,7 @@
                                 <x-dropdown-item href="/companies" :active="request()->is('companies')">All Companies</x-dropdown-item>
 
                                 @if (auth()->user()->is_admin)
+
                                     <x-dropdown-item href="/admin/employees/create" :active="request()->is('admin/employees/create')">
                                         Add Employee
                                     </x-dropdown-item>
@@ -56,6 +57,11 @@
                                     <x-dropdown-item href="/admin/companies/create" :active="request()->is('admin/companies/create')">
                                         Add Company
                                     </x-dropdown-item>
+
+                                    <x-dropdown-item href="/admin/employees" :active="request()->is('admin/employees')">
+                                        Edit Employees
+                                    </x-dropdown-item>
+
                                 @endif
 
                             </x-dropdown>

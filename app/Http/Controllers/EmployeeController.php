@@ -42,7 +42,7 @@ class EmployeeController extends Controller
         $attributes = request()->validate([
             'name' => 'required',
             'email' => ['required', Rule::unique('employees', 'email'), 'email'],
-            'phone' => ['required', 'numeric', 'digits:11', Rule::unique('employees', 'phone')],
+            'phone' => ['required', 'string', 'max:20', Rule::unique('employees', 'phone')],
             'image' => 'required|image',
             'job_title' => ['required', 'min:3'],
             'address' => ['required', 'min:8'],
@@ -82,18 +82,23 @@ class EmployeeController extends Controller
     {
         // Validate incoming data
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'company' => 'required|string|max:255',
-            'description' => 'required|string',
+            'name' => 'required',
+            'email' => ['required', Rule::unique('employees', 'email')->ignore($employee->id), 'email'],
+            'phone' => ['required', 'string', 'max:20', Rule::unique('employees', 'phone')->ignore($employee->id)],
+            'job_title' => ['required', 'min:3'],
+            'address' => ['required', 'min:8'],
+            'description' => 'required',
+            'company_id' => ['required', Rule::exists('companies', 'id')]
         ]);
-
-        // Check if the company exists. If not, create it.
-        $company = Company::firstOrCreate(['name' => $validatedData['company']]);
 
         // Update the employee's data
         $employee->update([
             'name' => $validatedData['name'],
-            'company_id' => $company->id,
+            'email' => $validatedData['email'],
+            'company_id' => $validatedData['company_id'],
+            'job_title' => $validatedData['job_title'],
+            'phone' => $validatedData['phone'],
+            'address' => $validatedData['address'],
             'description' => $validatedData['description'],
         ]);
 
@@ -102,10 +107,9 @@ class EmployeeController extends Controller
     }
 
 
-
     public function updateImage(Request $request, Employee $employee)
     {
-        $request->validate(['image' => 'required|image']);
+        $request->validate(['image' => 'image']);
 
         // Get the old image path before updating
         $oldImagePath = $employee->image;

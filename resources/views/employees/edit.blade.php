@@ -61,9 +61,6 @@
                 @endforeach
             </div>
 
-            <!-- Testimonials -->
-            <x-testimonials :employee="$employee" />
-
         </article>
 
         <!-- Right Edit Form Section for Larger Screens -->
@@ -76,27 +73,32 @@
 
             <!-- Name Input -->
 
-
-            <input type="text" name="name" value="{{ $employee->name }}" placeholder="Employee Name"
-                class="border rounded-md px-4 py-2 mb-2">
-            @error('name')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <input type="text" name="name" value="{{ $employee->name }}" placeholder="Employee Name"
+                    class="border rounded-md px-4 py-2 mb-2">
+                @error('name')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
 
             <!-- Company Input -->
-            <input type="text" name="company" value="{{ optional($employee->company)->name }}"
-                placeholder="Company Name" class="border rounded-md px-4 py-2 mb-2">
-            @error('company')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <input type="text" name="company" value="{{ optional($employee->company)->name }}"
+                    placeholder="Company Name" class="border rounded-md px-4 py-2 mb-2">
+                @error('company')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
 
             <!-- Description Input -->
-            <textarea name="description" rows="4" class="border rounded-md px-4 py-2 mb-2">{{ $employee->description }}</textarea>
-            @error('description')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <textarea name="description" rows="4" class="border rounded-md px-4 py-2 mb-2">{{ $employee->description }}</textarea>
+                @error('description')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
             <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save
                 Changes</button>
@@ -109,24 +111,33 @@
             @method('PUT')
 
             <!-- Name Input -->
-            <input type="text" name="name" value="{{ $employee->name }}" placeholder="Employee Name"
-                class="border rounded-md px-4 py-2 mb-2">
-            @error('name')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="{{ $employee->name }}" placeholder="Employee Name"
+                    class="border rounded-md px-4 py-2 mb-2">
+                @error('name')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
             <!-- Company Input -->
-            <input type="text" name="company" value="{{ $employee->company->name ?? '' }}"
-                placeholder="Company Name" class="border rounded-md px-4 py-2 mb-2">
-            @error('company')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <label for="company">Company</label>
+                <input type="text" name="company" value="{{ $employee->company->name ?? '' }}"
+                    placeholder="Company Name" class="border rounded-md px-4 py-2 mb-2">
+                @error('company')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
             <!-- Description Input -->
-            <textarea name="description" rows="4" class="border rounded-md px-4 py-2 mb-2">{{ $employee->description }}</textarea>
-            @error('description')
-                <p class="text-red-500 text-sm">{{ $message }}</p>
-            @enderror
+            <div class="flex flex-col">
+                <label for="description">Description</label>
+                <textarea name="description" rows="4" class="border rounded-md px-4 py-2 mb-2">{{ $employee->description }}</textarea>
+                @error('description')
+                    <p class="text-red-500 text-sm">{{ $message }}</p>
+                @enderror
+            </div>
 
 
             <button type="submit" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save

@@ -82,23 +82,26 @@ class EmployeeController extends Controller
     {
         // Validate incoming data
         $validatedData = $request->validate([
-            'image' => 'sometimes|required|string',
             'name' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'description' => 'required|string',
         ]);
 
+        // Check if the company exists. If not, create it.
+        $company = Company::firstOrCreate(['name' => $validatedData['company']]);
+
         // Update the employee's data
         $employee->update([
-            'image' => $validatedData['image'],
             'name' => $validatedData['name'],
-            'company' => $validatedData['company'],
+            'company_id' => $company->id,
             'description' => $validatedData['description'],
         ]);
 
-        // Redirect with a success message
-        return redirect()->route('admin.employees', $employee)->with('success', 'Employee details updated successfully!');
+        // Redirect back to the form page with a success message
+        return redirect()->back()->with('success', 'Employee details updated successfully!');
     }
+
+
 
     public function updateImage(Request $request, Employee $employee)
     {

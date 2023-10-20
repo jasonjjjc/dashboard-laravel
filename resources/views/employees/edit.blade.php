@@ -1,10 +1,10 @@
 <x-layout>
     <main class="max-w-2xl mt-6 mx-auto flex flex-col md:flex-row">
-
         <!-- Left Content Section -->
-        <article class="flex-1 flex flex-col items-start gap-6 p-4 pr-8 rounded-sm ">
+        <article class="flex-1 flex flex-col items-start gap-6 pr-8 rounded-sm ">
+            <a href="/admin/employees" class="text-blue-500 font-semibold py-2 text-sm hover:text-blue-600">Back to all employees</a>
 
-            <h1 class="text-lg font-bold">Edit Employee</h1>
+            <h1 class="text-2xl">Edit Employee</h1>
 
             <!-- Image and Edit Button -->
             <img src="{{ asset('storage/' . $employee->image) }}" alt="" class="rounded-xl w-full max-w-sm">
@@ -129,7 +129,7 @@
 
         <!-- Form for Smaller Screens -->
         <form method="POST" action="/admin/employees/{{ $employee->slug }}"
-            class="flex-1 flex flex-col gap-6 p-4 md:hidden">
+            class="flex-1 flex flex-col gap-6 mt-8 p-4 md:hidden">
 
             @csrf
             @method('PUT')

@@ -12,9 +12,8 @@
                 </h1>
 
             </a>
-            <h2 class="absolute top-2 right-2 flex justify-center md:w-40">
-                <x-link-button :company="$employee->company" />
-
+            <h2 class="absolute top-3 right-4 flex justify-center md:w-32">
+                <x-link-button :employeeCompany="$employee->company" />
             </h2>
         </div>
 
@@ -34,7 +33,7 @@
 
             </a>
             <h2 class="absolute top-3 right-2 flex justify-center md:w-40">
-                <x-link-button :website="$company->website" />
+                <x-link-button :company="$company" />
 
             </h2>
         </div>

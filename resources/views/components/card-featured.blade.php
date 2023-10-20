@@ -11,9 +11,7 @@
                 </h1>
 
             </a>
-            <h2 class="absolute top-3 right-4 flex justify-center md:w-32">
-                <x-link-button :employeeCompany="$employee->company" :employee="$employee"/>
-            </h2>
+
         </div>
 
 

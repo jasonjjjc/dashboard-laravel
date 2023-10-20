@@ -16,7 +16,7 @@
                         <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                     </label>
 
-                    <input id="email" name="email" type="text" placeholder="Your email address"
+                    <input id="email" name="email" type="text" placeholder="Enter your email address here"
                         class="w-full p-3 rounded-md border border-blue-500 focus:outline-blue-500">
 
                 </div>

@@ -60,7 +60,7 @@ class EmployeeController extends Controller
 
         $attributes['slug'] = $slug;
         $attributes['user_id'] = auth()->id();
-        $attributes['image'] = request()->file('image')->store('images', 'public');
+        $attributes['image'] = request()->file('image')->store('images/employees', 'public');
 
         try {
             Employee::create($attributes);

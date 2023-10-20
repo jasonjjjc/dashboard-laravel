@@ -46,7 +46,7 @@ class CompanyController extends Controller
         }
 
         $attributes['slug'] = $slug;
-        $attributes['logo'] = request()->file('logo')->store('images', 'public');
+        $attributes['logo'] = request()->file('logo')->store('images/companies', 'public');
 
         try {
             Company::create($attributes);

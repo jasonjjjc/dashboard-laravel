@@ -1,7 +1,7 @@
 <x-layout>
     <main class="max-w-xl mt-6 mx-auto">
         <article class="flex flex-col items-center gap-6">
-            <img src="{{asset('storage/' . $employee->image) }}" alt="" class="rounded-xl">
+            <img src="{{asset('storage/' . $employee->image) }}" alt="" class="rounded-xl max-w-sm">
 
             <p class="text-gray-400 text-xs">
                 Added <time>{{ $employee->created_at->diffForHumans() }}</time>

@@ -11,7 +11,7 @@
 
                 <div class="flex items-center justify-between w-full max-w-2xl">
                     <h1 class="text-2xl py-8">
-                        All <span class="text-blue-500">{{ $currentCompany ? $currentCompany->name : '' }}</span> Employees
+                        All <span class="text-blue-500">{{ $currentCompany ? ucwords($currentCompany->name) : '' }}</span> Employees
                     </h1>
                     @auth
                         @if (auth()->user()->is_admin == 1)

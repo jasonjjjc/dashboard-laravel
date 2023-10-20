@@ -28,34 +28,37 @@ class CompanyController extends Controller
     }
 
     public function store()
-    {
-        $attributes = request()->validate([
-            'name' => 'required',
-            'email' => ['required', Rule::unique('companies', 'email'), 'email'],
-            'logo' => 'required|image',
-            'website' => ['required', 'url'],
-            'summary' => ['required', 'min:10', 'max:255'],
-            'description' => 'required',
-        ]);
+{
+    $attributes = request()->validate([
+        'name' => 'required',
+        'email' => ['required', Rule::unique('companies', 'email'), 'email'],
+        'logo' => 'required|image|dimensions:min_width=100,min_height=100',
+        'website' => ['required', 'url'],
+        'summary' => ['required', 'min:10', 'max:255'],
+        'description' => 'required',
+    ]);
 
-        $slug = Str::slug(request('name'));
-        $slugExists = Company::where('slug', $slug)->exists();
+    $slug = Str::slug(request('name'));
+    $slugExists = Company::where('slug', $slug)->exists();
 
-        if ($slugExists) {
-            return redirect('/admin/companies/create')->with('error', 'Company with similar name already exists. Please choose a different name.')->withInput();
-        }
-
-        $attributes['slug'] = $slug;
-        $attributes['logo'] = request()->file('logo')->store('images/companies', 'public');
-
-        try {
-            Company::create($attributes);
-            return redirect('/companies')->with('success', 'Company created successfully!');
-        } catch (\Exception $e) {
-            \Log::error($e->getMessage());
-
-            return redirect('/admin/companies/create')->with('error', 'Company not created!')->withInput();
-        }
+    if ($slugExists) {
+        return redirect('/admin/companies/create')->with('error', 'Company with similar name already exists. Please choose a different name.')->withInput();
     }
+
+    $attributes['slug'] = $slug;
+    $attributes['logo'] = request()->file('logo')->store('images/companies', 'public');
+
+    try {
+
+        Company::create($attributes);
+        return redirect('/companies')->with('success', 'Company created successfully!');
+    
+    } catch (\Exception $e) {
+    
+        return redirect('/admin/companies/create')->with('error', 'Company not created!')->withInput();
+    
+    }
+}
+
 
 }

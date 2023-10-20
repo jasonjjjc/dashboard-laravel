@@ -12,8 +12,8 @@
                 @csrf
 
                 <div class=" flex items-center">
-                    <label for="email" class="hidden lg:inline-block mr-4">
-                        <img src="/images/mailbox-icon.svg" alt="mailbox letter">
+                    <label for="email" class="hidden mr-4">
+                        Email Address
                     </label>
 
                     <input id="email" name="email" type="text" placeholder="Enter your email address here"

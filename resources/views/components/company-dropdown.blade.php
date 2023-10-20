@@ -4,7 +4,7 @@
 
     <x-slot name="trigger">
         <button
-            class="pl-3 py-2 pr-2 w-full flex justify-between text-blue-500 hover:text-blue-600">{{ isset($currentCompany) ? $currentCompany->name : 'Filter by company' }}
+            class="pl-3 py-2 pr-2 w-full flex justify-between text-blue-500 hover:text-blue-600">{{ isset($currentCompany) ? ucwords($currentCompany->name) : 'Filter by company' }}
 
             <x-down-arrow class="pointer-events-none"></x-down-arrow>
 

@@ -2,7 +2,7 @@
     <main class="max-w-2xl mt-6 mx-auto flex flex-col md:flex-row">
 
         <!-- Left Content Section -->
-        <article class="flex-1 flex flex-col items-start gap-6 p-4">
+        <article class="flex-1 flex flex-col items-start gap-6 p-4 pr-8">
 
             <!-- Image and Edit Button -->
             <img src="{{ asset('storage/' . $employee->image) }}" alt="" class="rounded-xl w-full max-w-sm">
@@ -65,7 +65,7 @@
 
         <!-- Right Edit Form Section for Larger Screens -->
         <form method="POST" action="/admin/employees/{{ $employee->slug }}"
-            class="flex-1 flex flex-col gap-6 pl-4 hidden md:block">
+            class="flex-1 flex-col justify-center gap-6 pl-8 hidden md:flex border-l border-gray-100">
 
             @csrf
 

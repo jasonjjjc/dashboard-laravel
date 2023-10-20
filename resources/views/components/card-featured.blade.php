@@ -55,7 +55,7 @@
 
             </a>
             <h2 class="absolute top-3 right-2 flex justify-center md:w-40">
-                <x-link-button :company="$company" :employee="$employee"/>
+                <x-link-button :company="$company"/>
 
             </h2>
         </div>

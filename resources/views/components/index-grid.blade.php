@@ -10,14 +10,14 @@
 @else
     @if ($for == 'companies')
 
-        @if ($companies->count() > 0)
-            <div class="flex flex-col gap-4 w-full">
-                @foreach ($companies as $company)
-                    <x-card-featured :company="$company" />
-                @endforeach
-            </div>
-        @endif
+
+        <div class="flex flex-col gap-4 w-full">
+            @foreach ($companies as $company)
+                <x-card-featured :company="$company" />
+            @endforeach
+        </div>
+
 
     @endif
-    
+
 @endif

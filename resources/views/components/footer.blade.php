@@ -4,25 +4,27 @@
     <p class="text-sm mt-4">We promise to keep the inbox clean. No bugs.</p>
 
     <div class="mt-4">
-        <div class="flex justify-center">
+        <div class="flex flex-col items-center gap-6 max-w-md mx-auto">
 
-            <form id="newsletter" method="POST" action="/newsletter"
-                class="relative flex flex-col w-full gap-4 text-sm max-w-md">
+            <form id="newsletterForm" method="POST" action="/newsletter"
+                class="relative flex flex-col w-full gap-6 text-sm">
 
                 @csrf
 
-                <div class=" flex items-center">
-                    <label for="email" class="hidden mr-4">
+                <div class="relative flex items-center">
+                    <label for="newsletter-email" class="sr-only mr-4">
                         Email Address
                     </label>
 
-                    <input id="email" name="email" type="text" placeholder="Enter your email address here"
+                    <input id="newsletterEmail" name="newsletter-email" type="text"
+                        placeholder="Enter your email address here"
                         class="w-full p-3 rounded-md border border-blue-500 focus:outline-blue-500">
 
+                    @error('newsletter-email', 'newsletter')
+                        <p class="absolute top-full text-red-500 text-xs mt-1">{{ $message }}</p>
+                    @enderror
+
                 </div>
-                @error('email')
-                    <p class="absolute top-full text-red-500 text-xs mt-1">{{ $message }}</p>
-                @enderror
 
                 <button type="submit"
                     class="w-full bg-blue-500 py-3 rounded-md text-white hover:text-blue-300 hover:bg-blue-600 font-bold">

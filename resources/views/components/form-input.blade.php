@@ -8,6 +8,7 @@
 ])
 
 <div class="relative">
+    <label for="{{ $id }}" class="absolute bottom-full left-0 text-xs text-gray-500">{{ $placeholder }}<span class="text-red-500"> *</span></label>
     <input 
         type="{{ $type }}" 
         id="{{ $id }}" 

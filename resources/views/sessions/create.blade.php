@@ -4,7 +4,7 @@
 
         <div class="flex flex-col items-center py-20">
             <header class="flex flex-col justify-center items-center">
-                <h1 class="self-center font-bold text-xl pb-8">Login</h1>
+                <h1 class="self-center font-bold text-xl pb-4">Login</h1>
             </header>
 
             <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full ">

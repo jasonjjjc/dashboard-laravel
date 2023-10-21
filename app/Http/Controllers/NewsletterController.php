@@ -8,7 +8,7 @@ class NewsletterController extends Controller
 {
     public function __invoke()
     {
-        request()->validate(['email' => 'required|email']);
+        request()->validate(['newsletter-email' => 'required|email']);
         $mailchimp = new \MailchimpMarketing\ApiClient();
 
         $mailchimp->setConfig([
@@ -18,14 +18,16 @@ class NewsletterController extends Controller
         try {
             // 0571c59f3b is the ID on the Mailchimp API for the newsletter list
             $response = $mailchimp->lists->addListMember('0571c59f3b', [
-                'email_address' => request('email'),
+                'email_address' => request('newsletter-email'),
                 'status' => 'subscribed',
             ]);
 
-            return redirect('/')->with('success', 'You are now signed up for our newsletter!');
+            return back()->with('success', 'You are now signed up for our newsletter!');
         } catch (\Exception $e) {
             return redirect('/#newsletter')->withErrors([
-                'email' => 'This email could not be added to our newsletter list.'
+                'newsletter' => [
+                'newsletter-email' => 'This email could not be added to our newsletter list.'
+                ]
             ]);
         }
     }

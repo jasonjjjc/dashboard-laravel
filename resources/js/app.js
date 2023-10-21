@@ -3,17 +3,17 @@ import "./bootstrap";
 const registerForm = document.getElementById("register-form");
 const registerFormInputs = document.getElementById("register-form-inputs");
 const errorContainer = document.getElementById("error-container");
+const errorDiv = document.createElement("div");
 
 // Regular expression for email validation
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Function to display validation error messages below the input fields
-function showValidationError(message) {
-    const errorDiv = document.createElement("div");
+function makeErrorDiv(message) {
     errorDiv.className = "validation-error";
     errorDiv.classList.add("text-sm", "text-red-500", "w-full", "bottom-0");
     errorDiv.textContent = message;
-    errorContainer.appendChild(errorDiv);
+    return errorDiv;
 }
 
 // Function to remove validation error messages
@@ -35,6 +35,8 @@ if (registerForm) {
 
         // Get the values of the form fields
         const name = document.getElementById("name").value;
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
         const passwordConfirm =
             document.getElementById("password-confirm").value;
@@ -51,6 +53,20 @@ if (registerForm) {
             errorMessages.push("Your name should have 3 or more characters.");
         }
 
+        if (username.trim() === "") {
+            errorMessages.push("Please enter a username.");
+        }
+
+        if (username.trim().length < 3) {
+            errorMessages.push(
+                "Your username should have 3 or more characters."
+            );
+        }
+
+        if (!emailRegex.test(email)) {
+            errorMessages.push("Please enter a valid email address.");
+        }
+
         if (password.trim() === "" || passwordConfirm.trim() === "") {
             errorMessages.push("Please enter a password.");
         }
@@ -65,13 +81,47 @@ if (registerForm) {
 
         // Display all validation error messages
         errorMessages.forEach((message) => {
-            showValidationError(message);
+            const errorDiv = makeErrorDiv(message);
+            errorContainer.appendChild(errorDiv);
         });
 
         if (errorMessages.length === 0) {
             // If there are no validation errors, submit the form
             registerFormInputs.classList.add("hidden");
             registerForm.submit();
+        }
+    });
+}
+
+
+// Newsletter Form 
+
+// validate the email address and submit if validation is successful
+
+const newsletterForm = document.getElementById("newsletterForm");
+
+if (newsletterForm) {
+
+    newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("newsletterEmail").value;
+
+        const errorMessages = [];
+
+        if (!emailRegex.test(email)) {
+            errorMessages.push("Please enter a valid email address.");
+            
+            errorMessages.forEach((message) => {
+                makeErrorDiv(message);
+            });
+
+            newsletterForm.appendChild(errorDiv);
+        }
+
+
+        if (errorMessages.length === 0) {
+            newsletterForm.submit();
         }
     });
 }

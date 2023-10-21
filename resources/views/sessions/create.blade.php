@@ -10,19 +10,11 @@
             <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full ">
                 @csrf
                 <div id="register-form-inputs" class="relative flex flex-col gap-10 w-full max-w-md">
-                    <div class="relative">
-                        <input type="email" id="email" name="email" placeholder="Email*"
-                            value="{{ old('email') }}" required
-                            class="w-full px-4 py-2 rounded-sm border border-blue-500 focus:outline-blue-500" />
-                    </div>
-                    <div class="relative">
-                        <input type="password" id="password" name="password" placeholder="Password*" required
-                            class="w-full px-4 py-2 rounded-sm border border-blue-500 focus:outline-blue-500" />
-                    </div>
 
-                    @if ($errors->any())
-                        <p class="absolute top-full text-red-500 text-xs mt-6">{{ $errors->first() }}</p>
-                    @endif
+                        <x-form-input type="email" id="email" name="email" placeholder="Email*" required />
+                    
+
+                        <x-form-input type="password" id="password" name="password" placeholder="Password*" required />
 
                 </div>
                 <button id="register-form-submit" type="submit"

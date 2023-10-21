@@ -21,11 +21,11 @@
 <body style="font-family: Open Sans, sans-serif">
 
     <div class="px-4">
-        
+
         <section class="flex flex-col min-h-screen">
 
             <nav
-                class="flex items-center justify-between border-b border-gray-100 py-4 text-sm font-semibold text-blue-500">
+                class="absolute top-0 left-0 right-0 flex items-center justify-between border-b border-gray-100 p-4 text-sm font-semibold text-blue-500">
 
                 <div>
                     <a href="/">
@@ -49,7 +49,6 @@
                                 <x-dropdown-item href="/companies" :active="request()->is('companies')">All Companies</x-dropdown-item>
 
                                 @if (auth()->user()->is_admin)
-
                                     <x-dropdown-item href="/admin/employees/create" :active="request()->is('admin/employees/create')">
                                         Add Employee
                                     </x-dropdown-item>
@@ -61,7 +60,6 @@
                                     <x-dropdown-item href="/admin/employees" :active="request()->is('admin/employees')">
                                         Edit Employees
                                     </x-dropdown-item>
-
                                 @endif
 
                             </x-dropdown>
@@ -91,7 +89,10 @@
 
             </nav>
 
-            {{ $slot }}
+            <div class="flex-1 flex flex-col">
+                {{ $slot }}
+            </div>
+
         </section>
 
         <x-footer />

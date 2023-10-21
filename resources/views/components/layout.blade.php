@@ -89,8 +89,10 @@
 
             </nav>
 
-            <div class="flex-1 flex flex-col">
+            <div class="flex-1 flex flex-col {{ !request()->is('/', 'register', 'login') ? 'pt-20' : '' }}">
+
                 {{ $slot }}
+
             </div>
 
         </section>

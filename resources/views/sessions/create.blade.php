@@ -1,9 +1,6 @@
 <x-layout>
 
-
-    {{-- extra padding top and bottom to prevent overlap of navbar on extra small screens and maintain centralisation --}}
-
-    <section class="flex-1 flex flex-col justify-center py-20">
+    <section class="flex-1 flex flex-col justify-center">
 
             <header class="flex flex-col justify-center items-center">
                 <h1 class="self-center font-bold text-xl py-4">Login</h1>

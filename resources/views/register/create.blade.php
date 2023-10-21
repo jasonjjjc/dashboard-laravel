@@ -1,11 +1,15 @@
 <x-layout>
 
-        <div class="flex-1 flex flex-col justify-center">
-            <h1 class="text-center font-bold text-xl py-4">Register</h1>
+    <section class="flex-1 flex flex-col justify-center">
+        <div class="flex flex-col items-center py-20">
+
+            <h1 class="text-center font-bold text-xl pb-8">Register</h1>
 
             <form id="register-form" method="POST" action="/register" class="flex flex-col items-center gap-16 w-full">
                 @csrf
                 <div id="register-form-inputs" class="relative flex flex-col gap-6 w-full max-w-md">
+                    
+                    
                     <input type="text" id="name" name="name" placeholder="Name*" value="{{ old('name') }}"
                         required class="flex-1 px-4 py-2 rounded-sm border border-blue-500 focus:outline-blue-500" />
                     @error('name')
@@ -40,5 +44,6 @@
                     class="w-full max-w-md bg-blue-500 text-white py-2 px-4 rounded-md">Submit</button>
             </form>
         </div>
+    </section>
 
 </x-layout>

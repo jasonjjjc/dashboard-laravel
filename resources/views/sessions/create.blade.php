@@ -2,8 +2,9 @@
 
     <section class="flex-1 flex flex-col justify-center">
 
+        <div class="flex flex-col items-center py-20">
             <header class="flex flex-col justify-center items-center">
-                <h1 class="self-center font-bold text-xl py-4">Login</h1>
+                <h1 class="self-center font-bold text-xl pb-8">Login</h1>
             </header>
 
             <form id="login-form" method="POST" action="/sessions" class="flex flex-col items-center gap-16 w-full ">
@@ -27,7 +28,7 @@
                 <button id="register-form-submit" type="submit"
                     class="w-full max-w-md bg-blue-500 text-white py-2 px-4 rounded-md">Login</button>
             </form>
-
+        </div>
     </section>
 
 </x-layout>

@@ -1,7 +1,7 @@
 <x-layout>
 
         <main class="flex flex-1 flex-col items-center justify-center w-full">
-            <div class="space-y-6">
+            <div class="space-y-6 py-20">
                 <div class="flex flex-col gap-2 items-center">
                     <p class="font-bold text-4xl">{{ auth()->check() ? "Start your" : "Welcome to" }}</p>
                     <p class="font-bold text-6xl">JobStack</p>

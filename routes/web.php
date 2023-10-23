@@ -47,6 +47,7 @@ Route::post('admin/companies', [CompanyController::class, 'store'])->middleware(
 Route::get('admin/companies/{company:slug}/edit', [CompanyController::class, 'edit'])->middleware('admin');
 Route::put('admin/companies/{company:slug}', [CompanyController::class, 'update'])->middleware('admin');
 Route::patch('admin/companies/{company:slug}/image', [CompanyController::class, 'updateImage'])->middleware('admin');
+Route::delete('admin/companies/{company:slug}', [CompanyController::class, 'destroy'])->middleware('admin');
 
 
 

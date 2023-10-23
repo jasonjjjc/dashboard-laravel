@@ -7,7 +7,7 @@
 
             <div class="flex flex-col gap-6">
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="name">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="name">
                         Name
                     </label>
 
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="email">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="email">
                         Email
                     </label>
 
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="phone">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="phone">
                         Phone
                     </label>
 
@@ -49,7 +49,7 @@
 
 
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="image">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="image">
                         Image
                     </label>
 
@@ -62,7 +62,7 @@
                     @enderror
                 </div>
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="job_title">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="job_title">
                         Job Title
                     </label>
 
@@ -75,7 +75,7 @@
                     @enderror
                 </div>
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="address">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="address">
                         Address
                     </label>
 
@@ -88,7 +88,7 @@
                     @enderror
                 </div>
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="summary">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="summary">
                         Summary
                     </label>
 
@@ -101,7 +101,7 @@
                 </div>
 
                 <div class="relative">
-                    <label class="hidden block mb-2 uppercase font-bold text-xs text-gray-700" for="description">
+                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="description">
                         Description
                     </label>
 

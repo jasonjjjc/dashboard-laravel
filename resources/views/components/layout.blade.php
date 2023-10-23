@@ -60,6 +60,10 @@
                                     <x-dropdown-item href="/admin/employees" :active="request()->is('admin/employees')">
                                         Edit Employees
                                     </x-dropdown-item>
+
+                                    <x-dropdown-item href="/admin/companies" :active="request()->is('admin/companies')">
+                                        Edit Companies
+                                    </x-dropdown-item>
                                 @endif
 
                             </x-dropdown>

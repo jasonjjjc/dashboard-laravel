@@ -9,7 +9,7 @@
 
                 @csrf
 
-                <div id="register-form-inputs" class="relative flex flex-col gap-6 w-full max-w-md py-6">
+                <div id="register-form-inputs" class="relative flex flex-col gap-10 w-full max-w-md py-6">
 
                     <x-form-input type="text" id="name" name="name" value="{{ old('name') }}" labelText="name" required />
 

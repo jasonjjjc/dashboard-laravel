@@ -12,8 +12,13 @@
                 <div class="flex items-center justify-between w-full max-w-2xl">
                     <div class="flex flex-col py-4">
                         <h1 class="text-2xl">
-                            All Companies
+                            @if(request('search'))
+                                All companies matching "{{ request('search') }}"
+                            @else
+                                All Companies
+                            @endif
                         </h1>
+                        
                         <p class="pt-2 text-xs">Select a company to view their employees.</p>
                     </div>
                     @auth

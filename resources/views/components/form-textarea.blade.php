@@ -1,7 +1,7 @@
 @props(['required' => false, 'value' => '', 'name', 'labelText', 'rows' => 3])
 
 <div class="relative">
-    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="{{ $name }}">
+    <label class="absolute bottom-full left-0 block uppercase font-bold text-xs text-gray-700" for="{{ $name }}">
         {{ ucfirst($labelText) }}<span class="text-red-500">{{ $required ? ' *' : '' }}</span>
     </label>
 

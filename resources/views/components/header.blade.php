@@ -6,15 +6,22 @@
         <p class="text-lg">Search</p>
 
         <div class="flex flex-col gap-4 border-b border-gray-100 max-w-lg w-full">
-            <form method="GET" action="/{{ $for }}" class="flex flex-1 rounded-md">
+            <form method="GET" action="/{{ request()->path() }}" class="flex flex-1 rounded-md">
+
 
                 @if (request('company'))
                     <input type="hidden" name="company" value="{{ request('company') }}">
                 @endif
 
-                <input type="text" name="search" placeholder="Find {{ request()->is('companies') ? 'a company' : 'an employee' }}"
+                <input type="text" name="search"
+                    placeholder="Find {{ request()->is('companies') || request()->is('admin/companies')
+                        ? 'a company'
+                        : (request()->is('employees') || request()->is('admin/employees')
+                            ? 'an employee'
+                            : '') }}"
                     class="flex-1 rounded-tl-md rounded-bl-md border border-blue-500 bg-transparent placeholder-blue-500 font-semibold text-sm px-3 py-2 focus:outline-blue-500"
                     value="{{ request('search') }}" />
+
 
 
                 <button type="submit"

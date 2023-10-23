@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
+
+    // Display all employees
+    
     public function index()
     {
         return view('employees.index', [
@@ -22,6 +25,8 @@ class EmployeeController extends Controller
         ]);
     }
 
+    // Display the details for one employee
+
     public function show(Employee $employee)
     {
         return view('employees.show', [
@@ -29,12 +34,16 @@ class EmployeeController extends Controller
         ]);
     }
 
+    // Access the page for creating a new employee
+
     public function create()
     {
         return view('employees.create', [
             'companies' => Company::all()
         ]);
     }
+
+    // Save employee details
 
     public function store()
     {
@@ -78,6 +87,8 @@ class EmployeeController extends Controller
         ]);
     }
 
+    // Update employee details
+
     public function update(Request $request, Employee $employee)
     {
         // Validate incoming data
@@ -106,6 +117,7 @@ class EmployeeController extends Controller
         return redirect()->back()->with('success', 'Employee details updated successfully!');
     }
 
+    // Update employee image separately to avoid updating the image when updating other employee details
 
     public function updateImage(Request $request, Employee $employee)
     {
@@ -131,5 +143,13 @@ class EmployeeController extends Controller
         } else {
             return redirect()->back()->with('error', 'Employee image not updated!');
         }
+    }
+
+    // delete employee
+
+    public function destroy(Employee $employee)
+    {
+        $employee->delete();
+        return redirect('/admin/employees')->with('success', 'Employee deleted successfully!');
     }
 }

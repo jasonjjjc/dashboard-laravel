@@ -44,6 +44,9 @@ Route::get('companies', [CompanyController::class, 'index']);
 Route::get('admin/companies', [CompanyController::class, 'index'])->middleware('admin');
 Route::get('admin/companies/create', [CompanyController::class, 'create'])->middleware('admin');
 Route::post('admin/companies', [CompanyController::class, 'store'])->middleware('admin');
+Route::get('admin/companies/{company:slug}/edit', [CompanyController::class, 'edit'])->middleware('admin');
+Route::put('admin/companies/{company:slug}', [CompanyController::class, 'update'])->middleware('admin');
+Route::patch('admin/companies/{company:slug}/image', [CompanyController::class, 'updateImage'])->middleware('admin');
 
 
 

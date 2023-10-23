@@ -1,6 +1,6 @@
 {{-- if on admin pages the button submits a delete request for that employee --}}
 
-@if (isset($employee) && request()->is('admin/employees'))
+@if (isset($employee) && request()->is('admin/*'))
     <form id="deleteForm" method="POST" action="/admin/employees/{{ $employee->slug }}">
         @csrf
         <input type="hidden" name="_method" value="DELETE">

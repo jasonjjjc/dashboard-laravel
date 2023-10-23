@@ -9,7 +9,7 @@
 ])
 
 <div class="relative">
-    <label for="{{ $id }}" class="absolute bottom-full left-0 uppercase font-bold text-xs text-gray-700">{{ ucwords($labelText ?? str_replace('_', ' ', $name)) }}<span class="text-red-500"> *</span></label>
+    <label for="{{ $id }}" class="absolute bottom-full left-0 uppercase font-bold text-xs text-gray-700">{{ ucwords($labelText ?? str_replace('_', ' ', $name)) }} <span class="text-red-500" >{{ $required == 'true' ? "*" : ""}} </span></label>
 
     <input 
         type="{{ $type }}" 

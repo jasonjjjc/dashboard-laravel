@@ -6,130 +6,31 @@
             @csrf
 
             <div class="flex flex-col gap-6">
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="name">
-                        Name
-                    </label>
+                <x-form-input type="text" id="name" name="name" placeholder="" :value="old('name')"
+                    labeltext="Name" required="true" />
 
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="name" id="name" placeholder="Enter name" value="{{ old('name') }}" required>
+                <x-form-input type="text" id="email" name="email" placeholder="" :value="old('email')"
+                    labeltext="Email" required="true" />
 
-                    @error('name')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form-input type="text" id="phone" name="phone" placeholder="" :value="old('phone')"
+                    labeltext="Phone" required="true" />
 
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="email">
-                        Email
-                    </label>
+                <x-form-input type="file" id="image" name="image" placeholder="" :value="old('image')"
+                    labeltext="Image" required="true" />
 
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="email" id="email" placeholder="Enter email" value="{{ old('email') }}"
-                        required>
+                <x-form-input type="text" id="job_title" name="job_title" placeholder="" :value="old('job_title')"
+                    labeltext="Job Title" required="true" />
 
-                    @error('email')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form-input type="text" id="address" name="address" placeholder="" :value="old('address')"
+                    labeltext="address" required="true" />
 
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="phone">
-                        Phone
-                    </label>
+                <x-form-textarea name="summary" labelText="Summary" :value="old('summary')" :required="true" />
 
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="phone" id="phone" placeholder="Enter phone" value="{{ old('phone') }}"
-                        required>
+                <x-form-textarea name="description" labelText="Description" :value="old('description')" :required="true"
+                    rows="5" />
 
-                    @error('phone')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="image">
-                        Image
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="file"
-                        name="image" id="image" placeholder="Add an image" value="{{ old('image') }}"
-                        required>
-
-                    @error('image')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="job_title">
-                        Job Title
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="job_title" id="job_title" placeholder="Enter job title"
-                        value="{{ old('job_title') }}" required>
-
-                    @error('job_title')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="address">
-                        Address
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="address" id="address" placeholder="Enter address" value="{{ old('address') }}"
-                        required>
-
-                    @error('address')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="summary">
-                        Summary
-                    </label>
-
-                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="summary"
-                        id="summary" placeholder="Enter summary text" required>{{ old('summary') }}</textarea>
-
-                    @error('summary')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="description">
-                        Description
-                    </label>
-
-                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="description"
-                        id="description" placeholder="Enter description text" value="{{ old('description') }}" required>{{ old('description') }}</textarea>
-
-                    @error('description')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="-mb-5 uppercase font-bold text-xs text-gray-700" for="company_id">Company</label>
-
-                    <select name="company_id" id="company_id"
-                        class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" required>
-                        <option value="">Select Company</option>
-                        @foreach ($companies as $company)
-                            <option value="{{ $company->id }}"
-                                {{ old('company_id') == $company->id ? 'selected' : '' }}>
-                                {{ ucwords($company->name) }}</option>
-                        @endforeach
-                    </select>
-
-                    @error('company')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form-select name="company_id" labelText="Company" :options="$companies" optionKey="id"
+                    optionValue="name" :selectedValue="old('company_id')" :required="true" />
 
                 @if (session('error'))
                     <x-flash-message success="error" message="{{ session('error') }}" />

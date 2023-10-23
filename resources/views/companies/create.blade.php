@@ -5,87 +5,21 @@
 
             @csrf
 
-            <div class="flex flex-col gap-6">
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="name">
-                        Name
-                    </label>
+            <div class="flex flex-col gap-10">
+                <x-form-input type="text" id="name" name="name" placeholder="" :value="old('name')"
+                    labeltext="Name" required="true" />
+                <x-form-input type="text" id="email" name="email" placeholder="" :value="old('email')"
+                    labeltext="Email" required="true" />
+                <x-form-input type="file" id="logo" name="logo" placeholder="" :value="old('logo')"
+                    labeltext="Logo" required="true" />
+                <x-form-input type="text" id="website" name="website" placeholder="" :value="old('website')"
+                    labeltext="Website" required="true" />
 
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="name" id="name" placeholder="" value="{{ old('name') }}" required>
+                <x-form-textarea name="summary" labelText="Summary" :value="old('summary')" :required="true" />
 
-                    @error('name')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form-textarea name="description" labelText="Description" :value="old('description')" :required="true"
+                    rows="5" />
 
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="email">
-                        Email
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="email" id="email" placeholder="" value="{{ old('email') }}"
-                        required>
-
-                    @error('email')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="logo">
-                        Logo
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="file"
-                        name="logo" id="logo" placeholder="" value="{{ old('logo') }}"
-                        required>
-
-                    @error('logo')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="website">
-                        Website
-                    </label>
-
-                    <input class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text"
-                        name="website" id="website" placeholder=""
-                        value="{{ old('website') }}" required>
-
-                    @error('website')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="summary">
-                        Summary
-                    </label>
-
-                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="summary"
-                        id="summary" placeholder="" required>{{ old('summary') }}</textarea>
-
-                    @error('summary')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="relative">
-                    <label class="block mb-1 uppercase font-bold text-xs text-gray-700" for="description">
-                        Description
-                    </label>
-
-                    <textarea class="border border-gray-200 rounded-sm p-2 w-full focus:outline-blue-500" type="text" name="description"
-                        id="description" placeholder="" value="{{ old('description') }}" rows=5 required>{{ old('description') }}</textarea>
-
-                    @error('description')
-                        <p class="absolute top-full text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
 
                 @if (session('error'))
                     <x-flash-message success="error" message="{{ session('error') }}" />

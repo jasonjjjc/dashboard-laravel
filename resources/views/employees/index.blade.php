@@ -22,7 +22,7 @@
                     </div>
                     @auth
                         @if (auth()->user()->is_admin == 1)
-                            <a href="admin/employees/create"
+                            <a href="/admin/employees/create"
                                 class="py-1 px-3 bg-blue-500 h-fit w-fit rounded-md text-sm text-white hover:bg-blue-600 hover:text-blue-300">Add</a>
                         @endif
                     @endauth

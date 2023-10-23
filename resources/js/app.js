@@ -93,15 +93,13 @@ if (registerForm) {
     });
 }
 
-
-// Newsletter Form 
+// Newsletter Form
 
 // validate the email address and submit if validation is successful
 
 const newsletterForm = document.getElementById("newsletterForm");
 
 if (newsletterForm) {
-
     newsletterForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -111,7 +109,7 @@ if (newsletterForm) {
 
         if (!emailRegex.test(email)) {
             errorMessages.push("Please enter a valid email address.");
-            
+
             errorMessages.forEach((message) => {
                 makeErrorDiv(message);
             });
@@ -119,9 +117,23 @@ if (newsletterForm) {
             newsletterForm.appendChild(errorDiv);
         }
 
-
         if (errorMessages.length === 0) {
             newsletterForm.submit();
         }
     });
 }
+
+// Employee Delete Confirmation Modal
+
+// Using the window object to expose the show and hide functions to the global scope
+
+window.confirmDelete = function() {
+    // Show the modal
+    document.getElementById("confirmModal").style.display = "block";
+};
+
+window.closeModal = function() {
+    // Close the modal
+    document.getElementById("confirmModal").style.display = "none";
+};
+

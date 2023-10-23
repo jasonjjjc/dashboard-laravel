@@ -18,7 +18,7 @@
         placeholder="{{ $placeholder }}"
         value="{{ $type !== 'password' ? (old($name) ?: $value) : '' }}" 
         {{ $required ? 'required' : '' }}
-        class="flex-1 px-4 py-2 rounded-sm border border-blue-500 focus:outline-blue-500 w-full" 
+        class="flex-1 px-4 py-2 rounded-md border border-blue-500 focus:outline-blue-500 w-full" 
     />
 
     @error($name)

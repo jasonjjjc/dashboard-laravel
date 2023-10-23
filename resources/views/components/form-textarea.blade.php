@@ -6,7 +6,7 @@
     </label>
 
     <textarea 
-        class="border border-blue-500 rounded-sm p-2 w-full focus:outline-blue-500"
+        class="border border-blue-500 rounded-md p-2 w-full focus:outline-blue-500"
         type="text"
         id="{{ $name }}"
         name="{{ $name }}"

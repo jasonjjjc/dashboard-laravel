@@ -4,11 +4,13 @@
     'name' => '',
     'placeholder' => '',
     'value' => '',
+    'labelText' => null,
     'required' => false,
 ])
 
 <div class="relative">
-    <label for="{{ $id }}" class="absolute bottom-full left-0 text-xs text-gray-500">{{ $placeholder }}<span class="text-red-500"> *</span></label>
+    <label for="{{ $id }}" class="absolute bottom-full left-0 text-xs text-gray-500">{{ ucwords($labelText ?? str_replace('_', ' ', $name)) }}<span class="text-red-500"> *</span></label>
+
     <input 
         type="{{ $type }}" 
         id="{{ $id }}" 

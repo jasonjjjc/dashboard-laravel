@@ -11,19 +11,16 @@
 
                 <div id="register-form-inputs" class="relative flex flex-col gap-6 w-full max-w-md py-6">
 
-                    <x-form-input type="text" id="name" name="name" placeholder="Name"
-                        value="{{ old('name') }}" required />
+                    <x-form-input type="text" id="name" name="name" value="{{ old('name') }}" labelText="name" required />
 
-                    <x-form-input type="text" id="username" name="username" placeholder="Username"
-                        value="{{ old('username') }}" required />
+                    <x-form-input type="text" id="username" name="username" value="{{ old('username') }}"
+                        labelText="username" required />
 
-                    <x-form-input type="text" id="email" name="email" placeholder="Email"
-                        value="{{ old('email') }}" required />
+                    <x-form-input type="text" id="email" name="email" value="{{ old('email') }}" labelText="email" required />
 
-                    <x-form-input type="password" id="password" name="password" placeholder="Password" required />
+                    <x-form-input type="password" id="password" name="password" labelText="password" required />
 
-                    <x-form-input type="password" id="password-confirm" name="password_confirmation"
-                        placeholder="Confirm password" required />
+                    <x-form-input type="password" id="password-confirm" name="password_confirmation" labelText="password confirmation" required />
 
                     <div id="error-container" class="py-2">
                         @if ($errors->any())

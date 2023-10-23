@@ -11,10 +11,10 @@
                 @csrf
                 <div id="register-form-inputs" class="relative flex flex-col gap-10 w-full max-w-md">
 
-                        <x-form-input type="email" id="email" name="email" placeholder="Email*" required />
+                        <x-form-input type="email" id="email" name="email" placeholder="" required />
                     
 
-                        <x-form-input type="password" id="password" name="password" placeholder="Password*" required />
+                        <x-form-input type="password" id="password" name="password" placeholder="" required />
 
                 </div>
                 <button id="register-form-submit" type="submit"

@@ -19,7 +19,7 @@
                             @endif
                         </h1>
                         
-                        <p class="pt-2 text-xs">Select a company to view their employees.</p>
+                        <p class="pt-2 text-xs">Select a company to {{ request()->is('admin/companies') ? 'edit their details.' : 'view their employees.'}}</p>
                     </div>
                     @auth
                         @if (auth()->user()->is_admin == 1)

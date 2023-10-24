@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-    <title>Laravel From Scratch Blog</title>
+    <title>JobStack - Laravel Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +29,7 @@
 
                 <div>
                     <a href="/">
-                        <img src="/Favicon.ico" alt="JobStack Logo" width="40" height="80">
+                        <img src="/icon.png" alt="JobStack Logo" width="40" height="80">
                     </a>
                 </div>
 

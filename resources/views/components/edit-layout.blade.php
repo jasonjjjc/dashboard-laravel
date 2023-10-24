@@ -18,21 +18,23 @@
 
             <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50"
                 style="background-color: rgba(0,0,0,0.5)">
-                <div class="bg-white p-6 rounded-lg">
+                <div class="bg-white p-6 rounded-lg flex flex-col gap-8">
                     <form method="POST"
                         action="/admin/{{ isset($employee) ? 'employees' : 'companies' }}/{{ isset($employee) ? $employee->slug : $company->slug }}/image"
-                        enctype="multipart/form-data">
+                        enctype="multipart/form-data"
+                        class="flex flex-col gap-8"
+                        >
                         @csrf
                         @method('PATCH')
                         <input type="file" name="image">
                         @error('image')
-                            <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
+                            <p class="bg-red-100 border border-red-400 text-red-700">{{ $message }}</p>
                         @enderror
                         <button type="submit"
-                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-2">Update
+                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Update
                             Image</button>
                     </form>
-                    <button @click="open = false" class="mt-2 text-red-500">Close</button>
+                    <button @click="open = false" class="text-red-500 bg-gray-100 py-2 rounded hover:bg-gray-200">Close</button>
                 </div>
             </div>
         </div>

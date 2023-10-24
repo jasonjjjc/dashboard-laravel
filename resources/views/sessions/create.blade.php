@@ -11,12 +11,22 @@
                 @csrf
                 <div id="register-form-inputs" class="relative flex flex-col gap-10 w-full max-w-md">
 
-                        <x-form-input type="email" id="email" name="email" placeholder="" required />
-                    
+                    <x-form-input type="email" id="email" name="email" placeholder="" required />
 
-                        <x-form-input type="password" id="password" name="password" placeholder="" required />
+
+                    <x-form-input type="password" id="password" name="password" placeholder="" required />
+
+                    @if (session('loginError'))
+                        <div
+                            class="absolute top-full mt-2 left-0 w-full max-w-md bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                            {{ session('loginError') }}
+                        </div>
+                    @endif
 
                 </div>
+
+
+
                 <button id="register-form-submit" type="submit"
                     class="w-full max-w-md bg-blue-500 text-white py-2 px-4 rounded-md">Login</button>
             </form>

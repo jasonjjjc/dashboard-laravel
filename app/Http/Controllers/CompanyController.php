@@ -30,7 +30,7 @@ class CompanyController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'name' => 'required',
+            'name' => ['required', Rule::unique('companies', 'name')],
             'email' => ['required', Rule::unique('companies', 'email'), 'email'],
             'logo' => 'required|image|dimensions:min_width=100,min_height=100',
             'website' => ['required', 'url'],

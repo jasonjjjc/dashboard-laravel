@@ -24,8 +24,8 @@
 
                     <div id="error-container" class="py-2">
                         @if ($errors->any())
-                            <div class="bg-red-500 text-white rounded-md">
-                                <h2 class="font-bold text-lg">Error</h2>
+                            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                                <h2 class="font-bold">Error</h2>
                                 <ul class="list-disc list-inside">
                                     @foreach ($errors->all() as $error)
                                         <li class="text-sm">{{ $error }}</li>

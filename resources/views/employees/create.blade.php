@@ -5,7 +5,7 @@
 
             @csrf
 
-            <div class="flex flex-col gap-6">
+            <div class="flex flex-col gap-10">
                 <x-form-input type="text" id="name" name="name" placeholder="" :value="old('name')"
                     labeltext="Name" required="true" />
 

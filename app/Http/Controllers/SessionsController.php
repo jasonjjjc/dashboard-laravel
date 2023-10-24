@@ -23,7 +23,7 @@ class SessionsController extends Controller
 
             return back()
             ->withInput()
-            ->withErrors(['email' => 'Your provided credentials could not be verified.', 'password' => 'Your provided credentials could not be verified.']);
+            ->with(['loginError' => 'Invalid login credentials.']);
 
         } else {
     

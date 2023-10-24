@@ -17,7 +17,7 @@
                 Image</button>
 
             <div x-show="open" class="fixed inset-0 flex items-center justify-center z-50"
-                style="background-color: rgba(0,0,0,0.5)">
+                style="background-color: rgba(0,0,0,0.5); display:none;">
                 <div class="bg-white p-6 rounded-lg flex flex-col gap-8">
                     <form method="POST"
                         action="/admin/{{ isset($employee) ? 'employees' : 'companies' }}/{{ isset($employee) ? $employee->slug : $company->slug }}/image"

@@ -1,9 +1,10 @@
-## JobStack
+# JobStack
 
-# Timeline
+## Timeline
 
 I created this project to learn laravel. I spent 3 weeks on it, mostly by myself but with huge help from my POD teammates whenever I was stuck.
 
+## The 4 L's
 
 Loved 
 Laravel and MVC - I enjoyed learning a real all-in-one stack where all the tools are engrained in the framework to make short work of routes, database, storage, authentication and environment variables. I loved being able to use OOP and MVC to organise everything in my project. It is the greatest gift to code that I have experienced. For the first time I was able to see the complexity of my project increase without becoming overwhelmed by the code.

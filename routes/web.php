@@ -41,6 +41,7 @@ Route::delete('admin/employees/{employee:slug}', [EmployeeController::class, 'de
 
 
 Route::get('companies', [CompanyController::class, 'index']);
+Route::get('companies/{company:slug}', [CompanyController::class, 'show']);
 Route::get('admin/companies', [CompanyController::class, 'index'])->middleware('admin');
 Route::get('admin/companies/create', [CompanyController::class, 'create'])->middleware('admin');
 Route::post('admin/companies', [CompanyController::class, 'store'])->middleware('admin');

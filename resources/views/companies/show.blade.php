@@ -1,28 +1,28 @@
 <x-layout>
     <main class="max-w-xl mt-6 mx-auto">
         <article class="flex flex-col items-center gap-6">
-            <img src="{{ asset('storage/' . $employee->image) }}" alt="" class="rounded-xl w-full max-w-sm">
+            <img src="{{asset('storage/' . $company->logo) }}" alt="" class="rounded-xl w-full max-w-sm">
 
             <p class="text-gray-400 text-xs">
-                Added <time>{{ $employee->created_at->diffForHumans() }}</time>
+                Added <time>{{ $company->created_at->diffForHumans() }}</time>
             </p>
 
             <h1 class="font-bold text-2xl lg:text-4xl">
                 @php
-                    $nameParts = explode(' ', $employee->name);
-                    echo count($nameParts) > 1 ? ucwords($employee->name) : strtoupper($employee->name);
+                    $nameParts = explode(' ', $company->name);
+                    echo count($nameParts) > 1 ? ucwords($company->name) : strtoupper($company->name);
                 @endphp
             </h1>
+            
 
-
-            <x-link-button :employeeCompany="$employee->company" />
+            <x-link-button :company="$company"/>
 
 
             <div class="text-sm lg:text-md leading-loose border-b border-gray-100 pb-8">
                 <div>
-                    {{-- Convert the employee description to an array of sentences --}}
+                    {{-- Convert the company description to an array of sentences --}}
                     @php
-                        $sentences = preg_split('/\. (?=[A-Z])/', $employee->description);
+                        $sentences = preg_split('/\. (?=[A-Z])/', $company->description);
                         // Remove the last item, remove the period, and add it back
                         $lastSentence = array_pop($sentences);
                         $lastSentence = rtrim($lastSentence, '.');
@@ -36,8 +36,9 @@
                 </div>
             </div>
 
-            <x-testimonials :model="$employee" />
+            
 
+            <x-testimonials :model="$company" />
 
         </article>
     </main>

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Storage;
 
 class CompanyController extends Controller
 {
+    // Display all companies
 
     public function index()
     {
@@ -21,11 +22,23 @@ class CompanyController extends Controller
         ]);
     }
 
+    // Display the details for one company
+
+    public function show(Company $company)
+    {
+        return view('companies.show', [
+            'company' => $company,
+        ]);
+    }
+
+    // Display a page for creating a company
 
     public function create()
     {
         return view('companies.create');
     }
+
+    // Store a new company
 
     public function store()
     {
@@ -57,6 +70,8 @@ class CompanyController extends Controller
             return redirect('/admin/companies/create')->with('error', 'Company not created!')->withInput();
         }
     }
+
+    // Display a page for editing company details
 
     public function edit(Company $company)
     {

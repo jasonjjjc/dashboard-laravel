@@ -26,7 +26,7 @@
             @if($isEmployee && $isAdmin)
                 <x-link-button :employee="$item"/>
             @elseif($isEmployee)
-                <x-link-button :employeeCompany="$data->company" :employee="$item"/>
+                <x-link-button :employeeCompany="$item->company" :employee="$item"/>
             @else
                 <x-link-button :company="$item"/>
             @endif

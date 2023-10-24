@@ -30,7 +30,7 @@
                 </div>
 
                 @if (isset($employees) ? $employees->count() : null)
-                    <x-index-grid :employees="$employees" for="employees"></x-employees-grid>
+                    <x-index-grid :employees="$employees" for="employees"></x-index-grid>
 
                         {{ $employees->links() }}
                         <div class="h-12 w-full"></div> {{-- Spacer --}}

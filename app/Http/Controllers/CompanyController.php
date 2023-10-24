@@ -26,8 +26,12 @@ class CompanyController extends Controller
 
     public function show(Company $company)
     {
+        $company->load('employees');
+        $employees = $company->employees()->paginate(10);
+
         return view('companies.show', [
             'company' => $company,
+            'employees' => $employees,
         ]);
     }
 

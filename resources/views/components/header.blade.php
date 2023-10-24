@@ -14,7 +14,7 @@
                 @endif
 
                 <input type="text" name="search"
-                    placeholder="Find {{ request()->is('companies') || request()->is('admin/companies')
+                    placeholder="Find {{ request()->is('companies*') || request()->is('admin/companies')
                         ? 'a company'
                         : (request()->is('employees') || request()->is('admin/employees')
                             ? 'an employee'

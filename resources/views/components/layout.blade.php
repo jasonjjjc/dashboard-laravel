@@ -73,7 +73,7 @@
                     </div>
 
                     <a href="#newsletterForm" class="hidden md:block whitespace-nowrap py-2 px-4 hover:text-blue-600">
-                        Newsletter <span class="hidden md:inline-block">Sign Up</span>
+                        Newsletter
                     </a>
 
                     @auth

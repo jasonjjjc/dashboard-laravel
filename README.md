@@ -1,5 +1,7 @@
 ## JobStack
 
+# Timeline
+
 I created this project to learn laravel. I spent 3 weeks on it, mostly by myself but with huge help from my POD teammates whenever I was stuck.
 
 

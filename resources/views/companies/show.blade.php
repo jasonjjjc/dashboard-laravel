@@ -46,7 +46,7 @@
                 @if ($employees->count())
                     <x-index-grid :employees="$employees" for="employees"></x-index-grid>
 
-                    <a href="/companies/{{ $company->slug }}/employees" class="text-center text-blue-500 hover:underline">View all employees</a>
+                    {{ $employees->links() }}
                 @else
                     <p class="text-center mt-24">No employees yet. Please check back later.</p>
                 @endif

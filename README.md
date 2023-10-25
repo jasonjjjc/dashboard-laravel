@@ -36,22 +36,27 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 ## Docs
 
-Restarting the project
+### Restarting the project
 
-### git clone it
-### npm i
-### composer install
-### cp .env.example .env
-### php artisan key:generate
+<p>git clone it</p> 
+<p>npm i</p> 
+<p>composer install</p>
+<p>cp .env.example .env</p>
+<p>php artisan key:generate</p>
 
-Updating the project 
+### Updating the project 
+
+<p>Edit .env APP_ENV to local </p>
+<p>Edit .env APP_URL to http://127.0.0.1:8000</p>
+<p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to database name, root for username and blank for password and change APP_DEBUG to true</p>
+
 
 #Putting the project back onto cPanel
-
-### Edit .env APP_URL to deployment site 
-### edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to cPanel database information AND change APP_DEBUG to false
-### Run "npm run build" in Terminal
-### Extract everything inside the root folder to ZIP
-### Upload the ZIP file into cPanel root directory and extract
-### Go to browser and navigate to <a href="https://laravel-project.jason-chalangary.netmatters-scs.co.uk">https://laravel-project.jason-chalangary.netmatters-scs.co.uk/</a>
+<p>Edit .env APP_ENV to production</p>
+<p>Edit .env APP_URL to deployment site</p>
+<p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to cPanel database information AND change APP_DEBUG to false</p>
+<p>Run "npm run build" in Terminal</p>
+<p>Extract everything inside the root folder to ZIP</p>
+<p>Upload the ZIP file into cPanel root directory and extract</p>
+<p>Go to browser and navigate to <a href="https://laravel-project.jason-chalangary.netmatters-scs.co.uk">https://laravel-project.jason-chalangary.netmatters-scs.co.uk/</a></p>
 

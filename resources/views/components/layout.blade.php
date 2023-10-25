@@ -106,6 +106,10 @@
 
     @if (session()->has('success'))
         <x-flash-message success="success" :message="session('success')" />
+
+    @elseif (session()->has('error'))
+        <x-flash-message success="error" :message="session('error')" />
+
     @endif
 
 </body>

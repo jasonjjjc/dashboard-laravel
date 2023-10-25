@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class NewsletterController extends Controller
 {
     public function __invoke()
@@ -22,13 +20,10 @@ class NewsletterController extends Controller
                 'status' => 'subscribed',
             ]);
 
+
             return back()->with('success', 'You are now signed up for our newsletter!');
         } catch (\Exception $e) {
-            return back()->withErrors([
-                'newsletter' => [
-                'newsletter-email' => 'This email could not be added to our newsletter list.'
-                ]
-            ]);
+            return back()->with('error', 'Email could not be added to our newsletter list.');
         }
     }
 }

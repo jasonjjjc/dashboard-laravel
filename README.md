@@ -51,7 +51,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 <p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to database name, root for username and blank for password and change APP_DEBUG to true</p>
 
 
-#Putting the project back onto cPanel
+### Putting the project back onto cPanel
 <p>Edit .env APP_ENV to production</p>
 <p>Edit .env APP_URL to deployment site</p>
 <p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to cPanel database information AND change APP_DEBUG to false</p>

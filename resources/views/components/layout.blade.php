@@ -29,7 +29,7 @@
 
                 <div>
                     <a href="/">
-                        <img src="/icon.png" alt="JobStack Logo" width="40" height="80">
+                        <img src="/icon.png" alt="JobStack Logo" class="w-10 h-10">
                     </a>
                 </div>
 
@@ -106,10 +106,28 @@
 
     @if (session()->has('success'))
         <x-flash-message success="success" :message="session('success')" />
-
     @elseif (session()->has('error'))
         <x-flash-message success="error" :message="session('error')" />
-
     @endif
+
+
+
+    <script>
+        const hasNewsletterError = @json(session()->has('errors') && session('errors')->has('newsletter-error'));
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            if (hasNewsletterError) {
+                const formElement = document.getElementById('newsletterForm');
+                if (formElement) {  // check if the element exists to prevent errors
+                    formElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    </script>
+    
+    
+    
 
 </body>

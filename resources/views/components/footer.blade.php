@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center gap-6 max-w-md mx-auto">
 
             <form id="newsletterForm" method="POST" action="/newsletter"
-                class="relative flex flex-col w-full gap-6 text-sm">
+                class="relative flex flex-col w-full gap-10 text-sm">
 
                 @csrf
 
@@ -20,7 +20,7 @@
                         placeholder="Enter your email address here"
                         class="w-full p-3 rounded-md border border-blue-500 focus:outline-blue-500">
 
-                    @error('newsletter-email', 'newsletter')
+                    @error('newsletter-error')
                         <p class="absolute top-full text-red-500 text-xs mt-1">{{ $message }}</p>
                     @enderror
 

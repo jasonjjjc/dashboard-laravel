@@ -24,7 +24,7 @@ class NewsletterController extends Controller
 
             return back()->with('success', 'You are now signed up for our newsletter!');
         } catch (\Exception $e) {
-            return redirect('/#newsletter')->withErrors([
+            return back()->withErrors([
                 'newsletter' => [
                 'newsletter-email' => 'This email could not be added to our newsletter list.'
                 ]

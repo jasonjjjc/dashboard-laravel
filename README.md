@@ -33,3 +33,25 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+
+## Docs
+
+Restarting the project
+
+### git clone it
+### npm i
+### composer install
+### cp .env.example .env
+### php artisan key:generate
+
+Updating the project 
+
+#Putting the project back onto cPanel
+
+### Edit .env APP_URL to deployment site 
+### edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to cPanel database information AND change APP_DEBUG to false
+### Run "npm run build" in Terminal
+### Extract everything inside the root folder to ZIP
+### Upload the ZIP file into cPanel root directory and extract
+### Go to browser and navigate to <a href="https://laravel-project.jason-chalangary.netmatters-scs.co.uk">https://laravel-project.jason-chalangary.netmatters-scs.co.uk/</a>
+

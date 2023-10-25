@@ -43,15 +43,12 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 <p>composer install</p>
 <p>cp .env.example .env</p>
 <p>php artisan key:generate</p>
+<p>Open terminal and run "npm run dev"</p>
+<p>Open another terminal and run "php artisan serve"</p>
+<p>Open <a href="localhost:8000">localhost:8000</a> in browser</p>
+<p>Start coding!</p>
 
-### Updating the project 
-
-<p>Edit .env APP_ENV to local </p>
-<p>Edit .env APP_URL to http://127.0.0.1:8000</p>
-<p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to database name, root for username and blank for password and change APP_DEBUG to true</p>
-
-
-### Putting the project back onto cPanel
+### Deploying on cPanel
 <p>Edit .env APP_ENV to production</p>
 <p>Edit .env APP_URL to deployment site</p>
 <p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to cPanel database information AND change APP_DEBUG to false</p>
@@ -59,4 +56,10 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 <p>Extract everything inside the root folder to ZIP</p>
 <p>Upload the ZIP file into cPanel root directory and extract</p>
 <p>Go to browser and navigate to <a href="https://laravel-project.jason-chalangary.netmatters-scs.co.uk">https://laravel-project.jason-chalangary.netmatters-scs.co.uk/</a></p>
+
+### Editing code
+
+<p>Edit .env APP_ENV to local </p>
+<p>Edit .env APP_URL to http://127.0.0.1:8000</p>
+<p>Edit DB_DATABASE, DB_USERNAME and DB_PASSWORD to database name, root for username and blank for password and change APP_DEBUG to true</p>
 
